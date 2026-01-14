@@ -1,0 +1,43 @@
+# Text files should use LF line endings
+* text=auto
+
+# Shell scripts
+*.sh text eol=lf
+
+# Python files
+*.py text eol=lf diff=python
+
+# SQL files
+*.sql text eol=lf
+
+# Markdown files
+*.md text eol=lf
+
+# YAML files
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# JSON files
+*.json text eol=lf
+
+# Environment files
+.env* text eol=lf
+
+# Procfile
+Procfile text eol=lf
+
+# Binary files
+*.db binary
+*.sqlite binary
+*.sqlite3 binary
+*.pyc binary
+*.pyd binary
+*.so binary
+*.dll binary
+*.dylib binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary

@@ -1,0 +1,1033 @@
+{
+  "info": {
+    "name": "MTG Tournament Tracker API",
+    "description": "Complete API collection for tracking Magic the Gathering tournament matches, including best-of-3 match tracking, player statistics, deck archetype analysis, and matchup statistics.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "MTG_API"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/health",
+              "host": ["{{base_url}}"],
+              "path": ["health"]
+            },
+            "description": "Check if the API is running"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Seasons",
+      "item": [
+        {
+          "name": "Create Season",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"2026 Standard Season\",\n  \"start_date\": \"2026-01-01\",\n  \"end_date\": \"2026-03-31\",\n  \"description\": \"Q1 2026 Standard tournament season\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/seasons",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "seasons"]
+            },
+            "description": "Create a new season"
+          }
+        },
+        {
+          "name": "Get All Seasons",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/seasons",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "seasons"]
+            },
+            "description": "Retrieve all seasons"
+          }
+        },
+        {
+          "name": "Get Season by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/seasons/{{season_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "seasons", "{{season_id}}"]
+            },
+            "description": "Get a specific season by ID"
+          }
+        },
+        {
+          "name": "Update Season",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"end_date\": \"2026-04-15\",\n  \"description\": \"Extended season\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/seasons/{{season_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "seasons", "{{season_id}}"]
+            },
+            "description": "Update an existing season"
+          }
+        },
+        {
+          "name": "Delete Season",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/seasons/{{season_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "seasons", "{{season_id}}"]
+            },
+            "description": "Delete a season"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tournaments",
+      "item": [
+        {
+          "name": "Create Tournament",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"season_id\": {{season_id}},\n  \"name\": \"January Standard Showdown\",\n  \"tournament_date\": \"2026-01-15\",\n  \"location\": \"Local Game Store - Downtown\",\n  \"format\": \"Standard\",\n  \"description\": \"Weekly Standard tournament\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/tournaments",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "tournaments"]
+            },
+            "description": "Create a new tournament"
+          }
+        },
+        {
+          "name": "Get All Tournaments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/tournaments",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "tournaments"]
+            },
+            "description": "Retrieve all tournaments"
+          }
+        },
+        {
+          "name": "Get Tournaments by Season",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/tournaments?season_id={{season_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "tournaments"],
+              "query": [
+                {
+                  "key": "season_id",
+                  "value": "{{season_id}}"
+                }
+              ]
+            },
+            "description": "Filter tournaments by season"
+          }
+        },
+        {
+          "name": "Get Tournaments with Pagination",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/tournaments?skip=0&limit=10",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "tournaments"],
+              "query": [
+                {
+                  "key": "skip",
+                  "value": "0"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            },
+            "description": "Get tournaments with pagination"
+          }
+        },
+        {
+          "name": "Get Tournament by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/tournaments/{{tournament_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "tournaments", "{{tournament_id}}"]
+            },
+            "description": "Get a specific tournament by ID"
+          }
+        },
+        {
+          "name": "Update Tournament",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"January Standard Showdown - Finals\",\n  \"description\": \"Updated tournament name\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/tournaments/{{tournament_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "tournaments", "{{tournament_id}}"]
+            },
+            "description": "Update an existing tournament"
+          }
+        },
+        {
+          "name": "Delete Tournament",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/tournaments/{{tournament_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "tournaments", "{{tournament_id}}"]
+            },
+            "description": "Delete a tournament"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Players",
+      "item": [
+        {
+          "name": "Create Player - Alice",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Alice Johnson\",\n  \"email\": \"alice.johnson@email.com\",\n  \"active\": true,\n  \"notes\": \"Experienced player\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/players",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "players"]
+            },
+            "description": "Create a new player"
+          }
+        },
+        {
+          "name": "Create Player - Bob",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Bob Smith\",\n  \"email\": \"bob.smith@email.com\",\n  \"active\": true\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/players",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "players"]
+            },
+            "description": "Create another player"
+          }
+        },
+        {
+          "name": "Create Player - Charlie",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Charlie Davis\",\n  \"email\": \"charlie.davis@email.com\",\n  \"active\": true\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/players",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "players"]
+            },
+            "description": "Create a third player"
+          }
+        },
+        {
+          "name": "Get All Players",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/players",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "players"]
+            },
+            "description": "Retrieve all players"
+          }
+        },
+        {
+          "name": "Get Active Players Only",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/players?active_only=true",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "players"],
+              "query": [
+                {
+                  "key": "active_only",
+                  "value": "true"
+                }
+              ]
+            },
+            "description": "Get only active players"
+          }
+        },
+        {
+          "name": "Get Player by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/players/{{player_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "players", "{{player_id}}"]
+            },
+            "description": "Get a specific player by ID"
+          }
+        },
+        {
+          "name": "Update Player",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"active\": false,\n  \"notes\": \"Retired from tournaments\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/players/{{player_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "players", "{{player_id}}"]
+            },
+            "description": "Update player information"
+          }
+        },
+        {
+          "name": "Delete Player",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/players/{{player_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "players", "{{player_id}}"]
+            },
+            "description": "Delete a player"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Deck Archetypes",
+      "item": [
+        {
+          "name": "Create Deck - Mono Red Aggro",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Mono Red Aggro\",\n  \"color_identity\": \"R\",\n  \"archetype_type\": \"Aggro\",\n  \"description\": \"Fast aggressive red deck with burn spells\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/decks",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "decks"]
+            },
+            "description": "Create Mono Red Aggro deck archetype"
+          }
+        },
+        {
+          "name": "Create Deck - Azorius Control",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Azorius Control\",\n  \"color_identity\": \"WU\",\n  \"archetype_type\": \"Control\",\n  \"description\": \"Blue-white control with counterspells\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/decks",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "decks"]
+            },
+            "description": "Create Azorius Control deck archetype"
+          }
+        },
+        {
+          "name": "Create Deck - Golgari Midrange",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Golgari Midrange\",\n  \"color_identity\": \"BG\",\n  \"archetype_type\": \"Midrange\",\n  \"description\": \"Black-green midrange deck\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/decks",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "decks"]
+            },
+            "description": "Create Golgari Midrange deck archetype"
+          }
+        },
+        {
+          "name": "Create Deck - Izzet Tempo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Izzet Tempo\",\n  \"color_identity\": \"UR\",\n  \"archetype_type\": \"Tempo\",\n  \"description\": \"Blue-red tempo with cheap threats\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/decks",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "decks"]
+            },
+            "description": "Create Izzet Tempo deck archetype"
+          }
+        },
+        {
+          "name": "Get All Decks",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/decks",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "decks"]
+            },
+            "description": "Retrieve all deck archetypes"
+          }
+        },
+        {
+          "name": "Get Decks by Archetype Type",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/decks?archetype_type=Aggro",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "decks"],
+              "query": [
+                {
+                  "key": "archetype_type",
+                  "value": "Aggro"
+                }
+              ]
+            },
+            "description": "Filter decks by archetype type"
+          }
+        },
+        {
+          "name": "Get Deck by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/decks/{{deck_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "decks", "{{deck_id}}"]
+            },
+            "description": "Get a specific deck archetype by ID"
+          }
+        },
+        {
+          "name": "Update Deck",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"Updated deck description with latest tech\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/decks/{{deck_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "decks", "{{deck_id}}"]
+            },
+            "description": "Update deck archetype information"
+          }
+        },
+        {
+          "name": "Delete Deck",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/decks/{{deck_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "decks", "{{deck_id}}"]
+            },
+            "description": "Delete a deck archetype"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Matches & Games",
+      "item": [
+        {
+          "name": "Create Match (Without Games)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tournament_id\": {{tournament_id}},\n  \"player1_id\": 1,\n  \"player2_id\": 2,\n  \"player1_deck_id\": 1,\n  \"player2_deck_id\": 2,\n  \"round_number\": 1,\n  \"match_status\": \"COMPLETED\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/matches",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "matches"]
+            },
+            "description": "Create a match without games (games can be added later)"
+          }
+        },
+        {
+          "name": "Add Game 1 to Match",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"game_number\": 1,\n  \"winner_id\": 1,\n  \"game_result\": \"WIN\",\n  \"duration_minutes\": 12\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/matches/{{match_id}}/games",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "matches", "{{match_id}}", "games"]
+            },
+            "description": "Add game 1 to the match (player 1 wins)"
+          }
+        },
+        {
+          "name": "Add Game 2 to Match",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"game_number\": 2,\n  \"winner_id\": 2,\n  \"game_result\": \"WIN\",\n  \"duration_minutes\": 18\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/matches/{{match_id}}/games",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "matches", "{{match_id}}", "games"]
+            },
+            "description": "Add game 2 to the match (player 2 wins)"
+          }
+        },
+        {
+          "name": "Add Game 3 to Match",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"game_number\": 3,\n  \"winner_id\": 1,\n  \"game_result\": \"WIN\",\n  \"duration_minutes\": 15\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/matches/{{match_id}}/games",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "matches", "{{match_id}}", "games"]
+            },
+            "description": "Add game 3 to the match (player 1 wins - match winner)"
+          }
+        },
+        {
+          "name": "Get Match with Games",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/matches/{{match_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "matches", "{{match_id}}"]
+            },
+            "description": "Get a specific match with all its games"
+          }
+        },
+        {
+          "name": "Get All Matches",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/matches",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "matches"]
+            },
+            "description": "Retrieve all matches"
+          }
+        },
+        {
+          "name": "Get Matches by Tournament",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/matches?tournament_id={{tournament_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "matches"],
+              "query": [
+                {
+                  "key": "tournament_id",
+                  "value": "{{tournament_id}}"
+                }
+              ]
+            },
+            "description": "Filter matches by tournament"
+          }
+        },
+        {
+          "name": "Get Matches by Player",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/matches?player_id={{player_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "matches"],
+              "query": [
+                {
+                  "key": "player_id",
+                  "value": "{{player_id}}"
+                }
+              ]
+            },
+            "description": "Filter matches by player"
+          }
+        },
+        {
+          "name": "Get Matches with Pagination",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/matches?skip=0&limit=10",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "matches"],
+              "query": [
+                {
+                  "key": "skip",
+                  "value": "0"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            },
+            "description": "Get matches with pagination"
+          }
+        },
+        {
+          "name": "Update Match",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"match_status\": \"COMPLETED\",\n  \"notes\": \"Great match!\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/matches/{{match_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "matches", "{{match_id}}"]
+            },
+            "description": "Update match information"
+          }
+        },
+        {
+          "name": "Delete Match",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/matches/{{match_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "matches", "{{match_id}}"]
+            },
+            "description": "Delete a match and all its games"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Batch Operations",
+      "item": [
+        {
+          "name": "Batch Create Matches - Round 1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"matches\": [\n    {\n      \"tournament_id\": {{tournament_id}},\n      \"player1_id\": 1,\n      \"player2_id\": 2,\n      \"player1_deck_id\": 1,\n      \"player2_deck_id\": 2,\n      \"round_number\": 1,\n      \"match_status\": \"COMPLETED\",\n      \"games\": [\n        {\"game_number\": 1, \"winner_id\": 1, \"game_result\": \"WIN\", \"duration_minutes\": 12},\n        {\"game_number\": 2, \"winner_id\": 2, \"game_result\": \"WIN\", \"duration_minutes\": 18},\n        {\"game_number\": 3, \"winner_id\": 1, \"game_result\": \"WIN\", \"duration_minutes\": 15}\n      ]\n    },\n    {\n      \"tournament_id\": {{tournament_id}},\n      \"player1_id\": 3,\n      \"player2_id\": 4,\n      \"player1_deck_id\": 3,\n      \"player2_deck_id\": 4,\n      \"round_number\": 1,\n      \"match_status\": \"COMPLETED\",\n      \"games\": [\n        {\"game_number\": 1, \"winner_id\": 3, \"game_result\": \"WIN\", \"duration_minutes\": 20},\n        {\"game_number\": 2, \"winner_id\": 3, \"game_result\": \"WIN\", \"duration_minutes\": 22}\n      ]\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/matches/batch",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "matches", "batch"]
+            },
+            "description": "Batch create multiple matches with games in a single request - most efficient way to enter tournament data"
+          }
+        },
+        {
+          "name": "Batch Create Matches - Complex Example",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"matches\": [\n    {\n      \"tournament_id\": {{tournament_id}},\n      \"player1_id\": 1,\n      \"player2_id\": 2,\n      \"player1_deck_id\": 1,\n      \"player2_deck_id\": 2,\n      \"round_number\": 2,\n      \"match_status\": \"COMPLETED\",\n      \"games\": [\n        {\"game_number\": 1, \"winner_id\": 1, \"game_result\": \"WIN\", \"duration_minutes\": 10},\n        {\"game_number\": 2, \"winner_id\": 1, \"game_result\": \"WIN\", \"duration_minutes\": 8}\n      ]\n    },\n    {\n      \"tournament_id\": {{tournament_id}},\n      \"player1_id\": 3,\n      \"player2_id\": 4,\n      \"player1_deck_id\": 3,\n      \"player2_deck_id\": 1,\n      \"round_number\": 2,\n      \"match_status\": \"COMPLETED\",\n      \"games\": [\n        {\"game_number\": 1, \"winner_id\": 4, \"game_result\": \"WIN\", \"duration_minutes\": 15},\n        {\"game_number\": 2, \"winner_id\": 3, \"game_result\": \"WIN\", \"duration_minutes\": 18},\n        {\"game_number\": 3, \"winner_id\": 4, \"game_result\": \"WIN\", \"duration_minutes\": 12}\n      ]\n    },\n    {\n      \"tournament_id\": {{tournament_id}},\n      \"player1_id\": 1,\n      \"player2_id\": 3,\n      \"player1_deck_id\": 1,\n      \"player2_deck_id\": 3,\n      \"round_number\": 3,\n      \"match_status\": \"COMPLETED\",\n      \"games\": [\n        {\"game_number\": 1, \"winner_id\": 1, \"game_result\": \"WIN\", \"duration_minutes\": 14},\n        {\"game_number\": 2, \"winner_id\": 3, \"game_result\": \"WIN\", \"duration_minutes\": 20},\n        {\"game_number\": 3, \"winner_id\": 1, \"game_result\": \"WIN\", \"duration_minutes\": 16}\n      ]\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/matches/batch",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "matches", "batch"]
+            },
+            "description": "Create multiple rounds of matches in one batch operation"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Statistics",
+      "item": [
+        {
+          "name": "Get All Player Statistics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/stats/players",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "stats", "players"]
+            },
+            "description": "Get statistics for all players (wins, losses, win rate)"
+          }
+        },
+        {
+          "name": "Get Player Statistics by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/stats/players/{{player_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "stats", "players", "{{player_id}}"]
+            },
+            "description": "Get statistics for a specific player"
+          }
+        },
+        {
+          "name": "Get All Deck Statistics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/stats/decks",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "stats", "decks"]
+            },
+            "description": "Get statistics for all deck archetypes (win rate, meta share)"
+          }
+        },
+        {
+          "name": "Get Deck Statistics by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/stats/decks/{{deck_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "stats", "decks", "{{deck_id}}"]
+            },
+            "description": "Get statistics for a specific deck archetype"
+          }
+        },
+        {
+          "name": "Get All Deck Matchups",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/stats/matchups",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "stats", "matchups"]
+            },
+            "description": "Get all deck matchup statistics (deck A vs deck B)"
+          }
+        },
+        {
+          "name": "Get Specific Deck Matchup",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/stats/matchups/1/2",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "stats", "matchups", "1", "2"]
+            },
+            "description": "Get matchup statistics between two specific decks (e.g., Mono Red vs Azorius Control)"
+          }
+        },
+        {
+          "name": "Get Player-Deck Performance",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/stats/player-deck-performance",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "stats", "player-deck-performance"]
+            },
+            "description": "Get performance statistics for each player with each deck they've played"
+          }
+        },
+        {
+          "name": "Get Tournament Summary",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/stats/tournament-summary",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "stats", "tournament-summary"]
+            },
+            "description": "Get summary statistics for all tournaments"
+          }
+        },
+        {
+          "name": "Get Match Results",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/stats/match-results",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "stats", "match-results"]
+            },
+            "description": "Get aggregated match results with winners determined from individual games"
+          }
+        },
+        {
+          "name": "Get All Season Standings",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/stats/season-standings",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "stats", "season-standings"]
+            },
+            "description": "Get player standings for all seasons with points (3 per win, 1 per draw)"
+          }
+        },
+        {
+          "name": "Get Season Standings with Filter",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/stats/season-standings?season_id={{season_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "stats", "season-standings"],
+              "query": [
+                {
+                  "key": "season_id",
+                  "value": "{{season_id}}"
+                }
+              ]
+            },
+            "description": "Filter season standings by season ID"
+          }
+        },
+        {
+          "name": "Get Season Standings by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/stats/season-standings/{{season_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "stats", "season-standings", "{{season_id}}"]
+            },
+            "description": "Get player standings for a specific season ordered by points descending"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000",
+      "type": "string"
+    },
+    {
+      "key": "season_id",
+      "value": "1",
+      "type": "string"
+    },
+    {
+      "key": "tournament_id",
+      "value": "1",
+      "type": "string"
+    },
+    {
+      "key": "player_id",
+      "value": "1",
+      "type": "string"
+    },
+    {
+      "key": "deck_id",
+      "value": "1",
+      "type": "string"
+    },
+    {
+      "key": "match_id",
+      "value": "1",
+      "type": "string"
+    }
+  ]
+}

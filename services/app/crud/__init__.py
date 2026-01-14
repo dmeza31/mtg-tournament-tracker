@@ -1,0 +1,1 @@
+"""Initialize crud package."""
