@@ -110,7 +110,10 @@ psql $env:DATABASE_URL -f 03_views.sql
    ```
 
 4. Click **"Deploy"**
-5. Once deployed, note the public URL (e.g., `https://your-api.up.railway.app`)
+5. Wait for deployment to complete (watch the logs for "Application startup complete")
+6. Go to **Settings** → **Networking** section
+7. Click **"Generate Domain"** to create a public URL
+8. Copy the generated URL (e.g., `https://your-api.up.railway.app`)
 
 ### Step 5: Deploy Streamlit Frontend
 
@@ -128,7 +131,10 @@ psql $env:DATABASE_URL -f 03_views.sql
    ```
 
 4. Click **"Deploy"**
-5. Once deployed, note the public URL (e.g., `https://your-app.up.railway.app`)
+5. Wait for deployment to complete
+6. Go to **Settings** → **Networking** section
+7. Click **"Generate Domain"** to create a public URL
+8. Copy the generated URL (e.g., `https://your-app.up.railway.app`)
 
 ### Step 6: Update CORS Configuration
 
