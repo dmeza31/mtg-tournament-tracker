@@ -1,0 +1,171 @@
+{
+  "season_id": 1,
+  "tournament": {
+    "name": "January Friday Night Magic",
+    "tournament_date": "2026-01-24",
+    "location": "Dragon's Lair Game Store",
+    "format": "Standard",
+    "description": "Weekly Friday Night Magic tournament"
+  },
+  "players": [
+    {
+      "name": "Sarah Connor",
+      "email": "sarah.connor@email.com"
+    },
+    {
+      "name": "John Wick",
+      "email": "john.wick@email.com"
+    },
+    {
+      "name": "Lara Croft",
+      "email": "lara.croft@email.com"
+    },
+    {
+      "name": "Nathan Drake",
+      "email": "nathan.drake@email.com"
+    }
+  ],
+  "decks": [
+    {
+      "name": "Temur Energy",
+      "color_identity": "URG",
+      "archetype_type": "Midrange",
+      "description": "Energy-based midrange deck with threats and interaction"
+    },
+    {
+      "name": "Esper Control",
+      "color_identity": "WUB",
+      "archetype_type": "Control",
+      "description": "Three-color control deck with card advantage and removal"
+    },
+    {
+      "name": "Gruul Stompy",
+      "color_identity": "RG",
+      "archetype_type": "Aggro",
+      "description": "Fast creature-based aggro deck"
+    },
+    {
+      "name": "Mono White Weenie",
+      "color_identity": "W",
+      "archetype_type": "Aggro",
+      "description": "White aggressive creatures with pump spells"
+    }
+  ],
+  "matches": [
+    {
+      "round_number": 1,
+      "player1_name": "Sarah Connor",
+      "player2_name": "John Wick",
+      "player1_deck_name": "Temur Energy",
+      "player2_deck_name": "Esper Control",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Sarah Connor",
+          "duration_minutes": 18
+        },
+        {
+          "game_number": 2,
+          "winner_name": "John Wick",
+          "duration_minutes": 24
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Sarah Connor",
+          "duration_minutes": 20
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Lara Croft",
+      "player2_name": "Nathan Drake",
+      "player1_deck_name": "Gruul Stompy",
+      "player2_deck_name": "Mono White Weenie",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Lara Croft",
+          "duration_minutes": 12
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Lara Croft",
+          "duration_minutes": 14
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Sarah Connor",
+      "player2_name": "Lara Croft",
+      "player1_deck_name": "Temur Energy",
+      "player2_deck_name": "Gruul Stompy",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Lara Croft",
+          "duration_minutes": 16
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Sarah Connor",
+          "duration_minutes": 22
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Lara Croft",
+          "duration_minutes": 19
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "John Wick",
+      "player2_name": "Nathan Drake",
+      "player1_deck_name": "Esper Control",
+      "player2_deck_name": "Mono White Weenie",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "John Wick",
+          "duration_minutes": 26
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Nathan Drake",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "John Wick",
+          "duration_minutes": 28
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Lara Croft",
+      "player2_name": "John Wick",
+      "player1_deck_name": "Gruul Stompy",
+      "player2_deck_name": "Esper Control",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Lara Croft",
+          "duration_minutes": 17
+        },
+        {
+          "game_number": 2,
+          "winner_name": "John Wick",
+          "duration_minutes": 25
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Lara Croft",
+          "duration_minutes": 18
+        }
+      ]
+    }
+  ]
+}

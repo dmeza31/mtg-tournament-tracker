@@ -84,6 +84,7 @@ Streamlit web application for data visualization:
 - 🎴 **Deck Analytics**: Win rates, meta analysis, matchup breakdowns
 - 📊 **Tournament Results**: Round-by-round match and game details
 - 🔍 **Deck Filter**: Analyze specific deck matchups with visual charts
+- 📤 **Tournament Import**: Upload JSON files to import complete tournament data in one operation
 
 [📖 UI Documentation](UI/README.md)
 

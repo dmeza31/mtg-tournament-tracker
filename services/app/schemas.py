@@ -349,6 +349,80 @@ class SeasonStandings(BaseModel):
 
 
 # ============================================================================
+# TOURNAMENT IMPORT SCHEMAS (Complete Tournament Upload)
+# ============================================================================
+
+class GameImport(BaseModel):
+    """Schema for importing a game within a match."""
+    game_number: int = Field(..., ge=1, le=3, description="Game number (1-3)")
+    winner_name: str = Field(..., description="Winner player name")
+    duration_minutes: Optional[int] = Field(15, ge=1, le=180, description="Game duration in minutes")
+
+
+class MatchImport(BaseModel):
+    """Schema for importing a match with player/deck names."""
+    round_number: int = Field(..., ge=1, description="Tournament round number")
+    player1_name: str = Field(..., description="Player 1 name")
+    player2_name: str = Field(..., description="Player 2 name")
+    player1_deck_name: str = Field(..., description="Player 1 deck archetype name")
+    player2_deck_name: str = Field(..., description="Player 2 deck archetype name")
+    games: List[GameImport] = Field(..., min_length=2, max_length=3, description="List of games (2-3)")
+
+
+class PlayerImport(BaseModel):
+    """Schema for importing/creating a player."""
+    name: str = Field(..., max_length=100, description="Player name")
+    email: Optional[str] = Field(None, max_length=100, description="Player email")
+
+
+class DeckImport(BaseModel):
+    """Schema for importing/creating a deck archetype."""
+    name: str = Field(..., max_length=100, description="Deck archetype name")
+    color_identity: Optional[str] = Field("C", max_length=10, description="Color identity (e.g., 'WU', 'R', 'WUBRG')")
+    archetype_type: Optional[str] = Field("Other", max_length=50, description="Archetype type (e.g., 'Aggro', 'Control')")
+    description: Optional[str] = Field(None, description="Deck description")
+
+
+class TournamentImportData(BaseModel):
+    """Schema for importing complete tournament data."""
+    name: str = Field(..., max_length=150, description="Tournament name")
+    tournament_date: date = Field(..., description="Tournament date")
+    location: Optional[str] = Field(None, max_length=150, description="Tournament location")
+    format: Optional[str] = Field(None, max_length=50, description="Tournament format")
+    description: Optional[str] = Field(None, description="Tournament description")
+
+
+class TournamentCompleteImport(BaseModel):
+    """Schema for complete tournament import including all entities."""
+    season_id: int = Field(..., description="Season ID (must exist)")
+    tournament: TournamentImportData = Field(..., description="Tournament information")
+    players: List[PlayerImport] = Field(default_factory=list, description="List of players (creates if not exist)")
+    decks: List[DeckImport] = Field(default_factory=list, description="List of deck archetypes (creates if not exist)")
+    matches: List[MatchImport] = Field(..., min_length=1, description="List of matches with games")
+    
+    @field_validator('matches')
+    @classmethod
+    def validate_matches(cls, v):
+        """Validate that all matches have valid game counts."""
+        for match in v:
+            if len(match.games) < 2 or len(match.games) > 3:
+                raise ValueError(f"Each match must have 2-3 games, found {len(match.games)}")
+        return v
+
+
+class TournamentImportResponse(BaseModel):
+    """Response schema for tournament import."""
+    success: bool
+    message: str
+    tournament_id: int
+    tournament_created: bool
+    players_created: int
+    decks_created: int
+    matches_created: int
+    games_created: int
+
+
+# ============================================================================
 # ERROR SCHEMAS
 # ============================================================================
 

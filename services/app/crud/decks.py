@@ -14,6 +14,11 @@ def get_deck_archetype_by_name(db: Session, name: str) -> Optional[models.DeckAr
     return db.query(models.DeckArchetype).filter(models.DeckArchetype.name == name).first()
 
 
+def get_deck_by_name(db: Session, name: str) -> Optional[models.DeckArchetype]:
+    """Alias for get_deck_archetype_by_name."""
+    return get_deck_archetype_by_name(db, name)
+
+
 def get_deck_archetypes(db: Session, skip: int = 0, limit: int = 100, archetype_type: Optional[str] = None) -> List[models.DeckArchetype]:
     """Get list of deck archetypes."""
     query = db.query(models.DeckArchetype)

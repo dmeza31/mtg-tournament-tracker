@@ -130,6 +130,7 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4
 - `POST /api/v1/tournaments` - Create new tournament
 - `PUT /api/v1/tournaments/{id}` - Update tournament
 - `DELETE /api/v1/tournaments/{id}` - Delete tournament
+- `POST /api/v1/tournaments/import-complete` - **Import complete tournament data** (players, decks, matches, games)
 
 ### Players
 
@@ -256,6 +257,53 @@ curl "http://localhost:8000/api/v1/stats/players"
 ```bash
 curl "http://localhost:8000/api/v1/stats/matchups/1/2"
 ```
+
+### Import Complete Tournament
+
+Import a complete tournament with players, decks, and matches in a single operation:
+
+```bash
+curl -X POST "http://localhost:8000/api/v1/tournaments/import-complete" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "season_id": 1,
+    "tournament": {
+      "name": "Friday Night Magic",
+      "date": "2026-01-10",
+      "location": "Local Game Store",
+      "format": "Standard"
+    },
+    "players": [
+      {"name": "Alice", "email": "alice@email.com"},
+      {"name": "Bob", "email": "bob@email.com"}
+    ],
+    "decks": [
+      {"name": "Temur Energy", "color_identity": "URG", "archetype_type": "Midrange"},
+      {"name": "Esper Control", "color_identity": "WUB", "archetype_type": "Control"}
+    ],
+    "matches": [
+      {
+        "round_number": 1,
+        "player1_name": "Alice",
+        "player2_name": "Bob",
+        "player1_deck_name": "Temur Energy",
+        "player2_deck_name": "Esper Control",
+        "games": [
+          {"game_number": 1, "winner_name": "Alice", "duration_minutes": 20},
+          {"game_number": 2, "winner_name": "Bob", "duration_minutes": 25},
+          {"game_number": 3, "winner_name": "Alice", "duration_minutes": 18}
+        ]
+      }
+    ]
+  }'
+```
+
+**Features:**
+- Automatically creates missing players and decks
+- Looks up existing entities by name
+- Creates tournament, matches, and games in a single transaction
+- Returns counts of created entities
+- Full validation with detailed error messages
 
 For more detailed examples, see [EXAMPLES.md](EXAMPLES.md).
 

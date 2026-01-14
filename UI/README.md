@@ -49,6 +49,62 @@ streamlit run streamlit_app.py
 - See individual game results within matches
 - Tournament summary statistics
 
+### 📤 Import Tournament
+- **Complete tournament data import** - Upload a JSON file containing full tournament information
+- **Auto-create entities** - Automatically creates missing players and deck archetypes
+- **Smart matching** - Looks up existing players and decks by name
+- **Batch import** - Import tournament, players, decks, matches, and games in one operation
+- **Template files** - Use `tournament_import_template.json` as a starting point
+- **Example file** - See `tournament_import_example.json` for a complete reference
+- **Validation** - Built-in JSON schema validation and error reporting
+- **Import summary** - View counts of created entities after import
+
+## Tournament Import Format
+
+The tournament import feature accepts JSON files with the following structure:
+
+```json
+{
+  "season_id": 1,
+  "tournament": {
+    "name": "Friday Night Magic",
+    "date": "2026-01-10",
+    "location": "Local Game Store",
+    "format": "Standard"
+  },
+  "players": [
+    {"name": "Player 1", "email": "player1@email.com"}
+  ],
+  "decks": [
+    {
+      "name": "Temur Energy",
+      "color_identity": "URG",
+      "archetype_type": "Midrange"
+    }
+  ],
+  "matches": [
+    {
+      "round_number": 1,
+      "player1_name": "Player 1",
+      "player2_name": "Player 2",
+      "player1_deck_name": "Temur Energy",
+      "player2_deck_name": "Esper Control",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Player 1",
+          "duration_minutes": 25
+        }
+      ]
+    }
+  ]
+}
+```
+
+**Files available:**
+- `tournament_import_template.json` - Blank template
+- `tournament_import_example.json` - Complete example with sample data
+
 ## Configuration
 
 ### Local Development

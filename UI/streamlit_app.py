@@ -507,7 +507,7 @@ def main():
         st.rerun()
     
     # Main content tabs
-    tab1, tab2, tab3 = st.tabs(["📊 Season Standings", "🎴 Deck Statistics", "🏆 Tournament Results"])
+    tab1, tab2, tab3, tab4 = st.tabs(["📊 Season Standings", "🎴 Deck Statistics", "🏆 Tournament Results", "📤 Import Tournament"])
     
     with tab1:
         standings = get_season_standings(selected_season_id)
@@ -600,6 +600,139 @@ def main():
                 # Fetch and display matches
                 matches = get_tournament_matches(selected_tournament_id)
                 display_tournament_results(matches, selected_tournament_name)
+    
+    with tab4:
+        st.subheader("📤 Import Tournament Data")
+        
+        st.markdown("""
+        Upload a JSON file containing complete tournament data including players, decks, matches, and games.
+        The system will automatically create any missing players or decks.
+        """)
+        
+        # Instructions expander
+        with st.expander("📋 JSON Format Instructions"):
+            st.markdown("""
+            Your JSON file should include:
+            - **season_id**: The ID of the season for this tournament
+            - **tournament**: Name, date, location, and format
+            - **players**: List of players (name and optional email)
+            - **decks**: List of deck archetypes (name, colors, archetype)
+            - **matches**: List of matches with round, players, decks, and games
+            
+            Download the template or example files from the UI folder to get started.
+            """)
+            
+            st.code("""
+{
+  "season_id": 1,
+  "tournament": {
+    "name": "Friday Night Magic",
+    "date": "2026-01-10",
+    "location": "Local Game Store",
+    "format": "Standard"
+  },
+  "players": [
+    {"name": "Player 1", "email": "player1@email.com"}
+  ],
+  "decks": [
+    {"name": "Deck Name", "color_identity": "WU", "archetype_type": "Control"}
+  ],
+  "matches": [
+    {
+      "round_number": 1,
+      "player1_name": "Player 1",
+      "player2_name": "Player 2",
+      "player1_deck_name": "Deck Name",
+      "player2_deck_name": "Deck Name 2",
+      "games": [
+        {"game_number": 1, "winner_name": "Player 1", "duration_minutes": 20}
+      ]
+    }
+  ]
+}
+            """, language="json")
+        
+        # File uploader
+        uploaded_file = st.file_uploader(
+            "Choose a JSON file",
+            type=['json'],
+            help="Upload a JSON file with tournament data"
+        )
+        
+        if uploaded_file is not None:
+            try:
+                # Read and parse JSON
+                import json
+                file_contents = uploaded_file.read()
+                tournament_data = json.loads(file_contents)
+                
+                # Display preview
+                st.success("✅ File loaded successfully!")
+                
+                with st.expander("👁️ Preview Tournament Data"):
+                    st.json(tournament_data)
+                    
+                    # Show summary
+                    st.markdown("### Summary")
+                    col1, col2, col3, col4 = st.columns(4)
+                    with col1:
+                        st.metric("Players", len(tournament_data.get('players', [])))
+                    with col2:
+                        st.metric("Decks", len(tournament_data.get('decks', [])))
+                    with col3:
+                        st.metric("Matches", len(tournament_data.get('matches', [])))
+                    with col4:
+                        total_games = sum(len(m.get('games', [])) for m in tournament_data.get('matches', []))
+                        st.metric("Games", total_games)
+                
+                # Import button
+                if st.button("🚀 Import Tournament", type="primary", use_container_width=True):
+                    with st.spinner("Importing tournament data..."):
+                        try:
+                            response = requests.post(
+                                f"{API_BASE_URL}/tournaments/import-complete",
+                                json=tournament_data,
+                                timeout=30
+                            )
+                            
+                            if response.status_code in [200, 201]:
+                                result = response.json()
+                                st.success("🎉 Tournament imported successfully!")
+                                
+                                # Display results
+                                st.markdown("### Import Results")
+                                col1, col2, col3, col4, col5 = st.columns(5)
+                                with col1:
+                                    st.metric("Tournament", "✓" if result['tournament_created'] else "Exists")
+                                with col2:
+                                    st.metric("Players Created", result['players_created'])
+                                with col3:
+                                    st.metric("Decks Created", result['decks_created'])
+                                with col4:
+                                    st.metric("Matches", result['matches_created'])
+                                with col5:
+                                    st.metric("Games", result['games_created'])
+                                
+                                st.info(result['message'])
+                                
+                                # Clear cache to show new data
+                                st.cache_data.clear()
+                                
+                            else:
+                                error_detail = response.json().get('detail', 'Unknown error')
+                                st.error(f"❌ Import failed: {error_detail}")
+                                
+                        except requests.exceptions.RequestException as e:
+                            st.error(f"❌ Network error: {str(e)}")
+                        except Exception as e:
+                            st.error(f"❌ Error during import: {str(e)}")
+                            
+            except json.JSONDecodeError as e:
+                st.error(f"❌ Invalid JSON file: {str(e)}")
+            except Exception as e:
+                st.error(f"❌ Error reading file: {str(e)}")
+        else:
+            st.info("👆 Upload a JSON file to get started")
     
     # Footer
     st.markdown("---")

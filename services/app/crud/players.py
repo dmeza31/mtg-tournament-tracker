@@ -14,6 +14,11 @@ def get_player_by_email(db: Session, email: str) -> Optional[models.Player]:
     return db.query(models.Player).filter(models.Player.email == email).first()
 
 
+def get_player_by_name(db: Session, name: str) -> Optional[models.Player]:
+    """Get a player by name."""
+    return db.query(models.Player).filter(models.Player.name == name).first()
+
+
 def get_players(db: Session, skip: int = 0, limit: int = 100, active_only: bool = False) -> List[models.Player]:
     """Get list of players."""
     query = db.query(models.Player)

@@ -1,0 +1,45 @@
+{
+  "season_id": 1,
+  "tournament": {
+    "name": "",
+    "tournament_date": "2026-01-20",
+    "location": "",
+    "format": "Standard",
+    "description": ""
+  },
+  "players": [
+    {
+      "name": "",
+      "email": ""
+    }
+  ],
+  "decks": [
+    {
+      "name": "",
+      "color_identity": "",
+      "archetype_type": "",
+      "description": ""
+    }
+  ],
+  "matches": [
+    {
+      "round_number": 1,
+      "player1_name": "",
+      "player2_name": "",
+      "player1_deck_name": "",
+      "player2_deck_name": "",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "",
+          "duration_minutes": 15
+        }
+      ]
+    }
+  ]
+}
