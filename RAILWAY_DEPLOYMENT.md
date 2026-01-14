@@ -34,51 +34,59 @@ Railway Project
 
 ### Step 3: Initialize Database Schema
 
-After PostgreSQL is provisioned, you need to run the initialization scripts:
+After PostgreSQL is provisioned, you need to run the initialization scripts from your local machine.
 
-#### Option A: Using Railway CLI (Recommended)
+#### Get Public Database Connection String
+
+1. Go to PostgreSQL service → **Variables** tab
+2. Find the **public/external DATABASE_URL** (looks like `postgresql://postgres:password@containers-us-west-xxx.railway.app:port/railway`)
+3. **Important:** Use the external hostname (e.g., `containers-us-west-xxx.railway.app`), **NOT** `postgres.railway.internal`
+   - Internal hostname only works between Railway services
+   - External hostname is required for local connections
+
+#### Option A: Using psql from Command Line (Recommended)
 
 ```bash
-# Install Railway CLI
-npm i -g @railway/cli
-
-# Login to Railway
-railway login
-
-# Link to your project
-railway link
-
-# Run initialization script
-cd database
-railway run bash init.sh
-```
-
-#### Option B: Using psql Directly
-
-1. Get the DATABASE_URL from Railway:
-   - Go to PostgreSQL service → **Variables** tab
-   - Copy the `DATABASE_URL` value
-
-2. Run from your local machine:
-```bash
+# Navigate to database folder
 cd database
 
-# Set DATABASE_URL
-export DATABASE_URL="postgresql://postgres:password@host:port/railway"  # Replace with your URL
+# Set the PUBLIC DATABASE_URL from Railway (use external hostname)
+export DATABASE_URL="postgresql://postgres:password@containers-us-west-xxx.railway.app:port/railway"
 
-# Execute scripts
+# Execute scripts in order
 psql $DATABASE_URL -f 01_schema.sql
 psql $DATABASE_URL -f 02_indexes.sql
 psql $DATABASE_URL -f 03_views.sql
 ```
 
-#### Option C: Manual via Railway Dashboard
+**Windows PowerShell:**
+```powershell
+cd database
+$env:DATABASE_URL="postgresql://postgres:password@containers-us-west-xxx.railway.app:port/railway"
+psql $env:DATABASE_URL -f 01_schema.sql
+psql $env:DATABASE_URL -f 02_indexes.sql
+psql $env:DATABASE_URL -f 03_views.sql
+```
+
+#### Option B: Using Railway Dashboard (GUI Method)
 
 1. Open PostgreSQL service → **Data** tab
-2. Use the built-in query editor to copy/paste contents of:
+2. Click **Query** to open the SQL editor
+3. Copy and paste contents of each file in order:
    - `01_schema.sql`
    - `02_indexes.sql`
    - `03_views.sql`
+4. Click **Run** for each script
+
+#### Option C: Using pgAdmin or DBeaver
+
+1. Create new connection using Railway's external connection details:
+   - Host: `containers-us-west-xxx.railway.app` (from Railway Variables)
+   - Port: Your Railway port (e.g., 5432)
+   - Database: `railway`
+   - Username: `postgres`
+   - Password: From Railway Variables
+2. Open SQL Script editor and execute files in order
 
 ### Step 4: Deploy FastAPI Backend
 
