@@ -20,28 +20,28 @@ INSERT INTO seasons (name, start_date, end_date, description) VALUES
 -- TOURNAMENTS
 -- ============================================================================
 -- Season 1 Tournaments (Q1 - Standard)
-INSERT INTO tournaments (season_id, name, tournament_date, location, format, description) VALUES
-(1, 'January Standard Showdown', '2026-01-15', 'Local Game Store - Downtown', 'Standard', 'Weekly Standard tournament'),
-(1, 'February Championship Qualifier', '2026-02-20', 'Convention Center', 'Standard', 'Regional Championship Qualifier'),
-(1, 'March Season Finale', '2026-03-28', 'Local Game Store - Downtown', 'Standard', 'End of season tournament');
+INSERT INTO tournaments (season_id, tournament_type_id, name, tournament_date, location, format, description) VALUES
+(1, 3, 'January Standard Showdown', '2026-01-15', 'Local Game Store - Downtown', 'Standard', 'Weekly Standard tournament'),
+(1, 2, 'February Championship Qualifier', '2026-02-20', 'Convention Center', 'Standard', 'Regional Championship Qualifier'),
+(1, 2, 'March Season Finale', '2026-03-28', 'Local Game Store - Downtown', 'Standard', 'End of season tournament');
 
 -- Season 2 Tournaments (Q2 - Modern)
-INSERT INTO tournaments (season_id, name, tournament_date, location, format, description) VALUES
-(2, 'April Modern Masters', '2026-04-12', 'Game Haven', 'Modern', 'Modern format tournament'),
-(2, 'May Modern Mayhem', '2026-05-17', 'Convention Center', 'Modern', 'Large Modern event'),
-(2, 'June Modern Championship', '2026-06-21', 'Local Game Store - Downtown', 'Modern', 'Season championship');
+INSERT INTO tournaments (season_id, tournament_type_id, name, tournament_date, location, format, description) VALUES
+(2, 3, 'April Modern Masters', '2026-04-12', 'Game Haven', 'Modern', 'Modern format tournament'),
+(2, 2, 'May Modern Mayhem', '2026-05-17', 'Convention Center', 'Modern', 'Large Modern event'),
+(2, 2, 'June Modern Championship', '2026-06-21', 'Local Game Store - Downtown', 'Modern', 'Season championship');
 
 -- Season 3 Tournaments (Q3 - Pioneer)
-INSERT INTO tournaments (season_id, name, tournament_date, location, format, description) VALUES
-(3, 'July Pioneer Open', '2026-07-10', 'Game Haven', 'Pioneer', 'Pioneer format open tournament'),
-(3, 'August Pioneer Challenge', '2026-08-14', 'Convention Center', 'Pioneer', 'Pioneer competitive event'),
-(3, 'September Pioneer Finals', '2026-09-25', 'Local Game Store - Downtown', 'Pioneer', 'Season finale');
+INSERT INTO tournaments (season_id, tournament_type_id, name, tournament_date, location, format, description) VALUES
+(3, 3, 'July Pioneer Open', '2026-07-10', 'Game Haven', 'Pioneer', 'Pioneer format open tournament'),
+(3, 2, 'August Pioneer Challenge', '2026-08-14', 'Convention Center', 'Pioneer', 'Pioneer competitive event'),
+(3, 2, 'September Pioneer Finals', '2026-09-25', 'Local Game Store - Downtown', 'Pioneer', 'Season finale');
 
 -- Season 4 Tournaments (Q4 - Legacy)
-INSERT INTO tournaments (season_id, name, tournament_date, location, format, description) VALUES
-(4, 'October Legacy Legends', '2026-10-09', 'Game Haven', 'Legacy', 'Legacy format tournament'),
-(4, 'November Legacy Showdown', '2026-11-20', 'Convention Center', 'Legacy', 'Premier Legacy event'),
-(4, 'December Year-End Championship', '2026-12-19', 'Convention Center', 'Legacy', 'Annual championship finale');
+INSERT INTO tournaments (season_id, tournament_type_id, name, tournament_date, location, format, description) VALUES
+(4, 3, 'October Legacy Legends', '2026-10-09', 'Game Haven', 'Legacy', 'Legacy format tournament'),
+(4, 2, 'November Legacy Showdown', '2026-11-20', 'Convention Center', 'Legacy', 'Premier Legacy event'),
+(4, 1, 'December Year-End Championship', '2026-12-19', 'Convention Center', 'Legacy', 'Annual championship finale');
 
 -- ============================================================================
 -- PLAYERS
@@ -89,7 +89,7 @@ VALUES (1, 3, 4, 3, 4, 1, '2026-01-15 10:00:00', 'COMPLETED');
 
 INSERT INTO games (match_id, game_number, winner_id, game_result, duration_minutes) VALUES
 (2, 1, 3, 'WIN', 20),  -- Charlie wins game 1
-(2, 2, 3, 'WIN', 22);  -- Charlie wins game 2 (Charlie wins match 2-0)
+(2, 2, 3, 'DRAW', 22);  -- Draw in game 2 (Charlie wins match 1-0-1)
 
 -- Match 3: Ethan (Bant Ramp) vs Fiona (Dimir Aggro)
 INSERT INTO matches (tournament_id, player1_id, player2_id, player1_deck_id, player2_deck_id, round_number, match_date, match_status)
@@ -173,8 +173,8 @@ VALUES (2, 2, 6, 2, 6, 1, '2026-02-20 10:00:00', 'COMPLETED');
 
 INSERT INTO games (match_id, game_number, winner_id, game_result, duration_minutes) VALUES
 (11, 1, 2, 'WIN', 22),  -- Bob wins game 1
-(11, 2, 6, 'WIN', 16),  -- Fiona wins game 2
-(11, 3, 2, 'WIN', 25);  -- Bob wins game 3 (Bob wins match 2-1)
+(11, 2, 2, 'DRAW', 16),  -- Draw in game 2
+(11, 3, 2, 'WIN', 25);  -- Bob wins game 3 (Bob wins match 2-0-1)
 
 -- Match 12: Charlie (Golgari Midrange) vs Ethan (Rakdos Sacrifice)
 INSERT INTO matches (tournament_id, player1_id, player2_id, player1_deck_id, player2_deck_id, round_number, match_date, match_status)
@@ -251,7 +251,7 @@ VALUES (3, 6, 7, 6, 7, 1, '2026-03-28 10:00:00', 'COMPLETED');
 
 INSERT INTO games (match_id, game_number, winner_id, game_result, duration_minutes) VALUES
 (19, 1, 6, 'WIN', 15),  -- Fiona wins game 1
-(19, 2, 6, 'WIN', 17);  -- Fiona wins game 2 (Fiona wins match 2-0)
+(19, 2, 7, 'DRAW', 17);  -- Draw in game 2 (Fiona wins match 1-0-1)
 
 -- Match 20: Rakdos Sacrifice vs Bant Ramp
 INSERT INTO matches (tournament_id, player1_id, player2_id, player1_deck_id, player2_deck_id, round_number, match_date, match_status)
@@ -276,7 +276,7 @@ INSERT INTO games (match_id, game_number, winner_id, game_result, duration_minut
 INSERT INTO matches (tournament_id, player1_id, player2_id, player1_deck_id, player2_deck_id, round_number, match_date, match_status)
 VALUES (4, 2, 4, 2, 4, 1, '2026-04-12 10:00:00', 'COMPLETED');
 INSERT INTO games (match_id, game_number, winner_id, game_result, duration_minutes) VALUES
-(22, 1, 2, 'WIN', 24), (22, 2, 2, 'WIN', 26);
+(22, 1, 2, 'DRAW', 24), (22, 2, 2, 'WIN', 26);
 
 INSERT INTO matches (tournament_id, player1_id, player2_id, player1_deck_id, player2_deck_id, round_number, match_date, match_status)
 VALUES (4, 5, 7, 5, 7, 1, '2026-04-12 10:00:00', 'COMPLETED');

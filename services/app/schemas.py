@@ -40,6 +40,33 @@ class Season(SeasonBase):
 
 
 # ============================================================================
+# TOURNAMENT TYPE SCHEMAS
+# ============================================================================
+
+class TournamentTypeBase(BaseModel):
+    """Base schema for Tournament Type."""
+    name: str = Field(..., max_length=100, description="Unique tournament type name")
+    points_win: int = Field(..., ge=0, description="Points awarded for a match win")
+    points_draw: int = Field(..., ge=0, description="Points awarded for a match draw")
+    description: Optional[str] = Field(None, description="Tournament type description")
+
+
+class TournamentTypeCreate(TournamentTypeBase):
+    """Schema for creating a tournament type."""
+    pass
+
+
+class TournamentType(TournamentTypeBase):
+    """Schema for Tournament Type response."""
+    id: int
+    created_at: datetime
+    updated_at: datetime
+    
+    class Config:
+        from_attributes = True
+
+
+# ============================================================================
 # TOURNAMENT SCHEMAS
 # ============================================================================
 
@@ -51,6 +78,8 @@ class TournamentBase(BaseModel):
     location: Optional[str] = Field(None, max_length=200, description="Tournament location")
     format: Optional[str] = Field(None, max_length=50, description="MTG format (Standard, Modern, etc.)")
     description: Optional[str] = Field(None, description="Tournament description")
+    tournament_type_id: Optional[int] = Field(None, description="Tournament type ID")
+    tournament_type_name: Optional[str] = Field(None, max_length=100, description="Tournament type name (unique)")
 
 
 class TournamentCreate(TournamentBase):
@@ -66,6 +95,8 @@ class TournamentUpdate(BaseModel):
     location: Optional[str] = Field(None, max_length=200)
     format: Optional[str] = Field(None, max_length=50)
     description: Optional[str] = None
+    tournament_type_id: Optional[int] = Field(None, description="Tournament type ID")
+    tournament_type_name: Optional[str] = Field(None, max_length=100, description="Tournament type name (unique)")
 
 
 class Tournament(TournamentBase):
@@ -73,6 +104,8 @@ class Tournament(TournamentBase):
     id: int
     created_at: datetime
     updated_at: datetime
+    tournament_type_id: int
+    tournament_type: Optional[TournamentType] = None
     
     class Config:
         from_attributes = True
@@ -242,6 +275,10 @@ class Match(MatchBase):
     match_date: datetime
     created_at: datetime
     updated_at: datetime
+    player1_name: Optional[str] = Field(None, description="Player 1 name")
+    player2_name: Optional[str] = Field(None, description="Player 2 name")
+    player1_deck_name: Optional[str] = Field(None, description="Player 1 deck name")
+    player2_deck_name: Optional[str] = Field(None, description="Player 2 deck name")
     
     class Config:
         from_attributes = True
@@ -390,6 +427,8 @@ class TournamentImportData(BaseModel):
     location: Optional[str] = Field(None, max_length=150, description="Tournament location")
     format: Optional[str] = Field(None, max_length=50, description="Tournament format")
     description: Optional[str] = Field(None, description="Tournament description")
+    tournament_type_id: Optional[int] = Field(None, description="Tournament type ID")
+    tournament_type_name: Optional[str] = Field(None, max_length=100, description="Tournament type name (unique)")
 
 
 class TournamentCompleteImport(BaseModel):

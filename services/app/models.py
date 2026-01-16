@@ -1,10 +1,29 @@
 """SQLAlchemy ORM models matching the PostgreSQL database schema."""
 from sqlalchemy import (
     Column, Integer, String, Date, DateTime, Boolean, Text,
-    ForeignKey, CheckConstraint, UniqueConstraint, func
+    ForeignKey, CheckConstraint, UniqueConstraint, func, text
 )
 from sqlalchemy.orm import relationship
 from app.database import Base
+
+class TournamentType(Base):
+    """Tournament type with configurable point values."""
+    __tablename__ = "tournament_types"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String(100), nullable=False, unique=True)
+    points_win = Column(Integer, nullable=False)
+    points_draw = Column(Integer, nullable=False)
+    description = Column(Text)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)
+
+    tournaments = relationship("Tournament", back_populates="tournament_type")
+
+    __table_args__ = (
+        CheckConstraint('points_win >= 0', name='valid_points_win'),
+        CheckConstraint('points_draw >= 0', name='valid_points_draw'),
+    )
 
 
 class Season(Base):
@@ -33,6 +52,11 @@ class Tournament(Base):
     
     id = Column(Integer, primary_key=True, index=True)
     season_id = Column(Integer, ForeignKey("seasons.id", ondelete="CASCADE"), nullable=False)
+    tournament_type_id = Column(
+        Integer,
+        ForeignKey("tournament_types.id", ondelete="RESTRICT"),
+        nullable=False
+    )
     name = Column(String(150), nullable=False)
     tournament_date = Column(Date, nullable=False)
     location = Column(String(200))
@@ -43,6 +67,7 @@ class Tournament(Base):
     
     # Relationships
     season = relationship("Season", back_populates="tournaments")
+    tournament_type = relationship("TournamentType", back_populates="tournaments")
     matches = relationship("Match", back_populates="tournament", cascade="all, delete-orphan")
     
     __table_args__ = (

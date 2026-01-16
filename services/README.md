@@ -11,6 +11,7 @@ A comprehensive RESTful API built with **Python FastAPI** for tracking Magic the
 ✅ **Automatic API Documentation** via Swagger UI and ReDoc  
 ✅ **Error Handling** with structured JSON responses  
 ✅ **CORS Support** for web application integration  
+✅ **Tournament Types** with per-event win/draw points (default LGS Tournament; accept type id or unique name)
 
 ## Tech Stack
 
@@ -196,6 +197,26 @@ curl -X POST "http://localhost:8000/api/v1/seasons" \
   }'
 ```
 
+### Create a Tournament
+
+```bash
+curl -X POST "http://localhost:8000/api/v1/tournaments" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "season_id": 1,
+    "name": "Friday Night Magic - Week 1",
+    "tournament_date": "2026-01-10",
+    "location": "Local Game Store",
+    "format": "Standard",
+    "tournament_type_name": "LGS Tournament"
+  }'
+```
+
+**Notes:**
+- `tournament_type_name` is optional (defaults to "LGS Tournament" if omitted)
+- Can also use `tournament_type_id` instead of `tournament_type_name`
+- Available types: Nationals, Special Event, LGS Tournament (default), Online Tournament
+
 ### Create a Player
 
 ```bash
@@ -269,9 +290,10 @@ curl -X POST "http://localhost:8000/api/v1/tournaments/import-complete" \
     "season_id": 1,
     "tournament": {
       "name": "Friday Night Magic",
-      "date": "2026-01-10",
+      "tournament_date": "2026-01-10",
       "location": "Local Game Store",
-      "format": "Standard"
+      "format": "Standard",
+      "tournament_type_name": "LGS Tournament"
     },
     "players": [
       {"name": "Alice", "email": "alice@email.com"},
@@ -301,6 +323,8 @@ curl -X POST "http://localhost:8000/api/v1/tournaments/import-complete" \
 **Features:**
 - Automatically creates missing players and decks
 - Looks up existing entities by name
+- Tournament type can be specified by `tournament_type_id` or `tournament_type_name` (defaults to "LGS Tournament" if omitted)
+- Available tournament types: Nationals (12/4 pts), Special Event (7/3 pts), LGS Tournament (5/2 pts), Online Tournament (3/0 pts)
 - Creates tournament, matches, and games in a single transaction
 - Returns counts of created entities
 - Full validation with detailed error messages

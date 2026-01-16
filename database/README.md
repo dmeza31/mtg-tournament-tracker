@@ -10,6 +10,7 @@ A comprehensive PostgreSQL database for tracking Magic the Gathering tournament 
 - **Deck Statistics**: Analyze performance of deck archetypes
 - **Matchup Analysis**: Calculate win rates between specific deck pairings
 - **Tournament Organization**: Season and tournament hierarchy
+- **Tournament Types**: Configurable win/draw points per event type (default LGS Tournament)
 - **Optimized Queries**: Indexes designed for common query patterns
 
 ## Database Schema
@@ -18,10 +19,11 @@ A comprehensive PostgreSQL database for tracking Magic the Gathering tournament 
 
 1. **seasons** - Tournament seasons (e.g., "2026 Standard Season")
 2. **tournaments** - Individual tournaments within seasons
-3. **players** - Player information and registration
-4. **deck_archetypes** - Deck archetypes (e.g., "Mono Red Aggro", "Azorius Control")
-5. **matches** - Match-level information (best-of-3)
-6. **games** - Individual game results within matches
+3. **tournament_types** - Point configuration per event type (win/draw values)
+4. **players** - Player information and registration
+5. **deck_archetypes** - Deck archetypes (e.g., "Mono Red Aggro", "Azorius Control")
+6. **matches** - Match-level information (best-of-3)
+7. **games** - Individual game results within matches
 
 ### Relationships
 

@@ -213,6 +213,7 @@ MTG Tournament Tracker/
 ✅ **Tournament Creation** - Track multiple tournaments per season  
 ✅ **Player Registration** - Manage player profiles with active status  
 ✅ **Deck Archetypes** - Catalog decks with color identity and archetype type  
+✅ **Tournament Types** - Configure per-event point values (default LGS Tournament)
 
 ### Match Tracking
 ✅ **Best-of-3 Format** - Record individual game results within matches  

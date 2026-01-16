@@ -55,7 +55,10 @@ def create_tournament(tournament: schemas.TournamentCreate, db: Session = Depend
     - **format**: MTG format like Standard, Modern (optional)
     - **description**: Tournament description (optional)
     """
-    return tournaments.create_tournament(db=db, tournament=tournament)
+    try:
+        return tournaments.create_tournament(db=db, tournament=tournament)
+    except ValueError as exc:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(exc))
 
 
 @router.put("/{tournament_id}", response_model=schemas.Tournament)
@@ -65,7 +68,10 @@ def update_tournament(
     db: Session = Depends(get_db)
 ):
     """Update an existing tournament."""
-    db_tournament = tournaments.update_tournament(db, tournament_id=tournament_id, tournament=tournament)
+    try:
+        db_tournament = tournaments.update_tournament(db, tournament_id=tournament_id, tournament=tournament)
+    except ValueError as exc:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(exc))
     if not db_tournament:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
@@ -165,9 +171,18 @@ def import_complete_tournament(
             tournament_date=data.tournament.tournament_date,
             location=data.tournament.location,
             format=data.tournament.format,
-            description=data.tournament.description
+            description=data.tournament.description,
+            tournament_type_id=data.tournament.tournament_type_id,
+            tournament_type_name=data.tournament.tournament_type_name,
         )
-        new_tournament = tournaments.create_tournament(db, tournament_create)
+        try:
+            new_tournament = tournaments.create_tournament(db, tournament_create)
+        except ValueError as exc:
+            logger.error(f"Tournament type resolution failed: {exc}")
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail=str(exc)
+            )
         logger.info(f"Tournament created with ID: {new_tournament.id}")
         
         # Track created entities

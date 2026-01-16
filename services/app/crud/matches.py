@@ -7,8 +7,27 @@ from typing import Optional, List, Tuple
 
 
 def get_match(db: Session, match_id: int) -> Optional[models.Match]:
-    """Get a match by ID."""
-    return db.query(models.Match).filter(models.Match.id == match_id).first()
+    """Get a match by ID with player and deck names populated."""
+    match = db.query(models.Match).filter(models.Match.id == match_id).first()
+    
+    if not match:
+        return None
+    
+    # Get player names
+    player1 = db.query(models.Player).filter(models.Player.id == match.player1_id).first()
+    player2 = db.query(models.Player).filter(models.Player.id == match.player2_id).first()
+    
+    # Get deck names
+    deck1 = db.query(models.DeckArchetype).filter(models.DeckArchetype.id == match.player1_deck_id).first()
+    deck2 = db.query(models.DeckArchetype).filter(models.DeckArchetype.id == match.player2_deck_id).first()
+    
+    # Attach to match object for serialization
+    match.player1_name = player1.name if player1 else f"Player {match.player1_id}"
+    match.player2_name = player2.name if player2 else f"Player {match.player2_id}"
+    match.player1_deck_name = deck1.name if deck1 else f"Deck {match.player1_deck_id}"
+    match.player2_deck_name = deck2.name if deck2 else f"Deck {match.player2_deck_id}"
+    
+    return match
 
 
 def get_matches(
@@ -18,7 +37,7 @@ def get_matches(
     tournament_id: Optional[int] = None,
     player_id: Optional[int] = None
 ) -> List[models.Match]:
-    """Get list of matches."""
+    """Get list of matches with player and deck names populated."""
     query = db.query(models.Match)
     
     if tournament_id:
@@ -30,7 +49,25 @@ def get_matches(
             (models.Match.player2_id == player_id)
         )
     
-    return query.order_by(desc(models.Match.match_date)).offset(skip).limit(limit).all()
+    matches = query.order_by(desc(models.Match.match_date)).offset(skip).limit(limit).all()
+    
+    # Populate player and deck names
+    for match in matches:
+        # Get player names
+        player1 = db.query(models.Player).filter(models.Player.id == match.player1_id).first()
+        player2 = db.query(models.Player).filter(models.Player.id == match.player2_id).first()
+        
+        # Get deck names
+        deck1 = db.query(models.DeckArchetype).filter(models.DeckArchetype.id == match.player1_deck_id).first()
+        deck2 = db.query(models.DeckArchetype).filter(models.DeckArchetype.id == match.player2_deck_id).first()
+        
+        # Attach to match object for serialization
+        match.player1_name = player1.name if player1 else f"Player {match.player1_id}"
+        match.player2_name = player2.name if player2 else f"Player {match.player2_id}"
+        match.player1_deck_name = deck1.name if deck1 else f"Deck {match.player1_deck_id}"
+        match.player2_deck_name = deck2.name if deck2 else f"Deck {match.player2_deck_id}"
+    
+    return matches
 
 
 def create_match(db: Session, match: schemas.MatchCreate) -> models.Match:

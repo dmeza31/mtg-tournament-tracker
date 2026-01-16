@@ -13,7 +13,36 @@ DROP TABLE IF EXISTS matches CASCADE;
 DROP TABLE IF EXISTS deck_archetypes CASCADE;
 DROP TABLE IF EXISTS players CASCADE;
 DROP TABLE IF EXISTS tournaments CASCADE;
+DROP TABLE IF EXISTS tournament_types CASCADE;
 DROP TABLE IF EXISTS seasons CASCADE;
+
+-- ============================================================================
+-- TOURNAMENT TYPES TABLE
+-- ============================================================================
+-- Stores tournament type definitions and associated points for wins/draws
+CREATE TABLE tournament_types (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE,
+    points_win INTEGER NOT NULL,
+    points_draw INTEGER NOT NULL,
+    description TEXT,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT valid_points CHECK (points_win >= 0 AND points_draw >= 0)
+);
+
+COMMENT ON TABLE tournament_types IS 'Configurable tournament types with point values per result';
+COMMENT ON COLUMN tournament_types.name IS 'Unique tournament type name';
+COMMENT ON COLUMN tournament_types.points_win IS 'Points awarded for a match win';
+COMMENT ON COLUMN tournament_types.points_draw IS 'Points awarded for a match draw';
+
+-- Seed default tournament types (names must stay unique)
+INSERT INTO tournament_types (name, points_win, points_draw, description) VALUES
+('Nationals', 12, 4, 'National-level championship events'),
+('Special Event', 7, 3, 'Large regional or special events'),
+('LGS Tournament', 5, 2, 'Default local game store events'),
+('Online Tournament', 3, 0, 'Online or casual events');
 
 -- ============================================================================
 -- SEASONS TABLE
@@ -42,6 +71,7 @@ COMMENT ON COLUMN seasons.name IS 'Season name, e.g., "2026 Standard Season"';
 CREATE TABLE tournaments (
     id SERIAL PRIMARY KEY,
     season_id INTEGER NOT NULL REFERENCES seasons(id) ON DELETE CASCADE,
+    tournament_type_id INTEGER NOT NULL REFERENCES tournament_types(id) ON DELETE RESTRICT,
     name VARCHAR(150) NOT NULL,
     tournament_date DATE NOT NULL,
     location VARCHAR(200),
@@ -165,6 +195,11 @@ $$ LANGUAGE plpgsql;
 -- ============================================================================
 CREATE TRIGGER update_seasons_updated_at
     BEFORE UPDATE ON seasons
+    FOR EACH ROW
+    EXECUTE FUNCTION update_updated_at_column();
+
+CREATE TRIGGER update_tournament_types_updated_at
+    BEFORE UPDATE ON tournament_types
     FOR EACH ROW
     EXECUTE FUNCTION update_updated_at_column();
 

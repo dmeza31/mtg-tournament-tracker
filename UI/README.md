@@ -29,7 +29,7 @@ streamlit run streamlit_app.py
 ## Features
 
 ### 📊 Season Standings
-- View player rankings with points (3 per win, 1 per draw)
+- View player rankings with tournament-type points (defaults: LGS Tournament = 5/2 win/draw)
 - Champion highlighting (Gold/Silver/Bronze for top 3)
 - Switch between seasons using dropdown
 - Display season information and dates
@@ -68,9 +68,10 @@ The tournament import feature accepts JSON files with the following structure:
   "season_id": 1,
   "tournament": {
     "name": "Friday Night Magic",
-    "date": "2026-01-10",
+    "tournament_date": "2026-01-10",
     "location": "Local Game Store",
-    "format": "Standard"
+    "format": "Standard",
+    "tournament_type_name": "LGS Tournament"
   },
   "players": [
     {"name": "Player 1", "email": "player1@email.com"}

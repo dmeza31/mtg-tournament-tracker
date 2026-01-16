@@ -160,6 +160,26 @@ def display_season_standings(standings: List[Dict], season_name: str):
     
     st.dataframe(styled_df, use_container_width=True, hide_index=True)
     
+    # Explanation of standings calculation
+    with st.expander("ℹ️ How are standings calculated?"):
+        st.markdown("""
+        **Points are awarded based on tournament type:**
+        
+        | Tournament Type | Points/Win | Points/Draw |
+        |----------------|-----------|-------------|
+        | Nationals | 12 | 4 |
+        | Special Event | 7 | 3 |
+        | LGS Tournament | 5 | 2 |
+        | Online Tournament | 3 | 0 |
+        
+        - **Match Win**: Player earns points based on the tournament type
+        - **Match Draw**: Both players earn draw points (if applicable)
+        - **Match Loss**: No points awarded
+        
+        Your season total is the sum of all points earned across all tournaments. 
+        For more details, see the [Standings Calculation Guide](STANDINGS_CALCULATION.md).
+        """)
+    
     # Display champion info
     champion = standings[0]
     col1, col2, col3 = st.columns(3)
@@ -401,17 +421,21 @@ def display_tournament_results(matches: List[Dict], tournament_name: str):
                 for idx, match in round_matches.iterrows():
                     col1, col2, col3 = st.columns([2, 1, 2])
                     
+                    # Get player and deck names with fallbacks
+                    p1_name = match.get('player1_name', f"Player {match.get('player1_id')}")
+                    p1_deck = match.get('player1_deck_name', f"Deck {match.get('player1_deck_id')}")
+                    p2_name = match.get('player2_name', f"Player {match.get('player2_id')}")
+                    p2_deck = match.get('player2_deck_name', f"Deck {match.get('player2_deck_id')}")
+                    
                     with col1:
-                        st.markdown(f"**Player 1:** Player ID {match['player1_id']} "
-                                  f"(Deck ID: {match['player1_deck_id']})")
+                        st.markdown(f"**Player 1:** {p1_name}\n\n*Deck: {p1_deck}*")
                     
                     with col2:
                         st.markdown(f"<div style='text-align: center; font-weight: bold; color: #1f77b4;'>VS</div>", 
                                   unsafe_allow_html=True)
                     
                     with col3:
-                        st.markdown(f"**Player 2:** Player ID {match['player2_id']} "
-                                  f"(Deck ID: {match['player2_deck_id']})")
+                        st.markdown(f"**Player 2:** {p2_name}\n\n*Deck: {p2_deck}*")
                     
                     # Display games if available
                     if 'games' in match and match['games']:
@@ -589,12 +613,19 @@ def main():
                 
                 # Display tournament info
                 if selected_tournament:
-                    col1, col2, col3 = st.columns(3)
+                    col1, col2, col3, col4 = st.columns(4)
                     with col1:
                         st.info(f"**Location:** {selected_tournament.get('location', 'N/A')}")
                     with col2:
                         st.info(f"**Format:** {selected_tournament.get('format', 'N/A')}")
                     with col3:
+                        type_name = (
+                            selected_tournament.get('tournament_type', {}).get('name')
+                            or selected_tournament.get('tournament_type_name')
+                            or 'LGS Tournament'
+                        )
+                        st.info(f"**Type:** {type_name}")
+                    with col4:
                         st.info(f"**Date:** {selected_tournament.get('tournament_date', 'N/A')}")
                 
                 # Fetch and display matches
@@ -614,7 +645,7 @@ def main():
             st.markdown("""
             Your JSON file should include:
             - **season_id**: The ID of the season for this tournament
-            - **tournament**: Name, date, location, and format
+            - **tournament**: Name, date, location, format, and optional tournament type (defaults to "LGS Tournament" if omitted)
             - **players**: List of players (name and optional email)
             - **decks**: List of deck archetypes (name, colors, archetype)
             - **matches**: List of matches with round, players, decks, and games
@@ -627,9 +658,10 @@ def main():
   "season_id": 1,
   "tournament": {
     "name": "Friday Night Magic",
-    "date": "2026-01-10",
+        "tournament_date": "2026-01-10",
     "location": "Local Game Store",
-    "format": "Standard"
+        "format": "Standard",
+        "tournament_type_name": "LGS Tournament"
   },
   "players": [
     {"name": "Player 1", "email": "player1@email.com"}
@@ -665,6 +697,17 @@ def main():
                 import json
                 file_contents = uploaded_file.read()
                 tournament_data = json.loads(file_contents)
+
+                # Default tournament type to LGS Tournament when not provided
+                if isinstance(tournament_data, dict):
+                    tournament_section = tournament_data.get("tournament", {}) or {}
+                    if (
+                        isinstance(tournament_section, dict)
+                        and not tournament_section.get("tournament_type_id")
+                        and not tournament_section.get("tournament_type_name")
+                    ):
+                        tournament_section["tournament_type_name"] = "LGS Tournament"
+                        tournament_data["tournament"] = tournament_section
                 
                 # Display preview
                 st.success("✅ File loaded successfully!")
