@@ -5,7 +5,7 @@ from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
 from sqlalchemy.exc import IntegrityError, OperationalError
 from app.config import get_settings
-from app.routers import seasons, tournaments, players, decks, matches, statistics
+from app.routers import seasons, tournaments, players, decks, matches, statistics, tournament_types
 
 settings = get_settings()
 
@@ -52,6 +52,7 @@ app.add_middleware(
 # Include routers
 app.include_router(seasons.router, prefix="/api/v1")
 app.include_router(tournaments.router, prefix="/api/v1")
+app.include_router(tournament_types.router, prefix="/api/v1")
 app.include_router(players.router, prefix="/api/v1")
 app.include_router(decks.router, prefix="/api/v1")
 app.include_router(matches.router, prefix="/api/v1")

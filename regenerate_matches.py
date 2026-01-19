@@ -7,8 +7,8 @@ Usage:
     python regenerate_matches.py <input_file> [output_file]
     
 Example:
-    python regenerate_matches.py UI/DataImport/ForTheChildrenShowdown.json
-    python regenerate_matches.py UI/DataImport/ForTheChildrenShowdown.json UI/DataImport/ForTheChildrenShowdown_import.json
+    python regenerate_matches.py imports/DataImport/ForTheChildrenShowdown.json
+    python regenerate_matches.py imports/DataImport/ForTheChildrenShowdown.json imports/DataImport/ForTheChildrenShowdown_import.json
 """
 
 import json

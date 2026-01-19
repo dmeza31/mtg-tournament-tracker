@@ -133,6 +133,14 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4
 - `DELETE /api/v1/tournaments/{id}` - Delete tournament
 - `POST /api/v1/tournaments/import-complete` - **Import complete tournament data** (players, decks, matches, games)
 
+### Tournament Types
+
+- `GET /api/v1/tournament-types` - List all tournament types
+- `GET /api/v1/tournament-types/{id}` - Get tournament type by ID
+- `POST /api/v1/tournament-types` - Create new tournament type
+- `PUT /api/v1/tournament-types/{id}` - Update tournament type
+- `DELETE /api/v1/tournament-types/{id}` - Delete tournament type
+
 ### Players
 
 - `GET /api/v1/players` - List all players
@@ -162,7 +170,9 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4
 - `DELETE /api/v1/matches/{id}` - Delete match
 - `GET /api/v1/matches/{id}/games` - Get games for match
 - `POST /api/v1/matches/{id}/games` - Add game to match
+- `PUT /api/v1/matches/{match_id}/games/{game_id}` - Update game winner/result
 - `DELETE /api/v1/matches/{id}/games/{game_id}` - Delete game
+- Business rule: max 3 games per match; game_number must be unique per match (1-3)
 - `POST /api/v1/matches/batch` - **Batch create matches with games**
 
 ### Statistics

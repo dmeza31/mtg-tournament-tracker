@@ -106,12 +106,39 @@ def get_tournaments(season_id: Optional[int] = None) -> List[Dict]:
 
 
 @st.cache_data(ttl=60)
+def get_match_details(match_id: int) -> Dict:
+    """Fetch detailed match information including games."""
+    try:
+        response = requests.get(f"{API_BASE_URL}/matches/{match_id}")
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        st.error(f"Error fetching match details: {e}")
+        return {}
+
+
+@st.cache_data(ttl=60)
 def get_tournament_matches(tournament_id: int) -> List[Dict]:
-    """Fetch matches for a specific tournament."""
+    """Fetch matches for a specific tournament with game details."""
     try:
         response = requests.get(f"{API_BASE_URL}/matches?tournament_id={tournament_id}")
         response.raise_for_status()
-        return response.json()
+        matches = response.json()
+        
+        # Fetch detailed info for each match to get games
+        detailed_matches = []
+        for match in matches:
+            match_id = match.get('id')
+            if match_id:
+                detailed_match = get_match_details(match_id)
+                if detailed_match:
+                    detailed_matches.append(detailed_match)
+                else:
+                    detailed_matches.append(match)
+            else:
+                detailed_matches.append(match)
+        
+        return detailed_matches
     except requests.exceptions.RequestException as e:
         st.error(f"Error fetching tournament matches: {e}")
         return []
@@ -395,7 +422,7 @@ def display_deck_matchups(deck_id: int, deck_name: str, all_matchups: List[Dict]
             else:
                 return 'background-color: #f8d7da'  # Red
         
-        styled_df = display_df.style.applymap(color_win_rate, subset=['Win Rate %'])
+        styled_df = display_df.style.map(color_win_rate, subset=['Win Rate %'])
         st.dataframe(styled_df, use_container_width=True, hide_index=True)
 
 
@@ -405,7 +432,7 @@ def display_tournament_results(matches: List[Dict], tournament_name: str, lang: 
         st.warning(t('no_matches_yet', lang))
         return
     
-    st.subheader(f"🏆 {tournament_name} - {t('match_results', lang)}")
+    st.subheader(f"{tournament_name} - {t('match_results', lang)}")
     
     # Convert to DataFrame
     df = pd.DataFrame(matches)
@@ -418,49 +445,74 @@ def display_tournament_results(matches: List[Dict], tournament_name: str, lang: 
         rounds = sorted(df['round_number'].unique())
         
         for round_num in rounds:
-            with st.expander(f"🎯 {t('round', lang)} {round_num}", expanded=(round_num == 1)):
+            with st.expander(f"{t('round', lang)} {round_num}", expanded=(round_num == 1)):
                 round_matches = df[df['round_number'] == round_num]
                 
                 for idx, match in round_matches.iterrows():
                     col1, col2, col3 = st.columns([2, 1, 2])
                     
                     # Get player and deck names with fallbacks
-                    p1_name = match.get('player1_name', f"Player {match.get('player1_id')}")
+                    p1_id = match.get('player1_id')
+                    p2_id = match.get('player2_id')
+                    p1_name = match.get('player1_name', f"Player {p1_id}")
                     p1_deck = match.get('player1_deck_name', f"Deck {match.get('player1_deck_id')}")
-                    p2_name = match.get('player2_name', f"Player {match.get('player2_id')}")
+                    p2_name = match.get('player2_name', f"Player {p2_id}")
                     p2_deck = match.get('player2_deck_name', f"Deck {match.get('player2_deck_id')}")
                     
                     with col1:
-                        st.markdown(f"**{t('player_1', lang)}:** {p1_name}\n\n*Deck: {p1_deck}*")
+                        st.markdown(f"**{t('player_1', lang)}** {p1_name}\n\n*Deck: {p1_deck}*")
                     
                     with col2:
                         st.markdown(f"<div style='text-align: center; font-weight: bold; color: #1f77b4;'>VS</div>", 
                                   unsafe_allow_html=True)
                     
                     with col3:
-                        st.markdown(f"**{t('player_2', lang)}:** {p2_name}\n\n*Deck: {p2_deck}*")
+                        st.markdown(f"**{t('player_2', lang)}** {p2_name}\n\n*Deck: {p2_deck}*")
                     
-                    # Display games if available
-                    if 'games' in match and match['games']:
-                        games_data = []
-                        for game in match['games']:
-                            winner = game.get('winner_id')
+                    # Display games and determine match winner
+                    match_winner = None
+                    games_list = match.get('games', [])
+                    
+                    if games_list and len(games_list) > 0:
+                        st.markdown(f"**Games:**")
+                        
+                        p1_wins = 0
+                        p2_wins = 0
+                        
+                        for game in games_list:
+                            winner_id = game.get('winner_id')
                             game_num = game.get('game_number')
                             duration = game.get('duration_minutes', 'N/A')
-                            games_data.append({
-                                t('game', lang): game_num,
-                                t('winner', lang): f"Player {winner}",
-                                t('duration_min', lang): duration
-                            })
+                            
+                            # Map winner_id to player name and track wins
+                            if winner_id == p1_id:
+                                winner_name = p1_name
+                                p1_wins += 1
+                            elif winner_id == p2_id:
+                                winner_name = p2_name
+                                p2_wins += 1
+                            else:
+                                winner_name = f"Player {winner_id}"
+                            
+                            # Display each game with winner in green
+                            st.success(f"Game {game_num}: Winner - {winner_name} ({duration} min)")
                         
-                        if games_data:
-                            games_df = pd.DataFrame(games_data)
-                            st.dataframe(games_df, use_container_width=True, hide_index=True)
+                        # Determine overall match winner
+                        if p1_wins > p2_wins:
+                            match_winner = p1_name
+                        elif p2_wins > p1_wins:
+                            match_winner = p2_name
+                    else:
+                        st.info("No game data available for this match")
                     
-                    st.markdown(f"**{t('status', lang)}:** {match.get('match_status', 'Unknown')}")
+                    # Display match winner
+                    if match_winner:
+                        st.markdown(f"### **{t('match_winner', lang)}** {match_winner}")
+                    
+                    st.markdown(f"**{t('status', lang)}** {match.get('match_status', 'Unknown')}")
                     
                     if 'match_date' in match:
-                        st.markdown(f"*{t('date', lang)}: {match['match_date']}*")
+                        st.markdown(f"*{t('date', lang)} {match['match_date']}*")
                     
                     st.markdown("---")
     
@@ -469,25 +521,15 @@ def display_tournament_results(matches: List[Dict], tournament_name: str, lang: 
     
     with col1:
         completed = len(df[df['match_status'] == 'COMPLETED']) if 'match_status' in df.columns else 0
-        st.metric(f"✅ {t('completed_matches', lang)}", completed)
+        st.metric(f"{t('completed_matches', lang)}", completed)
     
     with col2:
         in_progress = len(df[df['match_status'] == 'IN_PROGRESS']) if 'match_status' in df.columns else 0
-        st.metric(f"⏳ {t('in_progress', lang)}", in_progress)
+        st.metric(f"{t('in_progress', lang)}", in_progress)
     
     with col3:
         total_rounds = df['round_number'].max() if 'round_number' in df.columns else 0
-        st.metric(f"🎯 {t('total_rounds', lang)}", int(total_rounds))
-    
-    # Detailed match table
-    with st.expander("📋 View All Matches Table"):
-        display_cols = ['round_number', 'player1_id', 'player2_id', 'player1_deck_id', 'player2_deck_id', 'match_status']
-        available_cols = [col for col in display_cols if col in df.columns]
-        
-        if available_cols:
-            display_df = df[available_cols].copy()
-            display_df.columns = [col.replace('_', ' ').title() for col in available_cols]
-            st.dataframe(display_df, use_container_width=True, hide_index=True)
+        st.metric(f"{t('total_rounds', lang)}", int(total_rounds))
 
 
 def main():
@@ -554,37 +596,69 @@ def main():
         st.cache_data.clear()
         st.rerun()
     
-    # Main content tabs
-    tab1, tab2, tab3, tab4 = st.tabs([
+    # Initialize active tab in session state
+    if 'active_tab' not in st.session_state:
+        st.session_state.active_tab = 0
+    
+    # Tab selection using radio buttons
+    tab_options = [
         t('tab_standings', lang), 
         t('tab_deck_stats', lang), 
-        t('tab_tournament_results', lang), 
-        t('tab_import', lang)
-    ])
+        t('tab_tournament_results', lang)
+    ]
     
-    with tab1:
+    # Create radio button for tab selection
+    selected_tab_label = st.radio(
+        "",
+        options=tab_options,
+        index=st.session_state.active_tab,
+        horizontal=True,
+        label_visibility="collapsed"
+    )
+    
+    # Update session state based on selection
+    st.session_state.active_tab = tab_options.index(selected_tab_label)
+    
+    st.divider()
+    
+    # Display content based on active tab
+    if st.session_state.active_tab == 0:
+        # Standings tab
         standings = get_season_standings(selected_season_id)
         if standings:
             display_season_standings(standings, selected_season['name'])
         else:
             st.info(t('no_standings', lang))
     
-    with tab2:
+    elif st.session_state.active_tab == 1:
+        # Deck Statistics tab
         deck_stats = get_deck_statistics()
         if deck_stats:
             # Add deck filter selector
-            st.subheader("🎴 Deck Performance Analysis")
+            st.subheader("Deck Performance Analysis")
             
             col_filter, col_spacer = st.columns([1, 3])
             with col_filter:
                 deck_filter_options = {"All Decks": None}
                 deck_filter_options.update({d['deck_name']: d['deck_id'] for d in deck_stats})
                 
+                # Initialize session state for selected deck
+                if 'selected_deck_filter' not in st.session_state:
+                    st.session_state.selected_deck_filter = "All Decks"
+                
+                # Get current index
+                try:
+                    current_index = list(deck_filter_options.keys()).index(st.session_state.selected_deck_filter)
+                except (ValueError, IndexError):
+                    current_index = 0
+                
                 selected_deck_name = st.selectbox(
                     "Filter by Deck",
                     options=list(deck_filter_options.keys()),
-                    key="deck_filter"
+                    index=current_index,
+                    key="deck_filter_widget"
                 )
+                st.session_state.selected_deck_filter = selected_deck_name
                 selected_deck_id = deck_filter_options[selected_deck_name]
             
             # Show overall stats or specific deck matchups
@@ -619,7 +693,7 @@ def main():
         else:
             st.info(t('no_deck_stats', lang))
     
-    with tab3:
+    elif st.session_state.active_tab == 2:
         st.subheader(f"🏆 {t('tournament_results_title', lang)}")
         
         # Fetch tournaments for selected season
@@ -660,139 +734,6 @@ def main():
                 # Fetch and display matches
                 matches = get_tournament_matches(selected_tournament_id)
                 display_tournament_results(matches, selected_tournament_name, lang)
-    
-    with tab4:
-        st.subheader(t('import_title', lang))
-        
-        st.markdown(t('import_intro', lang))
-        
-        # Instructions expander
-        with st.expander(t('json_format', lang)):
-            st.markdown(t('json_instructions', lang))
-            
-            st.code("""
-{
-  "season_id": 1,
-  "tournament": {
-    "name": "Friday Night Magic",
-        "tournament_date": "2026-01-10",
-    "location": "Local Game Store",
-        "format": "Standard",
-        "tournament_type_name": "LGS Tournament"
-  },
-  "players": [
-    {"name": "Player 1", "email": "player1@email.com"}
-  ],
-  "decks": [
-    {"name": "Deck Name", "color_identity": "WU", "archetype_type": "Control"}
-  ],
-  "matches": [
-    {
-      "round_number": 1,
-      "player1_name": "Player 1",
-      "player2_name": "Player 2",
-      "player1_deck_name": "Deck Name",
-      "player2_deck_name": "Deck Name 2",
-      "games": [
-        {"game_number": 1, "winner_name": "Player 1", "duration_minutes": 20}
-      ]
-    }
-  ]
-}
-            """, language="json")
-        
-        # File uploader
-        uploaded_file = st.file_uploader(
-            t('choose_file', lang),
-            type=['json'],
-            help=t('upload_file', lang)
-        )
-        
-        if uploaded_file is not None:
-            try:
-                # Read and parse JSON
-                import json
-                file_contents = uploaded_file.read()
-                tournament_data = json.loads(file_contents)
-
-                # Default tournament type to LGS Tournament when not provided
-                if isinstance(tournament_data, dict):
-                    tournament_section = tournament_data.get("tournament", {}) or {}
-                    if (
-                        isinstance(tournament_section, dict)
-                        and not tournament_section.get("tournament_type_id")
-                        and not tournament_section.get("tournament_type_name")
-                    ):
-                        tournament_section["tournament_type_name"] = "LGS Tournament"
-                        tournament_data["tournament"] = tournament_section
-                
-                # Display preview
-                st.success(t('import_success', lang))
-                
-                with st.expander(t('preview_data', lang)):
-                    st.json(tournament_data)
-                    
-                    # Show summary
-                    st.markdown(f"### {t('import_results', lang)}")
-                    col1, col2, col3, col4 = st.columns(4)
-                    with col1:
-                        st.metric(t('num_players', lang), len(tournament_data.get('players', [])))
-                    with col2:
-                        st.metric(t('num_decks', lang), len(tournament_data.get('decks', [])))
-                    with col3:
-                        st.metric(t('num_matches', lang), len(tournament_data.get('matches', [])))
-                    with col4:
-                        total_games = sum(len(m.get('games', [])) for m in tournament_data.get('matches', []))
-                        st.metric(t('created_games', lang), total_games)
-                
-                # Import button
-                if st.button(f"🚀 {t('import_button', lang)}", type="primary", use_container_width=True):
-                    with st.spinner(t('import_in_progress', lang) if lang == 'es' else "Importing tournament data..."):
-                        try:
-                            response = requests.post(
-                                f"{API_BASE_URL}/tournaments/import-complete",
-                                json=tournament_data,
-                                timeout=30
-                            )
-                            
-                            if response.status_code in [200, 201]:
-                                result = response.json()
-                                st.success(t('import_success', lang))
-                                
-                                # Display results
-                                st.markdown(f"### {t('import_results', lang)}")
-                                col1, col2, col3, col4, col5 = st.columns(5)
-                                with col1:
-                                    st.metric("Tournament", "✓" if result['tournament_created'] else "Exists")
-                                with col2:
-                                    st.metric(t('created_players', lang), result['players_created'])
-                                with col3:
-                                    st.metric(t('created_decks', lang), result['decks_created'])
-                                with col4:
-                                    st.metric(t('created_matches', lang), result['matches_created'])
-                                with col5:
-                                    st.metric(t('created_games', lang), result['games_created'])
-                                
-                                st.info(result['message'])
-                                
-                                # Clear cache to show new data
-                                st.cache_data.clear()
-                                
-                            else:
-                                error_detail = response.json().get('detail', 'Unknown error')
-                                st.error(f"{t('import_error', lang)}: {error_detail}")
-                                
-                        except requests.exceptions.RequestException as e:
-                            st.error(f"{t('import_error', lang)}: {str(e)}")
-                        except Exception as e:
-                            st.error(f"{t('import_error', lang)}: {str(e)}")
-                            
-            except json.JSONDecodeError as e:
-                st.error(f"{t('invalid_json', lang)}: {str(e)}")
-            except Exception as e:
-                st.error(f"{t('import_error', lang)}: {str(e)}")
-        else:
-            st.info(t('upload_file_first', lang))
     
     # Footer
     st.markdown("---")

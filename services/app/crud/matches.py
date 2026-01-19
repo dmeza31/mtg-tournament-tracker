@@ -126,6 +126,21 @@ def create_game(db: Session, match_id: int, game: schemas.GameCreate) -> models.
     return db_game
 
 
+def update_game(db: Session, game_id: int, game: schemas.GameUpdate) -> Optional[models.Game]:
+    """Update a game."""
+    db_game = get_game(db, game_id)
+    if not db_game:
+        return None
+    
+    update_data = game.model_dump(exclude_unset=True)
+    for field, value in update_data.items():
+        setattr(db_game, field, value)
+    
+    db.commit()
+    db.refresh(db_game)
+    return db_game
+
+
 def delete_game(db: Session, game_id: int) -> bool:
     """Delete a game."""
     db_game = get_game(db, game_id)

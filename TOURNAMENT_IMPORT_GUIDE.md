@@ -19,11 +19,11 @@ The MTG Tournament Tracker now includes a complete tournament import system that
 
 Use the template file as a starting point:
 
-**Location:** `UI/tournament_import_template.json`
+**Location:** `imports/tournament_import_template.json`
 
 Or refer to the complete example:
 
-**Location:** `UI/tournament_import_example.json`
+**Location:** `imports/tournament_import_example.json`
 
 ### Step 2: Fill in the Tournament Data
 
@@ -34,7 +34,7 @@ Your JSON file should include:
   "season_id": 1,
   "tournament": {
     "name": "Friday Night Magic",
-    "date": "2026-01-10",
+    "tournament_date": "2026-01-10",
     "location": "Local Game Store",
     "format": "Standard"
   },
@@ -67,10 +67,10 @@ Your JSON file should include:
 }
 ```
 
-### Step 3: Upload via Streamlit UI
+### Step 3: Upload via System Manager
 
-1. Open the Streamlit dashboard (http://localhost:8501)
-2. Navigate to the **"📤 Import Tournament"** tab
+1. Run the System Manager app (`streamlit run system-manager/app.py`, default http://localhost:8501)
+2. Open the **"📤 Import"** tab
 3. Click **"Browse files"** and select your JSON file
 4. Review the preview and summary statistics
 5. Click **"🚀 Import Tournament"** to process
@@ -88,7 +88,7 @@ After import, you'll see:
 
 - **season_id** (integer): Must match an existing season in the database
 - **tournament.name** (string): Tournament name
-- **tournament.date** (string): Date in YYYY-MM-DD format
+- **tournament.tournament_date** (string): Date in YYYY-MM-DD format
 - **tournament.location** (string): Tournament location
 - **tournament.format** (string): Magic format (Standard, Modern, etc.)
 
@@ -213,14 +213,14 @@ If validation fails, you'll receive a detailed error message explaining what nee
 
 1. **Before tournament:** Download `tournament_import_template.json`
 2. **During tournament:** Record match results in the JSON file
-3. **After tournament:** Upload the completed file via the UI
+3. **After tournament:** Upload the completed file via the System Manager import tab
 4. **View results:** Check season standings and statistics
 
 ### Sample Tournament Data
 
 The repository includes a complete example:
 
-**File:** `UI/tournament_import_example.json`
+**File:** `imports/tournament_import_example.json`
 
 **Contents:**
 - 4 players (Sarah Connor, John Wick, Lara Croft, Nathan Drake)
@@ -242,7 +242,7 @@ You can use this as a reference when creating your own tournament files.
 
 ### "Season not found"
 - Verify the season_id exists in your database
-- Check the season selector in the UI for valid IDs
+- Check the season selector in the System Manager for valid IDs
 
 ### "Player name not found"
 - Ensure player names in matches exactly match names in the players array
@@ -274,11 +274,11 @@ You can use this as a reference when creating your own tournament files.
 ### Frontend Components
 
 **Files Modified:**
-- `UI/streamlit_app.py` - Added "Import Tournament" tab with file uploader
+- `system-manager/app.py` - Added "Import" tab with file uploader
 
 **Files Added:**
-- `UI/tournament_import_template.json` - Blank template
-- `UI/tournament_import_example.json` - Complete example
+- `imports/tournament_import_template.json` - Blank template
+- `imports/tournament_import_example.json` - Complete example
 
 ### Database Operations
 

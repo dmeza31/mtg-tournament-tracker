@@ -4,11 +4,12 @@ A comprehensive full-stack application for tracking Magic the Gathering tourname
 
 ## Overview
 
-The MTG Tournament Tracker is a complete tournament management system consisting of three main components:
+The MTG Tournament Tracker is a complete tournament management system consisting of four main components:
 
 1. **PostgreSQL Database** - Robust schema with optimized views for statistics
 2. **FastAPI REST API** - High-performance backend with automatic documentation
-3. **Streamlit Dashboard** - Interactive web interface for data visualization
+3. **System Manager (Streamlit)** - Admin UI for CRUD operations and tournament import
+4. **Streamlit Dashboard** - Read-only web interface for data visualization
 
 ## Architecture
 
@@ -28,13 +29,15 @@ The MTG Tournament Tracker is a complete tournament management system consisting
     - Matchup analysis         - Auto documentation      - Constraints
 ```
 
+System Manager (admin Streamlit app) follows the same flow: Streamlit → FastAPI → PostgreSQL for CRUD and imports.
+
 ### Data Flow
 
-1. **User Interaction** → Streamlit UI provides interactive forms and visualizations
-2. **API Requests** → UI communicates with FastAPI backend via REST endpoints
+1. **User Interaction** → Streamlit UI (read-only) and System Manager (admin) provide interactive forms and visualizations
+2. **API Requests** → Both frontends communicate with the FastAPI backend via REST endpoints
 3. **Database Operations** → FastAPI queries PostgreSQL using SQLAlchemy ORM
 4. **Statistics** → Pre-built database views aggregate data for fast analytics
-5. **Response** → Data flows back through API to UI for display
+5. **Response** → Data flows back through API to the frontends for display
 
 ## Components
 
@@ -71,6 +74,17 @@ Python FastAPI application providing RESTful endpoints:
 
 [📖 API Documentation](services/README.md)
 
+### 🛠️ System Manager (`system-manager/`)
+
+Streamlit admin console for CRUD and tournament imports:
+
+- **CRUD**: Manage seasons, tournaments, matches, games, tournament types
+- **Editing**: Update match players, game winners/results, and add games
+- **Imports**: Upload a full tournament JSON via the 📤 Import tab (uses `/tournaments/import-complete`)
+- **Dropdown tooling**: Player/tournament selectors to prevent typos
+
+Run locally with `streamlit run system-manager/app.py`.
+
 ### 🎨 Frontend Dashboard (`UI/`)
 
 Streamlit web application for data visualization:
@@ -84,7 +98,7 @@ Streamlit web application for data visualization:
 - 🎴 **Deck Analytics**: Win rates, meta analysis, matchup breakdowns
 - 📊 **Tournament Results**: Round-by-round match and game details
 - 🔍 **Deck Filter**: Analyze specific deck matchups with visual charts
-- 📤 **Tournament Import**: Upload JSON files to import complete tournament data in one operation
+- _(Import lives in System Manager; this UI is read-only for analytics.)_
 
 [📖 UI Documentation](UI/README.md)
 
@@ -157,6 +171,16 @@ streamlit run streamlit_app.py
 
 Dashboard will be available at: http://localhost:8501
 
+#### 4. System Manager (Admin) Setup
+
+```bash
+# From repo root (or a new terminal)
+streamlit run system-manager/app.py
+# Use --server.port 8502 if the UI is already running on 8501
+```
+
+System Manager will default to: http://localhost:8501
+
 ## Technology Stack
 
 | Layer | Technology | Purpose |
@@ -196,11 +220,21 @@ MTG Tournament Tracker/
 │   ├── Procfile                      # Railway deployment config
 │   └── README.md                     # API documentation
 │
-├── UI/                                # Streamlit frontend
+├── system-manager/                   # Admin Streamlit app (CRUD + import)
+│   └── app.py                        # System Manager entrypoint
+│
+├── UI/                                # Streamlit frontend (read-only analytics)
 │   ├── streamlit_app.py              # Main dashboard
 │   ├── requirements.txt              # UI dependencies
 │   ├── Procfile                      # Railway deployment config
 │   └── README.md                     # UI documentation
+│
+├── imports/                          # Tournament import templates and samples
+│   ├── IMPORT_FORMAT_REFERENCE.md    # Field reference for import JSON
+│   ├── README.md                     # Import resources overview
+│   ├── tournament_import_example.json
+│   ├── tournament_import_template.json
+│   └── DataImport/                   # Raw and cleaned sample data
 │
 ├── RAILWAY_DEPLOYMENT.md             # Cloud deployment guide
 └── README.md                         # This file
@@ -214,6 +248,7 @@ MTG Tournament Tracker/
 ✅ **Player Registration** - Manage player profiles with active status  
 ✅ **Deck Archetypes** - Catalog decks with color identity and archetype type  
 ✅ **Tournament Types** - Configure per-event point values (default LGS Tournament)
+✅ **Bulk Imports** - Create tournaments, players, decks, matches, and games from a JSON file (System Manager)
 
 ### Match Tracking
 ✅ **Best-of-3 Format** - Record individual game results within matches  
@@ -241,7 +276,7 @@ All components run independently on localhost (see Quick Start above)
 ### Cloud Deployment (Railway)
 The system is ready for Railway deployment with automatic configuration:
 
-- **3 Services**: PostgreSQL database, FastAPI backend, Streamlit frontend
+- **Services**: PostgreSQL database, FastAPI backend, Streamlit frontend (UI), and optional System Manager admin app
 - **Auto-deploy**: Procfiles for automatic service configuration
 - **Environment Variables**: Pre-configured for production use
 - **Service Dependencies**: Proper startup order and URL references
@@ -343,7 +378,9 @@ This project is provided as-is for tournament tracking purposes.
 
 - **Database**: [database/README.md](database/README.md)
 - **API**: [services/README.md](services/README.md) & [services/EXAMPLES.md](services/EXAMPLES.md)
+- **System Manager**: Admin app at [system-manager/app.py](system-manager/app.py)
 - **UI**: [UI/README.md](UI/README.md)
+- **Imports**: [imports/README.md](imports/README.md) & [TOURNAMENT_IMPORT_GUIDE.md](TOURNAMENT_IMPORT_GUIDE.md)
 - **Deployment**: [RAILWAY_DEPLOYMENT.md](RAILWAY_DEPLOYMENT.md)
 - **API Testing**: http://localhost:8000/docs (when running)
 

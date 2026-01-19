@@ -133,6 +133,24 @@ def create_game(match_id: int, game: schemas.GameCreate, db: Session = Depends(g
         )
 
 
+@router.put("/{match_id}/games/{game_id}", response_model=schemas.Game)
+def update_game(match_id: int, game_id: int, game: schemas.GameUpdate, db: Session = Depends(get_db)):
+    """Update a game for a match."""
+    db_game = matches.get_game(db, game_id=game_id)
+    if not db_game:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Game with id {game_id} not found"
+        )
+    if db_game.match_id != match_id:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Game {game_id} does not belong to match {match_id}"
+        )
+    updated = matches.update_game(db, game_id=game_id, game=game)
+    return updated
+
+
 @router.delete("/{match_id}/games/{game_id}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_game(match_id: int, game_id: int, db: Session = Depends(get_db)):
     """Delete a game."""

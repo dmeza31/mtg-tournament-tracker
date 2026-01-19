@@ -6,6 +6,7 @@ Comprehensive examples for using the MTG Tournament Tracker API.
 
 - [Setup](#setup)
 - [Seasons](#seasons)
+- [Tournament Types](#tournament-types)
 - [Tournaments](#tournaments)
 - [Players](#players)
 - [Deck Archetypes](#deck-archetypes)
@@ -98,7 +99,139 @@ curl -X DELETE "http://localhost:8000/api/v1/seasons/1"
 
 ---
 
+## Tournament Types
+
+### Create a Tournament Type
+
+Tournament types define point values for match wins and draws, allowing different competitive levels.
+
+**cURL:**
+```bash
+curl -X POST "http://localhost:8000/api/v1/tournament-types" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Competitive",
+    "points_win": 3,
+    "points_draw": 1,
+    "description": "Competitive level tournament with standard 3-1 points"
+  }'
+```
+
+**Python:**
+```python
+import requests
+
+response = requests.post(
+    "http://localhost:8000/api/v1/tournament-types",
+    json={
+        "name": "Competitive",
+        "points_win": 3,
+        "points_draw": 1,
+        "description": "Competitive level tournament with standard 3-1 points"
+    }
+)
+tournament_type = response.json()
+print(f"Created tournament type: {tournament_type['name']} (ID: {tournament_type['id']})")
+```
+
+### Get All Tournament Types
+
+**cURL:**
+```bash
+curl "http://localhost:8000/api/v1/tournament-types"
+```
+
+**Python:**
+```python
+response = requests.get("http://localhost:8000/api/v1/tournament-types")
+types = response.json()
+for t in types:
+    print(f"{t['id']}: {t['name']} - Win: {t['points_win']} pts, Draw: {t['points_draw']} pts")
+```
+
+### Get Tournament Type by ID
+
+**cURL:**
+```bash
+curl "http://localhost:8000/api/v1/tournament-types/1"
+```
+
+### Update Tournament Type
+
+**cURL:**
+```bash
+curl -X PUT "http://localhost:8000/api/v1/tournament-types/1" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "points_win": 4,
+    "points_draw": 2,
+    "description": "Updated tournament type with increased points"
+  }'
+```
+
+### Delete Tournament Type
+
+**cURL:**
+```bash
+curl -X DELETE "http://localhost:8000/api/v1/tournament-types/1"
+```
+
+---
+
 ## Tournaments
+
+### Create a Tournament
+
+**cURL:**
+```bash
+curl -X POST "http://localhost:8000/api/v1/tournaments" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "season_id": 1,
+    "tournament_type_id": 1,
+    "name": "January Standard Showdown",
+    "tournament_date": "2026-01-15",
+    "location": "Local Game Store - Downtown",
+    "format": "Standard",
+    "description": "Weekly Standard tournament"
+  }'
+```
+
+**Python:**
+```python
+response = requests.post(
+    "http://localhost:8000/api/v1/tournaments",
+    json={
+        "season_id": 1,
+        "tournament_type_id": 1,
+        "name": "January Standard Showdown",
+        "tournament_date": "2026-01-15",
+        "location": "Local Game Store - Downtown",
+        "format": "Standard",
+        "description": "Weekly Standard tournament"
+    }
+)
+tournament = response.json()
+print(f"Created tournament with ID: {tournament['id']}")
+```
+
+### Get All Tournaments
+
+**cURL:**
+```bash
+# Get all tournaments
+curl "http://localhost:8000/api/v1/tournaments"
+
+# Filter by season
+curl "http://localhost:8000/api/v1/tournaments?season_id=1"
+
+# With pagination
+curl "http://localhost:8000/api/v1/tournaments?skip=0&limit=10"
+```
+
+---
+
+## Players
 
 ### Create a Tournament
 
@@ -383,6 +516,46 @@ curl "http://localhost:8000/api/v1/matches/1"
     }
   ]
 }
+```
+
+### Update a Match (players / round)
+
+**cURL:**
+```bash
+curl -X PUT "http://localhost:8000/api/v1/matches/1" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "player1_id": 3,
+    "player2_id": 4,
+    "round_number": 2
+  }'
+```
+
+### Update a Game (winner / result)
+
+**cURL:**
+```bash
+curl -X PUT "http://localhost:8000/api/v1/matches/1/games/2" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "winner_id": 3,
+    "game_result": "WIN"
+  }'
+```
+
+### Add a Game (if less than 3 exist)
+
+**cURL:**
+```bash
+curl -X POST "http://localhost:8000/api/v1/matches/1/games" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "game_number": 3,
+    "winner_id": 3,
+    "game_result": "DRAW",
+    "duration_minutes": 20,
+    "notes": "Time expired"
+  }'
 ```
 
 ### Get Matches with Filters

@@ -56,6 +56,14 @@ class TournamentTypeCreate(TournamentTypeBase):
     pass
 
 
+class TournamentTypeUpdate(BaseModel):
+    """Schema for updating a tournament type."""
+    name: Optional[str] = Field(None, max_length=100, description="Unique tournament type name")
+    points_win: Optional[int] = Field(None, ge=0, description="Points awarded for a match win")
+    points_draw: Optional[int] = Field(None, ge=0, description="Points awarded for a match draw")
+    description: Optional[str] = Field(None, description="Tournament type description")
+
+
 class TournamentType(TournamentTypeBase):
     """Schema for Tournament Type response."""
     id: int
@@ -210,6 +218,21 @@ class GameCreate(GameBase):
 class GameCreateWithoutMatch(GameBase):
     """Schema for creating a game without match_id (used in batch)."""
     pass
+
+
+class GameUpdate(BaseModel):
+    """Schema for updating a game."""
+    winner_id: Optional[int] = Field(None, description="Player ID who won the game")
+    game_result: Optional[str] = Field(None, description="Game result (WIN or DRAW)")
+    duration_minutes: Optional[int] = Field(None, ge=1, description="Game duration in minutes")
+    notes: Optional[str] = Field(None, description="Game notes")
+    
+    @field_validator('game_result')
+    @classmethod
+    def validate_game_result(cls, v):
+        if v is not None and v not in ['WIN', 'DRAW']:
+            raise ValueError('game_result must be WIN or DRAW')
+        return v
 
 
 class Game(GameBase):

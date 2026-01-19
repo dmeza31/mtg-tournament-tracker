@@ -7,7 +7,7 @@
   "season_id": 1,
   "tournament": {
     "name": "Weekly Tournament",
-    "date": "2026-01-15",
+    "tournament_date": "2026-01-15",
     "location": "Game Store",
     "format": "Standard"
   },
@@ -51,9 +51,10 @@
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | name | string | Yes | Tournament name |
-| date | string | Yes | Date (YYYY-MM-DD) |
+| tournament_date | string | Yes | Date (YYYY-MM-DD) |
 | location | string | Yes | Tournament location |
 | format | string | Yes | Magic format |
+| tournament_type_name | string | No | Defaults to "LGS Tournament" if omitted |
 
 ### Player Object
 | Field | Type | Required | Description |
@@ -143,12 +144,12 @@
 
 ❌ **Wrong:** Invalid date format
 ```json
-"date": "01/15/2026"  // US format
+"tournament_date": "01/15/2026"  // US format
 ```
 
 ✅ **Correct:**
 ```json
-"date": "2026-01-15"  // ISO format (YYYY-MM-DD)
+"tournament_date": "2026-01-15"  // ISO format (YYYY-MM-DD)
 ```
 
 ---
@@ -205,5 +206,7 @@ Before uploading, verify:
 
 ---
 
-**Files:** `UI/tournament_import_template.json`, `UI/tournament_import_example.json`  
-**Upload:** Streamlit UI → "📤 Import Tournament" tab
+**Files:** `imports/tournament_import_template.json`, `imports/tournament_import_example.json`  
+**Upload:** System Manager → "📤 Import" tab  
+**Raw Sample:** `imports/DataImport/ForTheChildrenShowdown.json`  
+**Clean Sample:** `imports/DataImport/ForTheChildrenShowdown_import.json`

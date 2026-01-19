@@ -113,7 +113,115 @@
       ]
     },
     {
-      "name": "Tournaments",
+      "name": "Tournament Types",
+      "item": [
+        {
+          "name": "Create Tournament Type - LGS",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"LGS Tournament\",\n  \"points_win\": 5,\n  \"points_draw\": 2,\n  \"description\": \"Default local game store tournament\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/tournament-types",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "tournament-types"]
+            },
+            "description": "Create a new tournament type for local game store events"
+          }
+        },
+        {
+          "name": "Create Tournament Type - Competitive",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Competitive\",\n  \"points_win\": 3,\n  \"points_draw\": 1,\n  \"description\": \"Competitive level tournament\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/tournament-types",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "tournament-types"]
+            },
+            "description": "Create a competitive tournament type"
+          }
+        },
+        {
+          "name": "Get All Tournament Types",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/tournament-types",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "tournament-types"]
+            },
+            "description": "Retrieve all tournament types"
+          }
+        },
+        {
+          "name": "Get Tournament Type by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/tournament-types/{{tournament_type_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "tournament-types", "{{tournament_type_id}}"]
+            },
+            "description": "Get a specific tournament type by ID"
+          }
+        },
+        {
+          "name": "Update Tournament Type",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"points_win\": 6,\n  \"points_draw\": 3,\n  \"description\": \"Updated tournament type\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/tournament-types/{{tournament_type_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "tournament-types", "{{tournament_type_id}}"]
+            },
+            "description": "Update an existing tournament type"
+          }
+        },
+        {
+          "name": "Delete Tournament Type",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/tournament-types/{{tournament_type_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "tournament-types", "{{tournament_type_id}}"]
+            },
+            "description": "Delete a tournament type"
+          }
+        }
+      ]
+    },
       "item": [
         {
           "name": "Create Tournament",
@@ -127,7 +235,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"season_id\": {{season_id}},\n  \"name\": \"January Standard Showdown\",\n  \"tournament_date\": \"2026-01-15\",\n  \"location\": \"Local Game Store - Downtown\",\n  \"format\": \"Standard\",\n  \"description\": \"Weekly Standard tournament\"\n}"
+              "raw": "{\n  \"season_id\": {{season_id}},\n  \"tournament_type_id\": {{tournament_type_id}},\n  \"name\": \"January Standard Showdown\",\n  \"tournament_date\": \"2026-01-15\",\n  \"location\": \"Local Game Store - Downtown\",\n  \"format\": \"Standard\",\n  \"description\": \"Weekly Standard tournament\"\n}"
             },
             "url": {
               "raw": "{{base_url}}/api/v1/tournaments",
@@ -658,6 +766,28 @@
           }
         },
         {
+          "name": "Update Game",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"winner_id\": 3,\n  \"game_result\": \"WIN\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/matches/{{match_id}}/games/{{game_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "matches", "{{match_id}}", "games", "{{game_id}}"]
+            },
+            "description": "Update a game's winner/result"
+          }
+        },
+        {
           "name": "Get Match with Games",
           "request": {
             "method": "GET",
@@ -756,7 +886,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"match_status\": \"COMPLETED\",\n  \"notes\": \"Great match!\"\n}"
+              "raw": "{\n  \"player1_id\": 3,\n  \"player2_id\": 4,\n  \"round_number\": 2,\n  \"match_status\": \"COMPLETED\"\n}"
             },
             "url": {
               "raw": "{{base_url}}/api/v1/matches/{{match_id}}",
@@ -1010,6 +1140,11 @@
       "type": "string"
     },
     {
+      "key": "tournament_type_id",
+      "value": "1",
+      "type": "string"
+    },
+    {
       "key": "tournament_id",
       "value": "1",
       "type": "string"
@@ -1026,6 +1161,11 @@
     },
     {
       "key": "match_id",
+      "value": "1",
+      "type": "string"
+    },
+    {
+      "key": "game_id",
       "value": "1",
       "type": "string"
     }
