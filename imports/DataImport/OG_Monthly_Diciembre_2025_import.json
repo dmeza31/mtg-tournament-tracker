@@ -1,0 +1,423 @@
+{
+  "season_id": 1,
+  "tournament": {
+    "name": "OG Monthly Diciembre 2025",
+    "tournament_date": "2025-12-24",
+    "location": "Burro Singles",
+    "format": "Premodern",
+    "tournament_type_name": "LGS Tournament",
+    "description": "OG Monthly Diciembre 2025 - Premodern Tournament"
+  },
+  "players": [
+    {
+      "name": "Edgar Brenes Soto",
+      "email": "edkeytar@email.com"
+    },
+    {
+      "name": "Juan Manuel Gabriel Valerio",
+      "email": "juanmagabriel@email.com"
+    },
+    {
+      "name": "Javier Córdoba V",
+      "email": "centralliving@email.com"
+    },
+    {
+      "name": "Esteban Gonzalez",
+      "email": "est1419@email.com"
+    },
+    {
+      "name": "David Araya",
+      "email": "davidaraya@email.com"
+    },
+    {
+      "name": "Ricardo Abarca",
+      "email": "bard91r@email.com"
+    },
+    {
+      "name": "Ale Focardi",
+      "email": "focardi@email.com"
+    },
+    {
+      "name": "Julian Wiedenmann",
+      "email": "zenzaz@email.com"
+    },
+    {
+      "name": "Oscar Zamora",
+      "email": "emzagu@email.com"
+    },
+    {
+      "name": "Daniel Meza",
+      "email": "dmeza@email.com"
+    }
+  ],
+  "decks": [
+    {
+      "name": "Abzan",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Azorius",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Dimir",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Jund",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Mono-Black",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Mono-Blue",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Orzhov",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Sultai",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "U-B-R-G",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "W-U-R-G",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    }
+  ],
+  "matches": [
+    {
+      "round_number": 3,
+      "player1_name": "Edgar Brenes Soto",
+      "player2_name": "Juan Manuel Gabriel Valerio",
+      "player1_deck_name": "Mono-Black",
+      "player2_deck_name": "Abzan",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Edgar Brenes Soto"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Edgar Brenes Soto"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Juan Manuel Gabriel Valerio"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Javier Córdoba V",
+      "player2_name": "Juan Manuel Gabriel Valerio",
+      "player1_deck_name": "W-U-R-G",
+      "player2_deck_name": "Abzan",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Javier Córdoba V"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Javier Córdoba V"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Edgar Brenes Soto",
+      "player2_name": "Esteban Gonzalez",
+      "player1_deck_name": "Mono-Black",
+      "player2_deck_name": "Orzhov",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Edgar Brenes Soto"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Edgar Brenes Soto"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Esteban Gonzalez"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "David Araya",
+      "player2_name": "Ricardo Abarca",
+      "player1_deck_name": "Mono-Blue",
+      "player2_deck_name": "Sultai",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ricardo Abarca"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ricardo Abarca"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Esteban Gonzalez",
+      "player2_name": "David Araya",
+      "player1_deck_name": "Orzhov",
+      "player2_deck_name": "Mono-Blue",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Esteban Gonzalez"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "David Araya"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "David Araya"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Javier Córdoba V",
+      "player2_name": "Ricardo Abarca",
+      "player1_deck_name": "W-U-R-G",
+      "player2_deck_name": "Sultai",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ricardo Abarca"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ricardo Abarca"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Javier Córdoba V",
+      "player2_name": "Julian Wiedenmann",
+      "player1_deck_name": "W-U-R-G",
+      "player2_deck_name": "Jund",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Javier Córdoba V"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Javier Córdoba V"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Julian Wiedenmann"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Ale Focardi",
+      "player2_name": "Esteban Gonzalez",
+      "player1_deck_name": "Dimir",
+      "player2_deck_name": "Orzhov",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ale Focardi"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Esteban Gonzalez"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Esteban Gonzalez"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Ale Focardi",
+      "player2_name": "Oscar Zamora",
+      "player1_deck_name": "Dimir",
+      "player2_deck_name": "Azorius",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Oscar Zamora"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Oscar Zamora"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Oscar Zamora",
+      "player2_name": "Julian Wiedenmann",
+      "player1_deck_name": "Azorius",
+      "player2_deck_name": "Jund",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Oscar Zamora"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Oscar Zamora"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Julian Wiedenmann"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Juan Manuel Gabriel Valerio",
+      "player2_name": "Daniel Meza",
+      "player1_deck_name": "Abzan",
+      "player2_deck_name": "U-B-R-G",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Juan Manuel Gabriel Valerio"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Juan Manuel Gabriel Valerio"
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Oscar Zamora",
+      "player2_name": "Ricardo Abarca",
+      "player1_deck_name": "Azorius",
+      "player2_deck_name": "Sultai",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Oscar Zamora"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Oscar Zamora"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Ricardo Abarca"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Ale Focardi",
+      "player2_name": "Daniel Meza",
+      "player1_deck_name": "Dimir",
+      "player2_deck_name": "U-B-R-G",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ale Focardi"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ale Focardi"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Daniel Meza"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Oscar Zamora",
+      "player2_name": "David Araya",
+      "player1_deck_name": "Azorius",
+      "player2_deck_name": "Mono-Blue",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Oscar Zamora"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Oscar Zamora"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "David Araya"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Daniel Meza",
+      "player2_name": "Julian Wiedenmann",
+      "player1_deck_name": "U-B-R-G",
+      "player2_deck_name": "Jund",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Daniel Meza"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Julian Wiedenmann"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Julian Wiedenmann"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Edgar Brenes Soto",
+      "player2_name": "Ricardo Abarca",
+      "player1_deck_name": "Mono-Black",
+      "player2_deck_name": "Sultai",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Edgar Brenes Soto"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ricardo Abarca"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Ricardo Abarca"
+        }
+      ]
+    }
+  ]
+}

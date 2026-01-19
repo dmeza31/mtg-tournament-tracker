@@ -1,0 +1,634 @@
+{
+  "season_id": 1,
+  "tournament": {
+    "name": "OG Monthly Noviembre 2025",
+    "tournament_date": "2025-12-01",
+    "location": "Burro Singles",
+    "format": "Premodern",
+    "tournament_type_name": "LGS Tournament",
+    "description": "OG Monthly Noviembre 2025 - Premodern Tournament"
+  },
+  "players": [
+    {
+      "name": "Emanuel Cianfanelli",
+      "email": "ecianfanelli@email.com"
+    },
+    {
+      "name": "Enrique Culligan",
+      "email": "mao88@email.com"
+    },
+    {
+      "name": "Luis Quesada",
+      "email": "blomega420@email.com"
+    },
+    {
+      "name": "Juan Pablo Meza Loaiza",
+      "email": "jpmeza@email.com"
+    },
+    {
+      "name": "Eduardo Flores",
+      "email": "blackwaldo@email.com"
+    },
+    {
+      "name": "Oscar Zamora",
+      "email": "emzagu@email.com"
+    },
+    {
+      "name": "David Araya",
+      "email": "davidaraya@email.com"
+    },
+    {
+      "name": "Juan Manuel Gabriel Valerio",
+      "email": "juanmagabriel@email.com"
+    },
+    {
+      "name": "Ignacio España",
+      "email": "iesvilla@email.com"
+    },
+    {
+      "name": "Darío Rodríguez",
+      "email": "dariorod@email.com"
+    },
+    {
+      "name": "Ale Focardi",
+      "email": "focardi@email.com"
+    },
+    {
+      "name": "Esteban Gonzalez",
+      "email": "est1419@email.com"
+    },
+    {
+      "name": "César Sánchez",
+      "email": "kongocr@email.com"
+    },
+    {
+      "name": "Natalia Torres",
+      "email": "natitc27@email.com"
+    }
+  ],
+  "decks": [
+    {
+      "name": "BW Midrange",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Devourer Combo",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Gruul",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Iggy Pop",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Landstill",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Life",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Mono Black Midrange",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Mono-Black",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "RB Goblins",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "RG Zoo",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Survival Infestation",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Survival Madness",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Zombies",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Zoo",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    }
+  ],
+  "matches": [
+    {
+      "round_number": 4,
+      "player1_name": "Emanuel Cianfanelli",
+      "player2_name": "Enrique Culligan",
+      "player1_deck_name": "Zoo",
+      "player2_deck_name": "Landstill",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Emanuel Cianfanelli"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Enrique Culligan"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Enrique Culligan"
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Luis Quesada",
+      "player2_name": "Juan Pablo Meza Loaiza",
+      "player1_deck_name": "Zombies",
+      "player2_deck_name": "Life",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Juan Pablo Meza Loaiza"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Juan Pablo Meza Loaiza"
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Eduardo Flores",
+      "player2_name": "Oscar Zamora",
+      "player1_deck_name": "Mono Black Midrange",
+      "player2_deck_name": "Survival Madness",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Eduardo Flores"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Eduardo Flores"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "David Araya",
+      "player2_name": "Juan Manuel Gabriel Valerio",
+      "player1_deck_name": "Iggy Pop",
+      "player2_deck_name": "Survival Infestation",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "David Araya"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "David Araya"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Juan Manuel Gabriel Valerio"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Ignacio España",
+      "player2_name": "Juan Pablo Meza Loaiza",
+      "player1_deck_name": "BW Midrange",
+      "player2_deck_name": "Life",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ignacio España"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Juan Pablo Meza Loaiza"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Luis Quesada",
+      "player2_name": "Enrique Culligan",
+      "player1_deck_name": "Zombies",
+      "player2_deck_name": "Landstill",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Luis Quesada"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Luis Quesada"
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "David Araya",
+      "player2_name": "Ignacio España",
+      "player1_deck_name": "Iggy Pop",
+      "player2_deck_name": "BW Midrange",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ignacio España"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ignacio España"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "David Araya",
+      "player2_name": "Darío Rodríguez",
+      "player1_deck_name": "Iggy Pop",
+      "player2_deck_name": "Devourer Combo",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Darío Rodríguez"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Darío Rodríguez"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Emanuel Cianfanelli",
+      "player2_name": "Ale Focardi",
+      "player1_deck_name": "Zoo",
+      "player2_deck_name": "RB Goblins",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Emanuel Cianfanelli"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ale Focardi"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Ale Focardi"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Luis Quesada",
+      "player2_name": "David Araya",
+      "player1_deck_name": "Zombies",
+      "player2_deck_name": "Iggy Pop",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Luis Quesada"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "David Araya"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Darío Rodríguez",
+      "player2_name": "Eduardo Flores",
+      "player1_deck_name": "Devourer Combo",
+      "player2_deck_name": "Mono Black Midrange",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Darío Rodríguez"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Darío Rodríguez"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Eduardo Flores"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Ale Focardi",
+      "player2_name": "Oscar Zamora",
+      "player1_deck_name": "RB Goblins",
+      "player2_deck_name": "Survival Madness",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ale Focardi"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ale Focardi"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Oscar Zamora"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Eduardo Flores",
+      "player2_name": "Enrique Culligan",
+      "player1_deck_name": "Mono Black Midrange",
+      "player2_deck_name": "Landstill",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Eduardo Flores"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Eduardo Flores"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Esteban Gonzalez",
+      "player2_name": "Eduardo Flores",
+      "player1_deck_name": "RG Zoo",
+      "player2_deck_name": "Mono Black Midrange",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Eduardo Flores"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Eduardo Flores"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "César Sánchez",
+      "player2_name": "Juan Manuel Gabriel Valerio",
+      "player1_deck_name": "Gruul",
+      "player2_deck_name": "Survival Infestation",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "César Sánchez"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "César Sánchez"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Juan Manuel Gabriel Valerio"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "César Sánchez",
+      "player2_name": "Emanuel Cianfanelli",
+      "player1_deck_name": "Gruul",
+      "player2_deck_name": "Zoo",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Emanuel Cianfanelli"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Emanuel Cianfanelli"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Esteban Gonzalez",
+      "player2_name": "Ignacio España",
+      "player1_deck_name": "RG Zoo",
+      "player2_deck_name": "BW Midrange",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ignacio España"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ignacio España"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Luis Quesada",
+      "player2_name": "Ale Focardi",
+      "player1_deck_name": "Zombies",
+      "player2_deck_name": "RB Goblins",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ale Focardi"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ale Focardi"
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Ale Focardi",
+      "player2_name": "Darío Rodríguez",
+      "player1_deck_name": "RB Goblins",
+      "player2_deck_name": "Devourer Combo",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Darío Rodríguez"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Darío Rodríguez"
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Natalia Torres",
+      "player2_name": "Juan Manuel Gabriel Valerio",
+      "player1_deck_name": "Mono-Black",
+      "player2_deck_name": "Survival Infestation",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Juan Manuel Gabriel Valerio"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Juan Manuel Gabriel Valerio"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Natalia Torres",
+      "player2_name": "Oscar Zamora",
+      "player1_deck_name": "Mono-Black",
+      "player2_deck_name": "Survival Madness",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Oscar Zamora"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Oscar Zamora"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Emanuel Cianfanelli",
+      "player2_name": "Juan Pablo Meza Loaiza",
+      "player1_deck_name": "Zoo",
+      "player2_deck_name": "Life",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Emanuel Cianfanelli"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Juan Pablo Meza Loaiza"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Juan Pablo Meza Loaiza"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Oscar Zamora",
+      "player2_name": "Juan Pablo Meza Loaiza",
+      "player1_deck_name": "Survival Madness",
+      "player2_deck_name": "Life",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Oscar Zamora"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Oscar Zamora"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Juan Pablo Meza Loaiza"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Darío Rodríguez",
+      "player2_name": "Natalia Torres",
+      "player1_deck_name": "Devourer Combo",
+      "player2_deck_name": "Mono-Black",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Darío Rodríguez"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Darío Rodríguez"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Ignacio España",
+      "player2_name": "Enrique Culligan",
+      "player1_deck_name": "BW Midrange",
+      "player2_deck_name": "Landstill",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Enrique Culligan"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Enrique Culligan"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Natalia Torres",
+      "player2_name": "César Sánchez",
+      "player1_deck_name": "Mono-Black",
+      "player2_deck_name": "Gruul",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Natalia Torres"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Natalia Torres"
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "César Sánchez",
+      "player2_name": "Esteban Gonzalez",
+      "player1_deck_name": "Gruul",
+      "player2_deck_name": "RG Zoo",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Esteban Gonzalez"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Esteban Gonzalez"
+        }
+      ]
+    }
+  ]
+}

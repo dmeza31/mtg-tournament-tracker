@@ -1,0 +1,491 @@
+{
+  "season_id": 2,
+  "tournament": {
+    "name": "BurroSingles Monthly Enero 2026",
+    "tournament_date": "2026-01-13",
+    "location": "Burro Singles",
+    "format": "Premodern",
+    "tournament_type_name": "LGS Tournament",
+    "description": "BurroSingles Monthly Enero 2026 - Premodern Tournament"
+  },
+  "players": [
+    {
+      "name": "Daisuke Hará González",
+      "email": "daih@email.com"
+    },
+    {
+      "name": "Oscar Zamora",
+      "email": "emzagu@email.com"
+    },
+    {
+      "name": "Ignacio España",
+      "email": "iesvilla@email.com"
+    },
+    {
+      "name": "Mario Escalante lopez",
+      "email": "harimamario@email.com"
+    },
+    {
+      "name": "Esteban Gonzalez",
+      "email": "est1419@email.com"
+    },
+    {
+      "name": "Emanuel Cianfanelli",
+      "email": "ecianfanelli@email.com"
+    },
+    {
+      "name": "David Araya",
+      "email": "davidaraya@email.com"
+    },
+    {
+      "name": "Daniel Meza",
+      "email": "dmeza@email.com"
+    },
+    {
+      "name": "Edgar Brenes Soto",
+      "email": "edkeytar@email.com"
+    },
+    {
+      "name": "Ale Focardi",
+      "email": "focardi@email.com"
+    }
+  ],
+  "decks": [
+    {
+      "name": "BUG Control",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Devourer Combo",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "GW Natural Order",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Parallax Replenish",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Sligh",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Stasis",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Stiflenought",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Zombies",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Zoo",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Unknown",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    }
+  ],
+  "matches": [
+    {
+      "round_number": 1,
+      "player1_name": "Daisuke Hará González",
+      "player2_name": "Oscar Zamora",
+      "player1_deck_name": "Stasis",
+      "player2_deck_name": "Devourer Combo",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Daisuke Hará González"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Daisuke Hará González"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Oscar Zamora"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Ignacio España",
+      "player2_name": "Mario Escalante lopez",
+      "player1_deck_name": "GW Natural Order",
+      "player2_deck_name": "Unknown",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ignacio España"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ignacio España"
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Esteban Gonzalez",
+      "player2_name": "Emanuel Cianfanelli",
+      "player1_deck_name": "Zoo",
+      "player2_deck_name": "BUG Control",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Esteban Gonzalez"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Emanuel Cianfanelli"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Emanuel Cianfanelli"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Daisuke Hará González",
+      "player2_name": "Esteban Gonzalez",
+      "player1_deck_name": "Stasis",
+      "player2_deck_name": "Zoo",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Daisuke Hará González"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Daisuke Hará González"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Esteban Gonzalez"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "David Araya",
+      "player2_name": "Ignacio España",
+      "player1_deck_name": "Stiflenought",
+      "player2_deck_name": "GW Natural Order",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "David Araya"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ignacio España"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "David Araya",
+      "player2_name": "Oscar Zamora",
+      "player1_deck_name": "Stiflenought",
+      "player2_deck_name": "Devourer Combo",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "David Araya"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "David Araya"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Oscar Zamora"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "David Araya",
+      "player2_name": "Daniel Meza",
+      "player1_deck_name": "Stiflenought",
+      "player2_deck_name": "Sligh",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "David Araya"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "David Araya"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Daniel Meza"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Mario Escalante lopez",
+      "player2_name": "Daniel Meza",
+      "player1_deck_name": "Unknown",
+      "player2_deck_name": "Sligh",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Mario Escalante lopez"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Mario Escalante lopez"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Daisuke Hará González",
+      "player2_name": "Ignacio España",
+      "player1_deck_name": "Stasis",
+      "player2_deck_name": "GW Natural Order",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Daisuke Hará González"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Daisuke Hará González"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Esteban Gonzalez",
+      "player2_name": "Edgar Brenes Soto",
+      "player1_deck_name": "Zoo",
+      "player2_deck_name": "Zombies",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Esteban Gonzalez"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Edgar Brenes Soto"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Edgar Brenes Soto"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Emanuel Cianfanelli",
+      "player2_name": "Edgar Brenes Soto",
+      "player1_deck_name": "BUG Control",
+      "player2_deck_name": "Zombies",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Edgar Brenes Soto"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Edgar Brenes Soto"
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Ale Focardi",
+      "player2_name": "Edgar Brenes Soto",
+      "player1_deck_name": "Parallax Replenish",
+      "player2_deck_name": "Zombies",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Edgar Brenes Soto"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Edgar Brenes Soto"
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Ignacio España",
+      "player2_name": "Daniel Meza",
+      "player1_deck_name": "GW Natural Order",
+      "player2_deck_name": "Sligh",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Daniel Meza"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Daniel Meza"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Emanuel Cianfanelli",
+      "player2_name": "Daniel Meza",
+      "player1_deck_name": "BUG Control",
+      "player2_deck_name": "Sligh",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Daniel Meza"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Daniel Meza"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Mario Escalante lopez",
+      "player2_name": "Ale Focardi",
+      "player1_deck_name": "Unknown",
+      "player2_deck_name": "Parallax Replenish",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Mario Escalante lopez"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ale Focardi"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Ale Focardi"
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Mario Escalante lopez",
+      "player2_name": "Oscar Zamora",
+      "player1_deck_name": "Unknown",
+      "player2_deck_name": "Devourer Combo",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Mario Escalante lopez"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Mario Escalante lopez"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Oscar Zamora"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Edgar Brenes Soto",
+      "player2_name": "Oscar Zamora",
+      "player1_deck_name": "Zombies",
+      "player2_deck_name": "Devourer Combo",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Oscar Zamora"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Oscar Zamora"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Esteban Gonzalez",
+      "player2_name": "Ale Focardi",
+      "player1_deck_name": "Zoo",
+      "player2_deck_name": "Parallax Replenish",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Esteban Gonzalez"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Esteban Gonzalez"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Ale Focardi"
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Daisuke Hará González",
+      "player2_name": "David Araya",
+      "player1_deck_name": "Stasis",
+      "player2_deck_name": "Stiflenought",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Daisuke Hará González"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Daisuke Hará González"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "David Araya"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Ale Focardi",
+      "player2_name": "Emanuel Cianfanelli",
+      "player1_deck_name": "Parallax Replenish",
+      "player2_deck_name": "BUG Control",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ale Focardi"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ale Focardi"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Emanuel Cianfanelli"
+        }
+      ]
+    }
+  ]
+}

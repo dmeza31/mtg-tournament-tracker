@@ -646,6 +646,81 @@ def render_tournament_type_tab():
                         st.markdown(f"<div class='error-box'>❌ Error: {response.get('error')}</div>", unsafe_allow_html=True)
 
 # ============================================================================
+# DECK MANAGEMENT TAB
+# ============================================================================
+
+def render_deck_tab():
+    st.header("🃏 Deck Archetype Management")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.subheader("Search & Update Existing Deck")
+        decks_success, decks_data = make_request("GET", "decks")
+        decks = decks_data if decks_success and isinstance(decks_data, list) else decks_data.get('data', []) if decks_success else []
+
+        if decks:
+            deck_options = {f"{d['id']}: {d['name']}": d for d in decks}
+            selected = st.selectbox("Select deck archetype:", options=list(deck_options.keys()), key="deck_search_select")
+            
+            if selected:
+                deck = deck_options[selected]
+                st.write("**Current Details:**")
+                st.json(deck)
+                
+                with st.form("update_deck_form"):
+                    st.subheader("Update Deck Archetype")
+                    new_name = st.text_input("Deck Name:", value=deck.get('name', ''))
+                    new_color_identity = st.text_input("Color Identity (e.g., UW, RG, WUBRG):", value=deck.get('color_identity', ''))
+                    new_archetype_type = st.selectbox(
+                        "Archetype Type:", 
+                        options=["Aggro", "Control", "Midrange", "Combo", "Other"],
+                        index=["Aggro", "Control", "Midrange", "Combo", "Other"].index(deck.get('archetype_type', 'Other')) if deck.get('archetype_type') in ["Aggro", "Control", "Midrange", "Combo", "Other"] else 4
+                    )
+                    new_description = st.text_area("Description:", value=deck.get('description', ''), height=100)
+                    
+                    if st.form_submit_button("Update Deck Archetype"):
+                        update_data = {
+                            "name": new_name,
+                            "color_identity": new_color_identity if new_color_identity else None,
+                            "archetype_type": new_archetype_type,
+                            "description": new_description if new_description else None
+                        }
+                        success, response = make_request("PUT", f"decks/{deck['id']}", update_data)
+                        if success:
+                            st.markdown(f"<div class='success-box'>✅ Deck archetype updated successfully!</div>", unsafe_allow_html=True)
+                            st.rerun()
+                        else:
+                            st.markdown(f"<div class='error-box'>❌ Error: {response.get('error')}</div>", unsafe_allow_html=True)
+        else:
+            st.info("No deck archetypes available to update.")
+    
+    with col2:
+        st.subheader("Create New Deck Archetype")
+        with st.form("create_deck_form"):
+            deck_name = st.text_input("Deck Name:")
+            color_identity = st.text_input("Color Identity (e.g., UW, RG, WUBRG):")
+            archetype_type = st.selectbox("Archetype Type:", options=["Aggro", "Control", "Midrange", "Combo", "Other"])
+            deck_description = st.text_area("Description:", height=100)
+            
+            if st.form_submit_button("Create Deck Archetype"):
+                if not deck_name:
+                    st.error("Please enter a deck name.")
+                else:
+                    create_data = {
+                        "name": deck_name,
+                        "color_identity": color_identity if color_identity else None,
+                        "archetype_type": archetype_type,
+                        "description": deck_description if deck_description else None
+                    }
+                    success, response = make_request("POST", "decks", create_data)
+                    if success:
+                        st.markdown(f"<div class='success-box'>✅ Deck archetype created successfully! ID: {response.get('id')}</div>", unsafe_allow_html=True)
+                        st.rerun()
+                    else:
+                        st.markdown(f"<div class='error-box'>❌ Error: {response.get('error')}</div>", unsafe_allow_html=True)
+
+# ============================================================================
 # MAIN APP
 # ============================================================================
 
@@ -662,7 +737,7 @@ def main():
         st.success(f"✅ Connected to API at {API_BASE_URL}")
     
     # Tabs
-    tab1, tab2, tab3, tab4, tab5 = st.tabs(["📅 Seasons", "🏆 Tournaments", "🎮 Matches", "📤 Import", "🏷️ Tournament Types"])
+    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["📅 Seasons", "🏆 Tournaments", "🎮 Matches", "📤 Import", "🏷️ Tournament Types", "🃏 Decks"])
     
     with tab1:
         render_season_tab()
@@ -679,6 +754,9 @@ def main():
     with tab5:
         render_tournament_type_tab()
     
+    with tab6:
+        render_deck_tab()
+    
     # Sidebar info
     st.sidebar.markdown("---")
     st.sidebar.subheader("Configuration")
@@ -691,6 +769,7 @@ def main():
     - **Tournaments**: Organize tournaments within seasons
     - **Matches**: Create and track matches between players
     - **Tournament Types**: Define tournament types with point values
+    - **Decks**: Manage deck archetypes and their attributes
     
     All changes are persisted to the PostgreSQL database via the REST API.
     """)
