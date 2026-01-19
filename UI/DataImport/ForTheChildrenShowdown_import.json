@@ -1,0 +1,2554 @@
+{
+  "season_id": 1,
+  "tournament": {
+    "name": "For The Children Showdown",
+    "tournament_date": "2025-12-07",
+    "location": "Escazu",
+    "format": "Premodern",
+    "tournament_type_name": "Special Event",
+    "description": "For The Children Showdown - Premodern Tournament"
+  },
+  "players": [
+    {
+      "name": "David Mora",
+      "email": "dmora@email.com"
+    },
+    {
+      "name": "Diego Medrano",
+      "email": "dmedrano@email.com"
+    },
+    {
+      "name": "Marcelo Bolaños",
+      "email": "mbolanos@email.com"
+    },
+    {
+      "name": "Emanuel Cianfanelli",
+      "email": "ecianfanelli@email.com"
+    },
+    {
+      "name": "Darío Rodríguez",
+      "email": "drodriguez@email.com"
+    },
+    {
+      "name": "Eduardo Flores",
+      "email": "eflores@email.com"
+    },
+    {
+      "name": "Guillermo Campos",
+      "email": "gcampos@email.com"
+    },
+    {
+      "name": "David Araya",
+      "email": "daraya@email.com"
+    },
+    {
+      "name": "Jose De la O Castillo",
+      "email": "jdelaoc@email.com"
+    },
+    {
+      "name": "Luis Quesada",
+      "email": "lquesada@email.com"
+    },
+    {
+      "name": "Natalia Torres",
+      "email": "ntorres@email.com"
+    },
+    {
+      "name": "Jose Roberto Rojas Salas",
+      "email": "jrojas@email.com"
+    },
+    {
+      "name": "Mario Marín",
+      "email": "mmarin@email.com"
+    },
+    {
+      "name": "Daniel Meza",
+      "email": "dmeza@email.com"
+    },
+    {
+      "name": "Enrique Culligan",
+      "email": "eculligan@email.com"
+    },
+    {
+      "name": "Ricardo Abarca",
+      "email": "rabarca@email.com"
+    },
+    {
+      "name": "Julian Wiedenmann",
+      "email": "jwiedenmann@email.com"
+    },
+    {
+      "name": "Lorenz Wiedenmann",
+      "email": "lwiedenmann@email.com"
+    },
+    {
+      "name": "Walter Ramirez",
+      "email": "wramirez@email.com"
+    },
+    {
+      "name": "Marco Brenes",
+      "email": "mbrenes@email.com"
+    },
+    {
+      "name": "Ale Focardi",
+      "email": "afocardi@email.com"
+    },
+    {
+      "name": "Gerardo Loaiza",
+      "email": "gloaiza@email.com"
+    },
+    {
+      "name": "Juan Pablo Meza Loaiza",
+      "email": "jpmeza@email.com"
+    },
+    {
+      "name": "Oscar Zamora",
+      "email": "ozamora@email.com"
+    },
+    {
+      "name": "Javier Córdoba V",
+      "email": "jcordoba@email.com"
+    }
+  ],
+  "decks": [
+    {
+      "name": "RG Elves",
+      "color_identity": "RG",
+      "archetype_type": "Aggro"
+    },
+    {
+      "name": "Trev-Aluren",
+      "color_identity": "UG",
+      "archetype_type": "Combo"
+    },
+    {
+      "name": "Stiflenought",
+      "color_identity": "U",
+      "archetype_type": "Combo"
+    },
+    {
+      "name": "GW Enchantress",
+      "color_identity": "GW",
+      "archetype_type": "Midrange"
+    },
+    {
+      "name": "Replenish",
+      "color_identity": "UW",
+      "archetype_type": "Combo"
+    },
+    {
+      "name": "Mono Black Midrange",
+      "color_identity": "B",
+      "archetype_type": "Midrange"
+    },
+    {
+      "name": "RG Goblins",
+      "color_identity": "RG",
+      "archetype_type": "Aggro"
+    },
+    {
+      "name": "Iggy Pop",
+      "color_identity": "UR",
+      "archetype_type": "Combo"
+    },
+    {
+      "name": "Sligh",
+      "color_identity": "R",
+      "archetype_type": "Aggro"
+    },
+    {
+      "name": "Lands",
+      "color_identity": "G",
+      "archetype_type": "Control"
+    },
+    {
+      "name": "Pit Rack",
+      "color_identity": "B",
+      "archetype_type": "Control"
+    },
+    {
+      "name": "Tide Control",
+      "color_identity": "U",
+      "archetype_type": "Control"
+    },
+    {
+      "name": "Mono-Red",
+      "color_identity": "R",
+      "archetype_type": "Aggro"
+    },
+    {
+      "name": "Hermit FEB",
+      "color_identity": "BRG",
+      "archetype_type": "Combo"
+    },
+    {
+      "name": "Psychatog",
+      "color_identity": "UB",
+      "archetype_type": "Control"
+    },
+    {
+      "name": "BUG Control",
+      "color_identity": "UBG",
+      "archetype_type": "Control"
+    },
+    {
+      "name": "Phantom Oath",
+      "color_identity": "W",
+      "archetype_type": "Combo"
+    },
+    {
+      "name": "Terrageddon",
+      "color_identity": "GW",
+      "archetype_type": "Control"
+    },
+    {
+      "name": "Life",
+      "color_identity": "W",
+      "archetype_type": "Combo"
+    },
+    {
+      "name": "UW Tidestill",
+      "color_identity": "UW",
+      "archetype_type": "Control"
+    },
+    {
+      "name": "BW Midrange",
+      "color_identity": "BW",
+      "archetype_type": "Midrange"
+    },
+    {
+      "name": "BWG Armageddon",
+      "color_identity": "BWG",
+      "archetype_type": "Midrange"
+    },
+    {
+      "name": "RG Zoo",
+      "color_identity": "RG",
+      "archetype_type": "Aggro"
+    },
+    {
+      "name": "Survival Infestation",
+      "color_identity": "BG",
+      "archetype_type": "Midrange"
+    },
+    {
+      "name": "Zombies",
+      "color_identity": "B",
+      "archetype_type": "Aggro"
+    }
+  ],
+  "matches": [
+    {
+      "round_number": 6,
+      "player1_name": "David Mora",
+      "player2_name": "Diego Medrano",
+      "player1_deck_name": "RG Elves",
+      "player2_deck_name": "Trev-Aluren",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "David Mora",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Diego Medrano",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Draw",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Marcelo Bolaños",
+      "player2_name": "Emanuel Cianfanelli",
+      "player1_deck_name": "Stiflenought",
+      "player2_deck_name": "GW Enchantress",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Emanuel Cianfanelli",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Emanuel Cianfanelli",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Marcelo Bolaños",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 8,
+      "player1_name": "Darío Rodríguez",
+      "player2_name": "Eduardo Flores",
+      "player1_deck_name": "Replenish",
+      "player2_deck_name": "Mono Black Midrange",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Darío Rodríguez",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Darío Rodríguez",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Guillermo Campos",
+      "player2_name": "David Araya",
+      "player1_deck_name": "RG Goblins",
+      "player2_deck_name": "Iggy Pop",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Guillermo Campos",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Guillermo Campos",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "David Mora",
+      "player2_name": "Emanuel Cianfanelli",
+      "player1_deck_name": "RG Elves",
+      "player2_deck_name": "GW Enchantress",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "David Mora",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "David Mora",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Emanuel Cianfanelli",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 5,
+      "player1_name": "Jose De la O Castillo",
+      "player2_name": "Emanuel Cianfanelli",
+      "player1_deck_name": "Sligh",
+      "player2_deck_name": "GW Enchantress",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Jose De la O Castillo",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Jose De la O Castillo",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Emanuel Cianfanelli",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 5,
+      "player1_name": "Enrique Culligan",
+      "player2_name": "Diego Medrano",
+      "player1_deck_name": "Psychatog",
+      "player2_deck_name": "Trev-Aluren",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Enrique Culligan",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Enrique Culligan",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Luis Quesada",
+      "player2_name": "Natalia Torres",
+      "player1_deck_name": "Lands",
+      "player2_deck_name": "Pit Rack",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Luis Quesada",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Luis Quesada",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Jose Roberto Rojas Salas",
+      "player2_name": "Mario Marín",
+      "player1_deck_name": "Tide Control",
+      "player2_deck_name": "Mono-Red",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Jose Roberto Rojas Salas",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Mario Marín",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Draw",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 5,
+      "player1_name": "Darío Rodríguez",
+      "player2_name": "Daniel Meza",
+      "player1_deck_name": "Replenish",
+      "player2_deck_name": "Hermit FEB",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Daniel Meza",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Daniel Meza",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 6,
+      "player1_name": "Jose Roberto Rojas Salas",
+      "player2_name": "Marcelo Bolaños",
+      "player1_deck_name": "Tide Control",
+      "player2_deck_name": "Stiflenought",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Jose Roberto Rojas Salas",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Jose Roberto Rojas Salas",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Diego Medrano",
+      "player2_name": "Ricardo Abarca",
+      "player1_deck_name": "Trev-Aluren",
+      "player2_deck_name": "BUG Control",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Diego Medrano",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Diego Medrano",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Ricardo Abarca",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 5,
+      "player1_name": "David Araya",
+      "player2_name": "Lorenz Wiedenmann",
+      "player1_deck_name": "Iggy Pop",
+      "player2_deck_name": "Mono Black Midrange",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Lorenz Wiedenmann",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Lorenz Wiedenmann",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "David Araya",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 5,
+      "player1_name": "Marco Brenes",
+      "player2_name": "Julian Wiedenmann",
+      "player1_deck_name": "RG Goblins",
+      "player2_deck_name": "Phantom Oath",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Marco Brenes",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Marco Brenes",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Julian Wiedenmann",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 6,
+      "player1_name": "Emanuel Cianfanelli",
+      "player2_name": "Ricardo Abarca",
+      "player1_deck_name": "GW Enchantress",
+      "player2_deck_name": "BUG Control",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ricardo Abarca",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ricardo Abarca",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Julian Wiedenmann",
+      "player2_name": "Ricardo Abarca",
+      "player1_deck_name": "Phantom Oath",
+      "player2_deck_name": "BUG Control",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ricardo Abarca",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ricardo Abarca",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Lorenz Wiedenmann",
+      "player2_name": "Walter Ramirez",
+      "player1_deck_name": "Mono Black Midrange",
+      "player2_deck_name": "Stiflenought",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Walter Ramirez",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Walter Ramirez",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Lorenz Wiedenmann",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Luis Quesada",
+      "player2_name": "Javier Córdoba V",
+      "player1_deck_name": "Lands",
+      "player2_deck_name": "Mono Black Midrange",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Luis Quesada",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Luis Quesada",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Ale Focardi",
+      "player2_name": "Natalia Torres",
+      "player1_deck_name": "Terrageddon",
+      "player2_deck_name": "Pit Rack",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ale Focardi",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ale Focardi",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 6,
+      "player1_name": "Gerardo Loaiza",
+      "player2_name": "Juan Pablo Meza Loaiza",
+      "player1_deck_name": "RG Goblins",
+      "player2_deck_name": "Life",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Juan Pablo Meza Loaiza",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Juan Pablo Meza Loaiza",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Gerardo Loaiza",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Marco Brenes",
+      "player2_name": "Eduardo Flores",
+      "player1_deck_name": "RG Goblins",
+      "player2_deck_name": "Mono Black Midrange",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Eduardo Flores",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Eduardo Flores",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Marco Brenes",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 5,
+      "player1_name": "Oscar Zamora",
+      "player2_name": "Eduardo Flores",
+      "player1_deck_name": "RG Elves",
+      "player2_deck_name": "Mono Black Midrange",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Eduardo Flores",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Eduardo Flores",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Oscar Zamora",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Juan Pablo Meza Loaiza",
+      "player2_name": "Natalia Torres",
+      "player1_deck_name": "Life",
+      "player2_deck_name": "Pit Rack",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Natalia Torres",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Natalia Torres",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Natalia Torres",
+      "player2_name": "David Araya",
+      "player1_deck_name": "Pit Rack",
+      "player2_deck_name": "Iggy Pop",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Natalia Torres",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Natalia Torres",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 5,
+      "player1_name": "Sebastian Garcia",
+      "player2_name": "Jose Roberto Rojas Salas",
+      "player1_deck_name": "Stiflenought",
+      "player2_deck_name": "Tide Control",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Sebastian Garcia",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Sebastian Garcia",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Guillermo Campos",
+      "player2_name": "Juan Pablo Meza Loaiza",
+      "player1_deck_name": "RG Goblins",
+      "player2_deck_name": "Life",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Juan Pablo Meza Loaiza",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Juan Pablo Meza Loaiza",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Javier Córdoba V",
+      "player2_name": "Ricardo Abarca",
+      "player1_deck_name": "Mono Black Midrange",
+      "player2_deck_name": "BUG Control",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ricardo Abarca",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ricardo Abarca",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Javier Córdoba V",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 6,
+      "player1_name": "Ale Focardi",
+      "player2_name": "Ignacio España",
+      "player1_deck_name": "Terrageddon",
+      "player2_deck_name": "BW Midrange",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ale Focardi",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ale Focardi",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 5,
+      "player1_name": "Natalia Torres",
+      "player2_name": "Marcelo Bolaños",
+      "player1_deck_name": "Pit Rack",
+      "player2_deck_name": "Stiflenought",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Natalia Torres",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Marcelo Bolaños",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Draw",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Juan Manuel Gabriel Valerio",
+      "player2_name": "Javier Córdoba V",
+      "player1_deck_name": "Survival Infestation",
+      "player2_deck_name": "Mono Black Midrange",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Javier Córdoba V",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Javier Córdoba V",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 5,
+      "player1_name": "Guillermo Campos",
+      "player2_name": "Daniel Fonseca",
+      "player1_deck_name": "RG Goblins",
+      "player2_deck_name": "BWG Armageddon",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Guillermo Campos",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Guillermo Campos",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Daniel Fonseca",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Mario Marín",
+      "player2_name": "Marcelo Bolaños",
+      "player1_deck_name": "Mono-Red",
+      "player2_deck_name": "Stiflenought",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Marcelo Bolaños",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Marcelo Bolaños",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Eduardo Flores",
+      "player2_name": "Edgar Brenes Soto",
+      "player1_deck_name": "Mono Black Midrange",
+      "player2_deck_name": "Zombies",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Eduardo Flores",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Eduardo Flores",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Daniel Meza",
+      "player2_name": "Ricardo Abarca",
+      "player1_deck_name": "Hermit FEB",
+      "player2_deck_name": "BUG Control",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Daniel Meza",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Daniel Meza",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Ricardo Abarca",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Marco Brenes",
+      "player2_name": "Gerardo Loaiza",
+      "player1_deck_name": "RG Goblins",
+      "player2_deck_name": "RG Goblins",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Marco Brenes",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Marco Brenes",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 6,
+      "player1_name": "Luis Quesada",
+      "player2_name": "Gustavo Montenegro",
+      "player1_deck_name": "Lands",
+      "player2_deck_name": "Sligh",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Gustavo Montenegro",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Gustavo Montenegro",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Esteban Gonzalez",
+      "player2_name": "Guillermo Campos",
+      "player1_deck_name": "RG Zoo",
+      "player2_deck_name": "RG Goblins",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Esteban Gonzalez",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Esteban Gonzalez",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Guillermo Campos",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 5,
+      "player1_name": "David Mora",
+      "player2_name": "Walter Ramirez",
+      "player1_deck_name": "RG Elves",
+      "player2_deck_name": "Stiflenought",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "David Mora",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "David Mora",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Luis Quesada",
+      "player2_name": "Diego Medrano",
+      "player1_deck_name": "Lands",
+      "player2_deck_name": "Trev-Aluren",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Diego Medrano",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Luis Quesada",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Jose De la O Castillo",
+      "player2_name": "Esteban Gonzalez",
+      "player1_deck_name": "Sligh",
+      "player2_deck_name": "RG Zoo",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Jose De la O Castillo",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Jose De la O Castillo",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Esteban Gonzalez",
+      "player2_name": "Juan Manuel Gabriel Valerio",
+      "player1_deck_name": "RG Zoo",
+      "player2_deck_name": "Survival Infestation",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Esteban Gonzalez",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Juan Manuel Gabriel Valerio",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Draw",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Enrique Culligan",
+      "player2_name": "Julian Wiedenmann",
+      "player1_deck_name": "Psychatog",
+      "player2_deck_name": "Phantom Oath",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Enrique Culligan",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Enrique Culligan",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Lorenz Wiedenmann",
+      "player2_name": "Daniel Meza",
+      "player1_deck_name": "Mono Black Midrange",
+      "player2_deck_name": "Hermit FEB",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Daniel Meza",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Daniel Meza",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Lorenz Wiedenmann",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Gustavo Montenegro",
+      "player2_name": "Enrique Culligan",
+      "player1_deck_name": "Sligh",
+      "player2_deck_name": "Psychatog",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Enrique Culligan",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Enrique Culligan",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Gustavo Montenegro",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 6,
+      "player1_name": "César Sánchez",
+      "player2_name": "Daniel Fonseca",
+      "player1_deck_name": "RG Goblins",
+      "player2_deck_name": "BWG Armageddon",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Daniel Fonseca",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Daniel Fonseca",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Walter Ramirez",
+      "player2_name": "Diego Medrano",
+      "player1_deck_name": "Stiflenought",
+      "player2_deck_name": "Trev-Aluren",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Diego Medrano",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Diego Medrano",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Walter Ramirez",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Edgar Brenes Soto",
+      "player2_name": "David Mora",
+      "player1_deck_name": "Zombies",
+      "player2_deck_name": "RG Elves",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "David Mora",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "David Mora",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Edgar Brenes Soto",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "David Araya",
+      "player2_name": "Darío Rodríguez",
+      "player1_deck_name": "Iggy Pop",
+      "player2_deck_name": "Replenish",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Darío Rodríguez",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Darío Rodríguez",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Emanuel Cianfanelli",
+      "player2_name": "Ignacio España",
+      "player1_deck_name": "GW Enchantress",
+      "player2_deck_name": "BW Midrange",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Emanuel Cianfanelli",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Emanuel Cianfanelli",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 7,
+      "player1_name": "Sebastian Garcia",
+      "player2_name": "Enrique Culligan",
+      "player1_deck_name": "Stiflenought",
+      "player2_deck_name": "Psychatog",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Sebastian Garcia",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Sebastian Garcia",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Enrique Culligan",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 5,
+      "player1_name": "Mario Escalante lopez",
+      "player2_name": "Ale Focardi",
+      "player1_deck_name": "UW Tidestill",
+      "player2_deck_name": "Terrageddon",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ale Focardi",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ale Focardi",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Sebastian Garcia",
+      "player2_name": "Darío Rodríguez",
+      "player1_deck_name": "Stiflenought",
+      "player2_deck_name": "Replenish",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Darío Rodríguez",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Darío Rodríguez",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Sebastian Garcia",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 8,
+      "player1_name": "Ale Focardi",
+      "player2_name": "Sebastian Garcia",
+      "player1_deck_name": "Terrageddon",
+      "player2_deck_name": "Stiflenought",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Sebastian Garcia",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Sebastian Garcia",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Ale Focardi",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Daniel Fonseca",
+      "player2_name": "Edgar Brenes Soto",
+      "player1_deck_name": "BWG Armageddon",
+      "player2_deck_name": "Zombies",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Edgar Brenes Soto",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Edgar Brenes Soto",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Daniel Fonseca",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Jose Roberto Rojas Salas",
+      "player2_name": "Mario Escalante lopez",
+      "player1_deck_name": "Tide Control",
+      "player2_deck_name": "UW Tidestill",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Jose Roberto Rojas Salas",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Jose Roberto Rojas Salas",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 7,
+      "player1_name": "Darío Rodríguez",
+      "player2_name": "Marco Brenes",
+      "player1_deck_name": "Replenish",
+      "player2_deck_name": "RG Goblins",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Darío Rodríguez",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Darío Rodríguez",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Marco Brenes",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 7,
+      "player1_name": "Eduardo Flores",
+      "player2_name": "Jose De la O Castillo",
+      "player1_deck_name": "Mono Black Midrange",
+      "player2_deck_name": "Sligh",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Eduardo Flores",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Eduardo Flores",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Jose De la O Castillo",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Marcelo Bolaños",
+      "player2_name": "Oscar Zamora",
+      "player1_deck_name": "Stiflenought",
+      "player2_deck_name": "RG Elves",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Oscar Zamora",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Oscar Zamora",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Marcelo Bolaños",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Esteban Gonzalez",
+      "player2_name": "Gustavo Montenegro",
+      "player1_deck_name": "RG Zoo",
+      "player2_deck_name": "Sligh",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Gustavo Montenegro",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Gustavo Montenegro",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Esteban Gonzalez",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 5,
+      "player1_name": "Juan Pablo Meza Loaiza",
+      "player2_name": "Javier Córdoba V",
+      "player1_deck_name": "Life",
+      "player2_deck_name": "Mono Black Midrange",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Javier Córdoba V",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Javier Córdoba V",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Juan Pablo Meza Loaiza",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "David Araya",
+      "player2_name": "Juan Manuel Gabriel Valerio",
+      "player1_deck_name": "Iggy Pop",
+      "player2_deck_name": "Survival Infestation",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Juan Manuel Gabriel Valerio",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Juan Manuel Gabriel Valerio",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "David Araya",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Daniel Meza",
+      "player2_name": "Jose De la O Castillo",
+      "player1_deck_name": "Hermit FEB",
+      "player2_deck_name": "Sligh",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Daniel Meza",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Daniel Meza",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 6,
+      "player1_name": "Julian Wiedenmann",
+      "player2_name": "Edgar Brenes Soto",
+      "player1_deck_name": "Phantom Oath",
+      "player2_deck_name": "Zombies",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Julian Wiedenmann",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Julian Wiedenmann",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Daniel Fonseca",
+      "player2_name": "Gerardo Loaiza",
+      "player1_deck_name": "BWG Armageddon",
+      "player2_deck_name": "RG Goblins",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Daniel Fonseca",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Daniel Fonseca",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Mario Escalante lopez",
+      "player2_name": "Daniel Fonseca",
+      "player1_deck_name": "UW Tidestill",
+      "player2_deck_name": "BWG Armageddon",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Mario Escalante lopez",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Mario Escalante lopez",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Enrique Culligan",
+      "player2_name": "Ignacio España",
+      "player1_deck_name": "Psychatog",
+      "player2_deck_name": "BW Midrange",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ignacio España",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ignacio España",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Oscar Zamora",
+      "player2_name": "Ale Focardi",
+      "player1_deck_name": "RG Elves",
+      "player2_deck_name": "Terrageddon",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Oscar Zamora",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Oscar Zamora",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Jose Roberto Rojas Salas",
+      "player2_name": "Daniel Fonseca",
+      "player1_deck_name": "Tide Control",
+      "player2_deck_name": "BWG Armageddon",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Jose Roberto Rojas Salas",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Jose Roberto Rojas Salas",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Daniel Fonseca",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Juan Manuel Gabriel Valerio",
+      "player2_name": "Ale Focardi",
+      "player1_deck_name": "Survival Infestation",
+      "player2_deck_name": "Terrageddon",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ale Focardi",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ale Focardi",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 9,
+      "player1_name": "Sebastian Garcia",
+      "player2_name": "Darío Rodríguez",
+      "player1_deck_name": "Stiflenought",
+      "player2_deck_name": "Replenish",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Sebastian Garcia",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Sebastian Garcia",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Darío Rodríguez",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Darío Rodríguez",
+      "player2_name": "Eduardo Flores",
+      "player1_deck_name": "Replenish",
+      "player2_deck_name": "Mono Black Midrange",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Darío Rodríguez",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Darío Rodríguez",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Eduardo Flores",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Sebastian Garcia",
+      "player2_name": "Luis Quesada",
+      "player1_deck_name": "Stiflenought",
+      "player2_deck_name": "Lands",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Sebastian Garcia",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Sebastian Garcia",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Enrique Culligan",
+      "player2_name": "Marco Brenes",
+      "player1_deck_name": "Psychatog",
+      "player2_deck_name": "RG Goblins",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Enrique Culligan",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Enrique Culligan",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Marco Brenes",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 5,
+      "player1_name": "César Sánchez",
+      "player2_name": "Gustavo Montenegro",
+      "player1_deck_name": "RG Goblins",
+      "player2_deck_name": "Sligh",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Gustavo Montenegro",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Gustavo Montenegro",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 6,
+      "player1_name": "Juan Manuel Gabriel Valerio",
+      "player2_name": "Natalia Torres",
+      "player1_deck_name": "Survival Infestation",
+      "player2_deck_name": "Pit Rack",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Juan Manuel Gabriel Valerio",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Juan Manuel Gabriel Valerio",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Natalia Torres",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 5,
+      "player1_name": "Esteban Gonzalez",
+      "player2_name": "Mario Marín",
+      "player1_deck_name": "RG Zoo",
+      "player2_deck_name": "Mono-Red",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Mario Marín",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Mario Marín",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Esteban Gonzalez",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 6,
+      "player1_name": "Walter Ramirez",
+      "player2_name": "Mario Escalante lopez",
+      "player1_deck_name": "Stiflenought",
+      "player2_deck_name": "UW Tidestill",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Mario Escalante lopez",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Mario Escalante lopez",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Oscar Zamora",
+      "player2_name": "Daniel Meza",
+      "player1_deck_name": "RG Elves",
+      "player2_deck_name": "Hermit FEB",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Daniel Meza",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Daniel Meza",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Oscar Zamora",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 6,
+      "player1_name": "Darío Rodríguez",
+      "player2_name": "Jose De la O Castillo",
+      "player1_deck_name": "Replenish",
+      "player2_deck_name": "Sligh",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Darío Rodríguez",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Jose De la O Castillo",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Draw",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Jose Roberto Rojas Salas",
+      "player2_name": "David Mora",
+      "player1_deck_name": "Tide Control",
+      "player2_deck_name": "RG Elves",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Jose Roberto Rojas Salas",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "David Mora",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Draw",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Walter Ramirez",
+      "player2_name": "Emanuel Cianfanelli",
+      "player1_deck_name": "Stiflenought",
+      "player2_deck_name": "GW Enchantress",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Emanuel Cianfanelli",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Emanuel Cianfanelli",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Walter Ramirez",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Walter Ramirez",
+      "player2_name": "Gustavo Montenegro",
+      "player1_deck_name": "Stiflenought",
+      "player2_deck_name": "Sligh",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Walter Ramirez",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Walter Ramirez",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Jose De la O Castillo",
+      "player2_name": "Diego Medrano",
+      "player1_deck_name": "Sligh",
+      "player2_deck_name": "Trev-Aluren",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Jose De la O Castillo",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Jose De la O Castillo",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Sebastian Garcia",
+      "player2_name": "Mario Escalante lopez",
+      "player1_deck_name": "Stiflenought",
+      "player2_deck_name": "UW Tidestill",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Sebastian Garcia",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Sebastian Garcia",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 6,
+      "player1_name": "Eduardo Flores",
+      "player2_name": "Enrique Culligan",
+      "player1_deck_name": "Mono Black Midrange",
+      "player2_deck_name": "Psychatog",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Eduardo Flores",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Enrique Culligan",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Draw",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Lorenz Wiedenmann",
+      "player2_name": "Julian Wiedenmann",
+      "player1_deck_name": "Mono Black Midrange",
+      "player2_deck_name": "Phantom Oath",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Julian Wiedenmann",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Julian Wiedenmann",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Juan Pablo Meza Loaiza",
+      "player2_name": "Marcelo Bolaños",
+      "player1_deck_name": "Life",
+      "player2_deck_name": "Stiflenought",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Marcelo Bolaños",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Marcelo Bolaños",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Marco Brenes",
+      "player2_name": "David Mora",
+      "player1_deck_name": "RG Goblins",
+      "player2_deck_name": "RG Elves",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Marco Brenes",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Marco Brenes",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Gerardo Loaiza",
+      "player2_name": "Lorenz Wiedenmann",
+      "player1_deck_name": "RG Goblins",
+      "player2_deck_name": "Mono Black Midrange",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Gerardo Loaiza",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Gerardo Loaiza",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Darío Rodríguez",
+      "player2_name": "Ignacio España",
+      "player1_deck_name": "Replenish",
+      "player2_deck_name": "BW Midrange",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Darío Rodríguez",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Darío Rodríguez",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 6,
+      "player1_name": "Oscar Zamora",
+      "player2_name": "Marco Brenes",
+      "player1_deck_name": "RG Elves",
+      "player2_deck_name": "RG Goblins",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Marco Brenes",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Marco Brenes",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Gustavo Montenegro",
+      "player2_name": "Sebastian Garcia",
+      "player1_deck_name": "Sligh",
+      "player2_deck_name": "Stiflenought",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Sebastian Garcia",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Sebastian Garcia",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Gustavo Montenegro",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Guillermo Campos",
+      "player2_name": "César Sánchez",
+      "player1_deck_name": "RG Goblins",
+      "player2_deck_name": "RG Goblins",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "César Sánchez",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "César Sánchez",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Guillermo Campos",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Mario Marín",
+      "player2_name": "Gerardo Loaiza",
+      "player1_deck_name": "Mono-Red",
+      "player2_deck_name": "RG Goblins",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Mario Marín",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Mario Marín",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 6,
+      "player1_name": "Mario Marín",
+      "player2_name": "Javier Córdoba V",
+      "player1_deck_name": "Mono-Red",
+      "player2_deck_name": "Mono Black Midrange",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Mario Marín",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Mario Marín",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 6,
+      "player1_name": "Daniel Meza",
+      "player2_name": "Sebastian Garcia",
+      "player1_deck_name": "Hermit FEB",
+      "player2_deck_name": "Stiflenought",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Daniel Meza",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Sebastian Garcia",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Draw",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "César Sánchez",
+      "player2_name": "Mario Escalante lopez",
+      "player1_deck_name": "RG Goblins",
+      "player2_deck_name": "UW Tidestill",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Mario Escalante lopez",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Mario Escalante lopez",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "César Sánchez",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 6,
+      "player1_name": "Guillermo Campos",
+      "player2_name": "Lorenz Wiedenmann",
+      "player1_deck_name": "RG Goblins",
+      "player2_deck_name": "Mono Black Midrange",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Guillermo Campos",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Guillermo Campos",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 5,
+      "player1_name": "Luis Quesada",
+      "player2_name": "Ricardo Abarca",
+      "player1_deck_name": "Lands",
+      "player2_deck_name": "BUG Control",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ricardo Abarca",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ricardo Abarca",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Oscar Zamora",
+      "player2_name": "César Sánchez",
+      "player1_deck_name": "RG Elves",
+      "player2_deck_name": "RG Goblins",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Oscar Zamora",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Oscar Zamora",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "César Sánchez",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Mario Marín",
+      "player2_name": "Ignacio España",
+      "player1_deck_name": "Mono-Red",
+      "player2_deck_name": "BW Midrange",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ignacio España",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ignacio España",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Mario Marín",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 7,
+      "player1_name": "Daniel Meza",
+      "player2_name": "Ale Focardi",
+      "player1_deck_name": "Hermit FEB",
+      "player2_deck_name": "Terrageddon",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ale Focardi",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ale Focardi",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Daniel Meza",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Javier Córdoba V",
+      "player2_name": "Edgar Brenes Soto",
+      "player1_deck_name": "Mono Black Midrange",
+      "player2_deck_name": "Zombies",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Edgar Brenes Soto",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Edgar Brenes Soto",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 5,
+      "player1_name": "Ignacio España",
+      "player2_name": "Edgar Brenes Soto",
+      "player1_deck_name": "BW Midrange",
+      "player2_deck_name": "Zombies",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ignacio España",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ignacio España",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Edgar Brenes Soto",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 5,
+      "player1_name": "Juan Manuel Gabriel Valerio",
+      "player2_name": "Gerardo Loaiza",
+      "player1_deck_name": "Survival Infestation",
+      "player2_deck_name": "RG Goblins",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Juan Manuel Gabriel Valerio",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Juan Manuel Gabriel Valerio",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Gerardo Loaiza",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Jose De la O Castillo",
+      "player2_name": "Juan Pablo Meza Loaiza",
+      "player1_deck_name": "Sligh",
+      "player2_deck_name": "Life",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Jose De la O Castillo",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Jose De la O Castillo",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Eduardo Flores",
+      "player2_name": "Ale Focardi",
+      "player1_deck_name": "Mono Black Midrange",
+      "player2_deck_name": "Terrageddon",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Eduardo Flores",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Eduardo Flores",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "César Sánchez",
+      "player2_name": "Julian Wiedenmann",
+      "player1_deck_name": "RG Goblins",
+      "player2_deck_name": "Phantom Oath",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Julian Wiedenmann",
+          "duration_minutes": 15
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Julian Wiedenmann",
+          "duration_minutes": 15
+        }
+      ]
+    }
+  ]
+}

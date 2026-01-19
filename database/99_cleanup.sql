@@ -13,9 +13,7 @@ DELETE FROM matches;
 -- Step 3: Delete tournaments (depends on seasons)
 DELETE FROM tournaments;
 
--- Step 4: Delete tournament types (no dependencies once tournaments are cleared)
-DELETE FROM tournament_types;
-
+-- Step 4: Delete tournament types (no dependencies)
 -- Step 5: Delete deck archetypes (no dependencies)
 DELETE FROM deck_archetypes;
 
@@ -23,7 +21,7 @@ DELETE FROM deck_archetypes;
 DELETE FROM players;
 
 -- Step 7: Delete seasons (no dependencies)
-DELETE FROM seasons;
+-- DELETE FROM seasons;
 
 -- Reset sequences to start from 1 again
 ALTER SEQUENCE seasons_id_seq RESTART WITH 1;
