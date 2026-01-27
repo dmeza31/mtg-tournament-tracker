@@ -1,0 +1,233 @@
+{
+  "season_id": 1,
+  "tournament": {
+    "name": "Monthly Burro Singles Setiembre 2025",
+    "tournament_date": "2025-10-07",
+    "location": "Burro Singles",
+    "format": "Premodern",
+    "tournament_type_name": "LGS Tournament",
+    "description": "Monthly Burro Singles Setiembre 2025 - Premodern Tournament"
+  },
+  "players": [
+    {
+      "name": "Edgar Brenes Soto",
+      "email": "edkeytar@email.com"
+    },
+    {
+      "name": "Oscar Zamora",
+      "email": "emzagu@email.com"
+    },
+    {
+      "name": "Julian Wiedenmann",
+      "email": "zenzaz@email.com"
+    },
+    {
+      "name": "Ignacio España",
+      "email": "iesvilla@email.com"
+    },
+    {
+      "name": "Ricardo Abarca",
+      "email": "bard91r@email.com"
+    },
+    {
+      "name": "Daisuke Hará González",
+      "email": "daih@email.com"
+    },
+    {
+      "name": "Emanuel Cianfanelli",
+      "email": "ecianfanelli@email.com"
+    }
+  ],
+  "decks": [
+    {
+      "name": "Landstill",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Oath Spec",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Psychatog",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Survival Madness",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Survival Rock",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Tidestill",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Tireless Speculation",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Zombies",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    }
+  ],
+  "matches": [
+    {
+      "round_number": 3,
+      "player1_name": "Edgar Brenes Soto",
+      "player2_name": "Oscar Zamora",
+      "player1_deck_name": "Zombies",
+      "player2_deck_name": "Landstill",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Oscar Zamora"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Oscar Zamora"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Julian Wiedenmann",
+      "player2_name": "Ignacio España",
+      "player1_deck_name": "Survival Madness",
+      "player2_deck_name": "Tireless Speculation",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ignacio España"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ignacio España"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Julian Wiedenmann",
+      "player2_name": "Ricardo Abarca",
+      "player1_deck_name": "Survival Madness",
+      "player2_deck_name": "Psychatog",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Julian Wiedenmann"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ricardo Abarca"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Oscar Zamora",
+      "player2_name": "Ricardo Abarca",
+      "player1_deck_name": "Landstill",
+      "player2_deck_name": "Psychatog",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ricardo Abarca"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ricardo Abarca"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Emanuel Cianfanelli",
+      "player2_name": "Ignacio España",
+      "player1_deck_name": "Oath Spec",
+      "player2_deck_name": "Tireless Speculation",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Emanuel Cianfanelli"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Emanuel Cianfanelli"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Ignacio España"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Oscar Zamora",
+      "player2_name": "Daisuke Hará González",
+      "player1_deck_name": "Landstill",
+      "player2_deck_name": "Survival Rock",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Oscar Zamora"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Oscar Zamora"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Emanuel Cianfanelli",
+      "player2_name": "Edgar Brenes Soto",
+      "player1_deck_name": "Oath Spec",
+      "player2_deck_name": "Zombies",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Emanuel Cianfanelli"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Emanuel Cianfanelli"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Edgar Brenes Soto"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Emanuel Cianfanelli",
+      "player2_name": "Ricardo Abarca",
+      "player1_deck_name": "Oath Spec",
+      "player2_deck_name": "Psychatog",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Emanuel Cianfanelli"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Emanuel Cianfanelli"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Ricardo Abarca"
+        }
+      ]
+    }
+  ]
+}

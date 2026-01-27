@@ -1,4 +1,6 @@
 import json
+import argparse
+import sys
 from datetime import datetime
 from pathlib import Path
 
@@ -21,43 +23,7 @@ def extract_tournament_date(date_str):
     dt = datetime.fromisoformat(date_str.replace('Z', '+00:00'))
     return dt.strftime('%Y-%m-%d')
 
-def extract_tournament_name(filename, date_str):
-    """Generate tournament name from filename pattern."""
-    # Extract month and year from filename
-    parts = filename.replace('_', ' ').replace('.json', '').split()
-    
-    # Determine tournament location/prefix
-    if 'OG' in filename or 'og' in parts:
-        location_prefix = 'OG'
-    elif 'BurroSingle' in filename or 'BurroSingles' in filename:
-        location_prefix = 'BurroSingles'
-    else:
-        location_prefix = 'Unknown'
-    
-    if 'Diciembre' in parts or 'diciembre' in parts:
-        month = 'Diciembre'
-    elif 'Noviembre' in parts or 'noviembre' in parts:
-        month = 'Noviembre'
-    elif 'enero' in parts or 'Enero' in parts:
-        month = 'Enero'
-    else:
-        month = 'Unknown'
-    
-    # Extract year
-    year = None
-    for part in parts:
-        if part.isdigit() and len(part) == 4:
-            year = part
-            break
-    
-    if not year:
-        # Try to extract from date_str
-        dt = datetime.fromisoformat(date_str.replace('Z', '+00:00'))
-        year = str(dt.year)
-    
-    return f"{location_prefix} Monthly {month} {year}"
-
-def process_tournament_file(input_file, season_id):
+def process_tournament_file(input_file, season_id, tournament_name, location, format_type='Premodern', tournament_type='LGS Tournament'):
     """Process a tournament JSON file and generate import format."""
     
     with open(input_file, 'r', encoding='utf-8') as f:
@@ -76,7 +42,6 @@ def process_tournament_file(input_file, season_id):
     first_match = matches[0]
     date_created = first_match['DateCreated']
     tournament_date = extract_tournament_date(date_created)
-    tournament_name = extract_tournament_name(Path(input_file).name, date_created)
     
     # Extract unique players with their decklists
     players_dict = {}
@@ -202,10 +167,10 @@ def process_tournament_file(input_file, season_id):
         'tournament': {
             'name': tournament_name,
             'tournament_date': tournament_date,
-            'location': 'Burro Singles',
-            'format': 'Premodern',
-            'tournament_type_name': 'LGS Tournament',
-            'description': f'{tournament_name} - Premodern Tournament'
+            'location': location,
+            'format': format_type,
+            'tournament_type_name': tournament_type,
+            'description': f'{tournament_name} - {format_type} Tournament'
         },
         'players': players,
         'decks': decks,
@@ -215,65 +180,73 @@ def process_tournament_file(input_file, season_id):
     return output
 
 def main():
-    # Define input files and their season IDs
-    files_to_process = [
-        {
-            'input': r'c:\Users\dmeza\Desktop\Personal Repo\MTG Tournament Tracker\imports\DataImport\BurroSingle_Monthly_Diciembre_2025.json',
-            'output': r'c:\Users\dmeza\Desktop\Personal Repo\MTG Tournament Tracker\imports\DataImport\BurroSingle_Monthly_Diciembre_2025_import.json',
-            'season_id': 1
-        },
-        {
-            'input': r'c:\Users\dmeza\Desktop\Personal Repo\MTG Tournament Tracker\imports\DataImport\BurroSingles_Monthly_Noviembre_2025.json',
-            'output': r'c:\Users\dmeza\Desktop\Personal Repo\MTG Tournament Tracker\imports\DataImport\BurroSingles_Monthly_Noviembre_2025_import.json',
-            'season_id': 1
-        },
-        {
-            'input': r'c:\Users\dmeza\Desktop\Personal Repo\MTG Tournament Tracker\imports\DataImport\BurroSingles_monthy_enero_2026.json',
-            'output': r'c:\Users\dmeza\Desktop\Personal Repo\MTG Tournament Tracker\imports\DataImport\BurroSingles_monthy_enero_2026_import.json',
-            'season_id': 2
-        },
-        {
-            'input': r'c:\Users\dmeza\Desktop\Personal Repo\MTG Tournament Tracker\imports\DataImport\OG_monthly_noviembre_2025.json',
-            'output': r'c:\Users\dmeza\Desktop\Personal Repo\MTG Tournament Tracker\imports\DataImport\OG_monthly_noviembre_2025_import.json',
-            'season_id': 1
-        },
-        {
-            'input': r'c:\Users\dmeza\Desktop\Personal Repo\MTG Tournament Tracker\imports\DataImport\OG_Monthly_Diciembre_2025.json',
-            'output': r'c:\Users\dmeza\Desktop\Personal Repo\MTG Tournament Tracker\imports\DataImport\OG_Monthly_Diciembre_2025_import.json',
-            'season_id': 1
-        }
-    ]
+    parser = argparse.ArgumentParser(
+        description='Generate tournament import file from MTG Melee JSON export',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog='''
+Examples:
+  python generate_burro_imports.py tournament.json 2 "OG Monthly Enero 2026" "Only Games"
+  python generate_burro_imports.py tournament.json 1 "BurroSingles Monthly" "Burro Singles" -o output.json
+  python generate_burro_imports.py tournament.json 2 "Tournament Name" "Location" -f Modern -t "Competitive"
+        '''
+    )
     
-    created_files = []
+    # Required arguments
+    parser.add_argument('input_file', help='Path to tournament JSON file from MTG Melee')
+    parser.add_argument('season_id', type=int, help='Season ID number')
+    parser.add_argument('tournament_name', help='Tournament name (e.g., "OG Monthly Enero 2026")')
+    parser.add_argument('location', help='Tournament location (e.g., "Only Games", "Burro Singles")')
     
-    for file_info in files_to_process:
-        print(f"\nProcessing {Path(file_info['input']).name}...")
+    # Optional arguments
+    parser.add_argument('-o', '--output', help='Output file path (default: auto-generate from input filename)')
+    parser.add_argument('-f', '--format', default='Premodern', help='Tournament format (default: Premodern)')
+    parser.add_argument('-t', '--tournament-type', default='LGS Tournament', help='Tournament type (default: LGS Tournament)')
+    
+    args = parser.parse_args()
+    
+    # Generate output path if not provided
+    if args.output:
+        output_file = args.output
+    else:
+        input_path = Path(args.input_file)
+        output_file = str(input_path.parent / f"{input_path.stem}_import.json")
+    
+    print(f"\nProcessing {Path(args.input_file).name}...")
+    print(f"  Season ID: {args.season_id}")
+    print(f"  Tournament: {args.tournament_name}")
+    print(f"  Location: {args.location}")
+    print(f"  Format: {args.format}")
+    print(f"  Type: {args.tournament_type}")
+    
+    try:
+        result = process_tournament_file(
+            args.input_file,
+            args.season_id,
+            args.tournament_name,
+            args.location,
+            args.format,
+            args.tournament_type
+        )
         
-        try:
-            result = process_tournament_file(file_info['input'], file_info['season_id'])
+        if result:
+            # Write output file
+            with open(output_file, 'w', encoding='utf-8') as f:
+                json.dump(result, f, indent=2, ensure_ascii=False)
             
-            if result:
-                # Write output file
-                with open(file_info['output'], 'w', encoding='utf-8') as f:
-                    json.dump(result, f, indent=2, ensure_ascii=False)
-                
-                created_files.append(file_info['output'])
-                print(f"✓ Created: {file_info['output']}")
-                print(f"  - Players: {len(result['players'])}")
-                print(f"  - Decks: {len(result['decks'])}")
-                print(f"  - Matches: {len(result['matches'])}")
-            else:
-                print(f"✗ Failed to process {file_info['input']}")
-        
-        except Exception as e:
-            print(f"✗ Error processing {file_info['input']}: {str(e)}")
+            print(f"\n✓ Created: {output_file}")
+            print(f"  - Players: {len(result['players'])}")
+            print(f"  - Decks: {len(result['decks'])}")
+            print(f"  - Matches: {len(result['matches'])}")
+        else:
+            print(f"\n✗ Failed to process {args.input_file}")
+            sys.exit(1)
     
-    print(f"\n{'='*60}")
-    print(f"Import generation complete!")
-    print(f"{'='*60}")
-    print(f"Created {len(created_files)} import files:")
-    for file_path in created_files:
-        print(f"  - {file_path}")
+    except FileNotFoundError:
+        print(f"\n✗ Error: Input file not found: {args.input_file}")
+        sys.exit(1)
+    except Exception as e:
+        print(f"\n✗ Error processing {args.input_file}: {str(e)}")
+        sys.exit(1)
 
 if __name__ == '__main__':
     main()

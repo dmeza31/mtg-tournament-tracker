@@ -1,0 +1,360 @@
+{
+  "season_id": 2,
+  "tournament": {
+    "name": "OG Monthly Enero 2026",
+    "tournament_date": "2026-01-24",
+    "location": "Only Games",
+    "format": "Premodern",
+    "tournament_type_name": "LGS Tournament",
+    "description": "OG Monthly Enero 2026 - Premodern Tournament"
+  },
+  "players": [
+    {
+      "name": "Ricardo Abarca",
+      "email": "bard91r@email.com"
+    },
+    {
+      "name": "Juan Manuel Gabriel Valerio",
+      "email": "juanmagabriel@email.com"
+    },
+    {
+      "name": "Eduardo Flores",
+      "email": "blackwaldo@email.com"
+    },
+    {
+      "name": "Guillermo Campos",
+      "email": "elguille@email.com"
+    },
+    {
+      "name": "Ale Focardi",
+      "email": "focardi@email.com"
+    },
+    {
+      "name": "Emanuel Cianfanelli",
+      "email": "ecianfanelli@email.com"
+    },
+    {
+      "name": "César Sánchez",
+      "email": "kongocr@email.com"
+    },
+    {
+      "name": "Juan Pablo Meza Loaiza",
+      "email": "jpmeza@email.com"
+    },
+    {
+      "name": "Mario Escalante lopez",
+      "email": "harimamario@email.com"
+    }
+  ],
+  "decks": [
+    {
+      "name": "BUG Control",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Contamination",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Devourer Combo",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Finkula",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "GW Terrageddon",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Landstill",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Machine Head",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Tempting Swamp",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Treva's Oath",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    }
+  ],
+  "matches": [
+    {
+      "round_number": 1,
+      "player1_name": "Eduardo Flores",
+      "player2_name": "Guillermo Campos",
+      "player1_deck_name": "Tempting Swamp",
+      "player2_deck_name": "GW Terrageddon",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Guillermo Campos"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Guillermo Campos"
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Ale Focardi",
+      "player2_name": "Ricardo Abarca",
+      "player1_deck_name": "Devourer Combo",
+      "player2_deck_name": "BUG Control",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ale Focardi"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ale Focardi"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Ricardo Abarca"
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Eduardo Flores",
+      "player2_name": "Juan Manuel Gabriel Valerio",
+      "player1_deck_name": "Tempting Swamp",
+      "player2_deck_name": "Treva's Oath",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Eduardo Flores"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Eduardo Flores"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Juan Manuel Gabriel Valerio"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Emanuel Cianfanelli",
+      "player2_name": "César Sánchez",
+      "player1_deck_name": "Contamination",
+      "player2_deck_name": "Machine Head",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "César Sánchez"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "César Sánchez"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Juan Pablo Meza Loaiza",
+      "player2_name": "Eduardo Flores",
+      "player1_deck_name": "Finkula",
+      "player2_deck_name": "Tempting Swamp",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Juan Pablo Meza Loaiza"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Juan Pablo Meza Loaiza"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Eduardo Flores"
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Mario Escalante lopez",
+      "player2_name": "Guillermo Campos",
+      "player1_deck_name": "Landstill",
+      "player2_deck_name": "GW Terrageddon",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Mario Escalante lopez"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Guillermo Campos"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Mario Escalante lopez",
+      "player2_name": "Juan Pablo Meza Loaiza",
+      "player1_deck_name": "Landstill",
+      "player2_deck_name": "Finkula",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Mario Escalante lopez"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Mario Escalante lopez"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Ricardo Abarca",
+      "player2_name": "Emanuel Cianfanelli",
+      "player1_deck_name": "BUG Control",
+      "player2_deck_name": "Contamination",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ricardo Abarca"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ricardo Abarca"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Ricardo Abarca",
+      "player2_name": "Guillermo Campos",
+      "player1_deck_name": "BUG Control",
+      "player2_deck_name": "GW Terrageddon",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Guillermo Campos"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Guillermo Campos"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "César Sánchez",
+      "player2_name": "Eduardo Flores",
+      "player1_deck_name": "Machine Head",
+      "player2_deck_name": "Tempting Swamp",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "César Sánchez"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Eduardo Flores"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Eduardo Flores"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Juan Manuel Gabriel Valerio",
+      "player2_name": "César Sánchez",
+      "player1_deck_name": "Treva's Oath",
+      "player2_deck_name": "Machine Head",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Juan Manuel Gabriel Valerio"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Juan Manuel Gabriel Valerio"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Guillermo Campos",
+      "player2_name": "Ale Focardi",
+      "player1_deck_name": "GW Terrageddon",
+      "player2_deck_name": "Devourer Combo",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ale Focardi"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ale Focardi"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Juan Pablo Meza Loaiza",
+      "player2_name": "Ale Focardi",
+      "player1_deck_name": "Finkula",
+      "player2_deck_name": "Devourer Combo",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Juan Pablo Meza Loaiza"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Juan Pablo Meza Loaiza"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Ale Focardi"
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Juan Pablo Meza Loaiza",
+      "player2_name": "Emanuel Cianfanelli",
+      "player1_deck_name": "Finkula",
+      "player2_deck_name": "Contamination",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Juan Pablo Meza Loaiza"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Emanuel Cianfanelli"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Emanuel Cianfanelli"
+        }
+      ]
+    }
+  ]
+}

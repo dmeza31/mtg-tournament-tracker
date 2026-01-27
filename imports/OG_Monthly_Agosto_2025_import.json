@@ -1,0 +1,248 @@
+{
+  "season_id": 1,
+  "tournament": {
+    "name": "Olympus Garden Monthly Agosto 2025",
+    "tournament_date": "2025-08-23",
+    "location": "Olympus Garden",
+    "format": "Premodern",
+    "tournament_type_name": "LGS Tournament",
+    "description": "Olympus Garden Monthly Agosto 2025 - Premodern Tournament"
+  },
+  "players": [
+    {
+      "name": "Glen Calvo",
+      "email": "baristacuz@email.com"
+    },
+    {
+      "name": "Ale Focardi",
+      "email": "focardi@email.com"
+    },
+    {
+      "name": "Javier Córdoba V",
+      "email": "centralliving@email.com"
+    },
+    {
+      "name": "Juan Manuel Gabriel Valerio",
+      "email": "juanmagabriel@email.com"
+    },
+    {
+      "name": "Sebastian Garcia",
+      "email": "sebastiangb@email.com"
+    },
+    {
+      "name": "Luis Quesada",
+      "email": "blomega420@email.com"
+    }
+  ],
+  "decks": [
+    {
+      "name": "Gruul",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Jund",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Land(Tax)",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Parallax Replenish",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Stiflenought",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Treva's Survival",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    }
+  ],
+  "matches": [
+    {
+      "round_number": 1,
+      "player1_name": "Glen Calvo",
+      "player2_name": "Ale Focardi",
+      "player1_deck_name": "Stiflenought",
+      "player2_deck_name": "Treva's Survival",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Glen Calvo"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ale Focardi"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Ale Focardi"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Javier Córdoba V",
+      "player2_name": "Juan Manuel Gabriel Valerio",
+      "player1_deck_name": "Gruul",
+      "player2_deck_name": "Jund",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Javier Córdoba V"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Javier Córdoba V"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Sebastian Garcia",
+      "player2_name": "Ale Focardi",
+      "player1_deck_name": "Parallax Replenish",
+      "player2_deck_name": "Treva's Survival",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Sebastian Garcia"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Sebastian Garcia"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Ale Focardi"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Glen Calvo",
+      "player2_name": "Juan Manuel Gabriel Valerio",
+      "player1_deck_name": "Stiflenought",
+      "player2_deck_name": "Jund",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Glen Calvo"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Juan Manuel Gabriel Valerio"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Juan Manuel Gabriel Valerio"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Juan Manuel Gabriel Valerio",
+      "player2_name": "Sebastian Garcia",
+      "player1_deck_name": "Jund",
+      "player2_deck_name": "Parallax Replenish",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Juan Manuel Gabriel Valerio"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Sebastian Garcia"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Sebastian Garcia"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Javier Córdoba V",
+      "player2_name": "Luis Quesada",
+      "player1_deck_name": "Gruul",
+      "player2_deck_name": "Land(Tax)",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Javier Córdoba V"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Javier Córdoba V"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Ale Focardi",
+      "player2_name": "Luis Quesada",
+      "player1_deck_name": "Treva's Survival",
+      "player2_deck_name": "Land(Tax)",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ale Focardi"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ale Focardi"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Sebastian Garcia",
+      "player2_name": "Javier Córdoba V",
+      "player1_deck_name": "Parallax Replenish",
+      "player2_deck_name": "Gruul",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Sebastian Garcia"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Sebastian Garcia"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Javier Córdoba V"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Glen Calvo",
+      "player2_name": "Luis Quesada",
+      "player1_deck_name": "Stiflenought",
+      "player2_deck_name": "Land(Tax)",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Glen Calvo"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Glen Calvo"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Luis Quesada"
+        }
+      ]
+    }
+  ]
+}

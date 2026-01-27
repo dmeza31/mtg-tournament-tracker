@@ -1,0 +1,450 @@
+{
+  "season_id": 1,
+  "tournament": {
+    "name": "Monthly Burro Singles Setiembre 2025",
+    "tournament_date": "2025-09-02",
+    "location": "Burro Singles",
+    "format": "Premodern",
+    "tournament_type_name": "LGS Tournament",
+    "description": "Monthly Burro Singles Setiembre 2025 - Premodern Tournament"
+  },
+  "players": [
+    {
+      "name": "Darío Rodríguez",
+      "email": "dariorod@email.com"
+    },
+    {
+      "name": "Ale Focardi",
+      "email": "focardi@email.com"
+    },
+    {
+      "name": "Eduardo Flores",
+      "email": "blackwaldo@email.com"
+    },
+    {
+      "name": "Emanuel Cianfanelli",
+      "email": "ecianfanelli@email.com"
+    },
+    {
+      "name": "Luis David Jiménez",
+      "email": "ldchino@email.com"
+    },
+    {
+      "name": "Daisuke Hará González",
+      "email": "daih@email.com"
+    },
+    {
+      "name": "Natalia Torres",
+      "email": "natitc27@email.com"
+    },
+    {
+      "name": "Ignacio España",
+      "email": "iesvilla@email.com"
+    },
+    {
+      "name": "Ricardo Abarca",
+      "email": "bard91r@email.com"
+    },
+    {
+      "name": "Oscar Zamora",
+      "email": "emzagu@email.com"
+    }
+  ],
+  "decks": [
+    {
+      "name": "5c Good Stuff",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Astral Slide",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Contamination",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "GW Enchantress",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Mono Black Control",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Pit Rack",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Psychatog",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Pyrostatic Oath",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    },
+    {
+      "name": "Zoo",
+      "color_identity": "Unknown",
+      "archetype_type": "Other"
+    }
+  ],
+  "matches": [
+    {
+      "round_number": 2,
+      "player1_name": "Darío Rodríguez",
+      "player2_name": "Ale Focardi",
+      "player1_deck_name": "Astral Slide",
+      "player2_deck_name": "Contamination",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Darío Rodríguez"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ale Focardi"
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Ale Focardi",
+      "player2_name": "Eduardo Flores",
+      "player1_deck_name": "Contamination",
+      "player2_deck_name": "Mono Black Control",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ale Focardi"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ale Focardi"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Darío Rodríguez",
+      "player2_name": "Emanuel Cianfanelli",
+      "player1_deck_name": "Astral Slide",
+      "player2_deck_name": "GW Enchantress",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Darío Rodríguez"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Emanuel Cianfanelli"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Luis David Jiménez",
+      "player2_name": "Eduardo Flores",
+      "player1_deck_name": "Psychatog",
+      "player2_deck_name": "Mono Black Control",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Eduardo Flores"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Eduardo Flores"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Daisuke Hará González",
+      "player2_name": "Luis David Jiménez",
+      "player1_deck_name": "Psychatog",
+      "player2_deck_name": "Psychatog",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Daisuke Hará González"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Daisuke Hará González"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Emanuel Cianfanelli",
+      "player2_name": "Natalia Torres",
+      "player1_deck_name": "GW Enchantress",
+      "player2_deck_name": "Pit Rack",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Emanuel Cianfanelli"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Natalia Torres"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Eduardo Flores",
+      "player2_name": "Darío Rodríguez",
+      "player1_deck_name": "Mono Black Control",
+      "player2_deck_name": "Astral Slide",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Darío Rodríguez"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Darío Rodríguez"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Ignacio España",
+      "player2_name": "Ricardo Abarca",
+      "player1_deck_name": "5c Good Stuff",
+      "player2_deck_name": "Pyrostatic Oath",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ricardo Abarca"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ricardo Abarca"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Eduardo Flores",
+      "player2_name": "Oscar Zamora",
+      "player1_deck_name": "Mono Black Control",
+      "player2_deck_name": "Zoo",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Oscar Zamora"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Oscar Zamora"
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Oscar Zamora",
+      "player2_name": "Emanuel Cianfanelli",
+      "player1_deck_name": "Zoo",
+      "player2_deck_name": "GW Enchantress",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Oscar Zamora"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Oscar Zamora"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Emanuel Cianfanelli"
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Ignacio España",
+      "player2_name": "Luis David Jiménez",
+      "player1_deck_name": "5c Good Stuff",
+      "player2_deck_name": "Psychatog",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ignacio España"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ignacio España"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Ignacio España",
+      "player2_name": "Ale Focardi",
+      "player1_deck_name": "5c Good Stuff",
+      "player2_deck_name": "Contamination",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ignacio España"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ale Focardi"
+        },
+        {
+          "game_number": 3,
+          "winner_name": "Ale Focardi"
+        }
+      ]
+    },
+    {
+      "round_number": 3,
+      "player1_name": "Oscar Zamora",
+      "player2_name": "Ricardo Abarca",
+      "player1_deck_name": "Zoo",
+      "player2_deck_name": "Pyrostatic Oath",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ricardo Abarca"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ricardo Abarca"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Daisuke Hará González",
+      "player2_name": "Oscar Zamora",
+      "player1_deck_name": "Psychatog",
+      "player2_deck_name": "Zoo",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Oscar Zamora"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Oscar Zamora"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Ignacio España",
+      "player2_name": "Daisuke Hará González",
+      "player1_deck_name": "5c Good Stuff",
+      "player2_deck_name": "Psychatog",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Daisuke Hará González"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Daisuke Hará González"
+        }
+      ]
+    },
+    {
+      "round_number": 1,
+      "player1_name": "Natalia Torres",
+      "player2_name": "Ale Focardi",
+      "player1_deck_name": "Pit Rack",
+      "player2_deck_name": "Contamination",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Natalia Torres"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Natalia Torres"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Ricardo Abarca",
+      "player2_name": "Natalia Torres",
+      "player1_deck_name": "Pyrostatic Oath",
+      "player2_deck_name": "Pit Rack",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Ricardo Abarca"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Ricardo Abarca"
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Natalia Torres",
+      "player2_name": "Daisuke Hará González",
+      "player1_deck_name": "Pit Rack",
+      "player2_deck_name": "Psychatog",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Natalia Torres"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Natalia Torres"
+        }
+      ]
+    },
+    {
+      "round_number": 2,
+      "player1_name": "Emanuel Cianfanelli",
+      "player2_name": "Luis David Jiménez",
+      "player1_deck_name": "GW Enchantress",
+      "player2_deck_name": "Psychatog",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Emanuel Cianfanelli"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Emanuel Cianfanelli"
+        }
+      ]
+    },
+    {
+      "round_number": 4,
+      "player1_name": "Ricardo Abarca",
+      "player2_name": "Darío Rodríguez",
+      "player1_deck_name": "Pyrostatic Oath",
+      "player2_deck_name": "Astral Slide",
+      "games": [
+        {
+          "game_number": 1,
+          "winner_name": "Darío Rodríguez"
+        },
+        {
+          "game_number": 2,
+          "winner_name": "Darío Rodríguez"
+        }
+      ]
+    }
+  ]
+}
