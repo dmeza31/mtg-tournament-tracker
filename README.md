@@ -153,7 +153,7 @@ psql (PostgreSQL) 15.15 (Homebrew)
 
 Create the database and the role so the following command works:  psql -U postgres -d mtg_tournaments -f 01_schema.sql
 
-Run:
+```bash
 
 **Get into the shell to create the role and the db**
 
@@ -188,6 +188,7 @@ psql  mtg_tournaments
 \du
 
 Ouput shows mtg_tournament tables
+```
 
 #### 1. Database Setup
 
