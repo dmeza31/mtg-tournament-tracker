@@ -112,6 +112,7 @@ Streamlit web application for data visualization:
 
 ### Local Development Setup
 
+
 ### Mac OSX setup
 
 You may get this error:
@@ -128,6 +129,8 @@ On your macOS/Homebrew setup, Postgres 10 didn’t:
 
 - automatically create the postgres role 
 - a matching database
+
+  
 
 So commands using -U postgres or defaulting to your OS username failed.
 
