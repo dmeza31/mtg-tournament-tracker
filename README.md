@@ -155,7 +155,7 @@ Create the database and the role so the following command works:  psql -U postgr
 
 Run:
 
-# Getting to any db, to tbe able to create the db mtg_tournaments
+# Get into the shell to create the role and the db
 psql postgres
 
 # Create role
