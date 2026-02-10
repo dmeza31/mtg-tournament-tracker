@@ -65,7 +65,7 @@ A comprehensive PostgreSQL database for tracking Magic the Gathering tournament 
 
 5. **Load Sample Data** (optional):
    ```bash
-   psql -d mtg_tournaments -f 05_sample_data.sql
+   psql -d mtg_tournaments -f 97_sample_data.sql
    ```
 
 #### Method 2: Using PowerShell on Windows

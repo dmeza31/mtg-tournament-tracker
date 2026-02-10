@@ -112,6 +112,88 @@ Streamlit web application for data visualization:
 
 ### Local Development Setup
 
+
+### Mac OSX setup
+
+You may get this error:
+
+- psql: error: connection to server on socket "/tmp/.s.PGSQL.5432" failed: FATAL:  role "postgres" does not exist
+
+or 
+
+- psql: error: connection to server on socket "/tmp/.s.PGSQL.5432" failed: FATAL:  database "your-username" does not exist
+
+
+
+On your macOS/Homebrew setup, Postgres 10 didn’t:
+
+- automatically create the postgres role 
+- a matching database
+
+  
+
+So commands using -U postgres or defaulting to your OS username failed.
+
+
+
+# Optional: You may have to install postgres15
+
+```bash
+# Binary is a different location on mac, include it in the path after installing it if you choose to use postgres15
+
+echo 'export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"' >> ~/.zshrc
+
+source ~/.zshrc
+
+# Verify Installation works 
+
+psql —version
+
+psql (PostgreSQL) 15.15 (Homebrew)
+```
+
+
+### Fix FATAL:  role "postgres" does not exist
+
+Create the database and the role so the following command works:  psql -U postgres -d mtg_tournaments -f 01_schema.sql
+
+```bash
+
+# Get into the shell to create the role and the db
+
+psql postgres
+
+# Create role
+
+CREATE ROLE postgres
+WITH LOGIN SUPERUSER PASSWORD 'postgres';
+
+SELECT datname FROM pg_database WHERE datname = 'mtg_tournaments';
+
+# Create db
+
+CREATE DATABASE mtg_tournaments;
+
+ALTER DATABASE mtg_tournaments OWNER TO postgres;
+
+# Exit  
+
+Ctrl D 
+
+
+Verify that it worked
+
+# Get in to the mtg_tournaments that you created
+
+psql  mtg_tournaments 
+
+# Verify it works
+
+\du
+
+Ouput shows mtg_tournament tables
+```
+
 #### 1. Database Setup
 
 ```bash
