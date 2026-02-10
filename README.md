@@ -116,11 +116,11 @@ Streamlit web application for data visualization:
 
 You may get this error:
 
-psql: error: connection to server on socket "/tmp/.s.PGSQL.5432" failed: FATAL:  role "postgres" does not exist
+- psql: error: connection to server on socket "/tmp/.s.PGSQL.5432" failed: FATAL:  role "postgres" does not exist
 
 or 
 
-psql: error: connection to server on socket "/tmp/.s.PGSQL.5432" failed: FATAL:  database "your-username" does not exist
+- psql: error: connection to server on socket "/tmp/.s.PGSQL.5432" failed: FATAL:  database "your-username" does not exist
 
 
 
