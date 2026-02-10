@@ -141,7 +141,7 @@ echo 'export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"' >> ~/.zshrc
 
 source ~/.zshrc
 
-##Verify Installation works** 
+**Verify Installation works** 
 
 psql —version
 
