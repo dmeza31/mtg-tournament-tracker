@@ -135,13 +135,13 @@ So commands using -U postgres or defaulting to your OS username failed.
 
 # Optional: You may have to install postgres15 
 
-Binary is a different location on mac, include it in the path after installing it if you choose to use postgres15.
+##Binary is a different location on mac, include it in the path after installing it if you choose to use postgres15.
 
 echo 'export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"' >> ~/.zshrc
 
 source ~/.zshrc
 
-Verify Installation works 
+##Verify Installation works 
 
 psql —version
 
