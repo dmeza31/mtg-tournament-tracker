@@ -133,7 +133,7 @@ So commands using -U postgres or defaulting to your OS username failed.
 
 
 
-You may have to install postgres15 
+# Optional: You may have to install postgres15 
 
 Binary is a different location on mac, include it in the path after installing it if you choose to use postgres15.
 
