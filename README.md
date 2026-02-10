@@ -155,30 +155,30 @@ Create the database and the role so the following command works:  psql -U postgr
 
 Run:
 
-# Get into the shell to create the role and the db
+**Get into the shell to create the role and the db**
 psql postgres
 
-# Create role
+**Create role**
 CREATE ROLE postgres
 WITH LOGIN SUPERUSER PASSWORD 'postgres';
 
 SELECT datname FROM pg_database WHERE datname = 'mtg_tournaments';
 
-# Create db
+**Create db**
 CREATE DATABASE mtg_tournaments;
 
 ALTER DATABASE mtg_tournaments OWNER TO postgres;
 
-# Exit  
+**Exit**  
 Ctrl D 
 
 
 Verify that it worked
 
-# Get in to the mtg_tournaments that you created.
+**Get in to the mtg_tournaments that you created**
 psql  mtg_tournaments 
 
-# Verify it works.
+**Verify it works**
 \du
 
 Ouput shows mtg_tournament tables
